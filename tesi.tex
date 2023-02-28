@@ -1,0 +1,155 @@
+\documentclass[a4paper]{sapthesis}
+\title{EEG signal denoising using machine learning techniques}
+\author{Martina Doku}
+\IDnumber{1938629}
+\course{Applied Computer Science and Artificial Intelligence}
+\courseorganizer{Facoltà di Ingegneria dell’Informazione, Informatica e Statistica}
+\AcademicYear{2022/23}
+\advisor{Prof Danilo Avola}
+\copyyear{2023}
+\authoremail{doku.1938629@studenti.uniroma1.it}
+\begin{document}
+\maketitle
+\dedication{dedication}
+\begin{abstract}
+This thesis aims to investigate the use of machine learning
+ techniques for EEG signal denoising. The first part of the
+thesis is dedicated to the introduction of the problem, the statement
+of the research questions and an overview of the basic concepts.
+The second part is dedicated to history and 
+the state of
+the art of the signal analysis, and more specifically of the EEG signal
+analysis and denoising methods. The third part is dedicated to the
+ machine learning techniques.
+The fourth part is dedicated to the experimental results and the last part
+is dedicated to the conclusions and future work.
+\end{abstract}
+\tableofcontents
+\chapter{Introduction}
+The chapter is built as follows: in the first section there is a brief
+introduction of the problem, the reasons that led to the choice of the
+topic and the outline of the thesis. In the second section there is the
+statement of the research questions. In the third section there is a brief
+description of the basic concepts.
+\section{Problem statement}
+What is EEG in the first place and why is it important? Electroencephalography 
+(EEG) is a non-invasive technique used to measure the electrical activity of
+the brain. EEG signals are still among the less explored ones in the
+field of signal processing, despite their widespread use in clinical 
+practice and research. In recent years, there has been a growing 
+interest in developing denoising methods for EEG data to improve their 
+quality and reliability.\\ \\
+The main objective of this thesis is to investigate and compare different
+ EEG denoising methods, and to evaluate their performance in terms of 
+ signal quality, artifact removal, and preservation of underlying brain
+activity. Specifically, we will focus on the most recent machine learning
+techniques, such as generative adversarial networks (GANs), autoencoders
+(AEs), and deep learning (DL) models. We will also investigate the 
+potential of combining different denoising methods to improve the 
+performance of EEG denoising. \\ \\
+Overall, this thesis aims to provide a better understanding of the strengths
+ and limitations of different EEG denoising methods, and to help researchers
+  and clinicians make informed decisions when selecting the most appropriate
+   denoising method for their EEG data analysis. By improving the quality of
+    EEG signals, we can enhance our understanding of brain function and 
+    ultimately contribute to the development of more effective diagnostic 
+    and therapeutic tools for neurological disorders.
+
+\section{Research questions}
+The research questions are the following:
+\begin{itemize}
+\item How can we remove artifacts from EEG signals?
+\item How can we exploit the most recent machine learning techniques for
+    EEG denoising?
+\item What are the strengths and limitations of these new methods?
+\item What are the performance of these new methods?
+\end{itemize}
+\section{Basic concepts}
+\subsection{EEG}
+When talking about EEG,in this thesis, we are referring to the
+ electroencephalogram, in particular we are interested in the 
+ EEG waves. Electroencephalogram (EEG) waves are the patterns 
+ of electrical activity that are recorded by EEG measurements. 
+ These waves have different frequencies and amplitudes, and they 
+ reveal different states of brain activity. We divide the EEG waves in 
+ 5 main categories depending on their frquency:Alpha, Beta, Theta, 
+ Delta and Gamma waves.
+
+
+ Alpha waves are typically observed when someone is relaxed and awake,
+  with a frequency of 8-13 Hz. Beta waves, on the other hand, are 
+  associated with active cognitive processing and have a higher frequency 
+  of 14-30 Hz. Theta waves are usually observed during drowsiness or
+   light sleep and have a frequency of 4-7 Hz, while delta waves are
+    typically observed during deep sleep and have a frequency of less 
+    than 4 Hz.
+ 
+ Gamma waves have a frequency of 30-100 Hz and are associated with higher 
+ cognitive functions such as attention and memory. Mu waves, with a 
+ frequency of 8-13 Hz, are observed in the sensorimotor cortex during 
+ movement and motor planning.
+ 
+ It's important to remember that EEG waves are not distinct entities but 
+ represent a continuous spectrum of activity that can be influenced by
+  various factors such as task demands, attention, and emotion. Interpreting EEG waves requires expertise 
+  and context since different patterns of EEG activity may reflect 
+  different states of brain activity depending on the individual and the 
+  experimental conditions. Furthermore, research has shown that EEG waves
+   can be useful in clinical diagnosis and prognosis, as well as in the
+    assessment of cognitive function and brain injury. Therefore, 
+    understanding the various EEG waves and their characteristics 
+    can provide valuable insights into brain function and activity.
+\subsection{EEG denoising}
+EEG signals can be influenced by various factor that alter the real waves 
+originated from neural activities, those factors are defined as artifacts. 
+The artifacts can be classified as \cite{EEG artifact}: 
+\begin{itemize}
+    \item intrinsic artifacts:
+    artifacts that depend on physiological sources, such as ocular artifacts (EOG)
+    that come from eye movement and blinking, muscle artifacts (EMG) and
+     cardiac artifacts (ECG)
+    \item extrinsic artifacts: artifacts generated from external electromagnetic 
+    such as power line noise
+    sources.
+\end{itemize}
+Denoising of EEG data is an essential task to be able to work on data and to
+extract meaningful information from it. The denoising process is complex and
+it does lead to different level of quality of the data depending on the 
+method used, the quality of the data and the type of artifact.\\ \\
+There are several challenges \cite{denoising challenges} related both 
+to single methods characteristic and general artifact removal.
+For example, some methods are computationally expensive and require a lot
+of time to be applied, some methods are not able to remove all kind of
+artifacts, some methods require a lot of data to be applied. On a general
+level, there is the problem of the lack of a standard method to evaluate
+the quality of the denoised data and the EEG applications are not 
+yet fuly commercial, so there hasn't been a sufficient investment in
+hardware and software to make the denoising process easier.\\ \\
+However the main goal of latest studies is to find a method that can
+denoise from all kind of artifacts and that can be used in a flexible
+and fast way, to accomodate the needs of all the different EEG applications.
+\chapter{Literature review}
+\section{Signal analysis}
+\section{EEG denoising}
+\section{Machine learning}
+\chapter{Methodology}
+\section{Data}
+\section{Preprocessing}
+\section{Denoising}
+\section{Machine learning}
+\chapter{Experimental results}
+\section{Results}
+\section{Discussion}
+\chapter{Conclusions and future work}
+\section{Conclusions}
+\section{Future work}
+\chapter{Bibliography}
+\begin{thebibliography}{1}
+\bibitem{EEG artifact}{iang, X.; Bian, G.-B.; Tian, Z. Removal of Artifacts from EEG Signals: A Review. Sensors 2019, 19, 987.}
+\bibitem{denoising challenges}{Wajid Mumtaz, Suleman Rasheed, Alina Irfan, Review of challenges associated with the EEG artifact removal methods, Biomedical Signal Processing and Control, Volume 68, 2021, 102741, ISSN 1746-8094}
+\end{thebibliography}
+\chapter{Appendix}
+
+
+
+\end{document}
