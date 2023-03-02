@@ -130,10 +130,97 @@ denoise from all kind of artifacts and that can be used in a flexible
 and fast way, to accomodate the needs of all the different EEG applications.
 \chapter{Literature review}
 \section{Signal analysis}
+In this section we will present the basic techniques used for the analysis
+of signals. We will start with the definition of a signal and we will
+present the main methods used for the analysis of general signals that 
+constituted a base for the methods used for the analysis of EEG data.
+\subsection{Fourier transform}
+\label{sec:fourier}
+The first method used for the removal of artifacts from signals is the
+Fourier transform \cite{fourier}. The Fourier transform is a mathematical tool used
+ used to decompose a signal into sine and cosine functions, that are 
+used as basis functions for the original signal.
+It is defined as:
+
+\begin{equation}
+\label{eq:fourier}
+F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t} dt
+\end{equation}
+
+where $f(t)$ is the signal and $\omega$ is the frequency. The Fourier
+transform of a signal is a complex number, which can be decomposed into
+its real and imaginary parts. The real part of the Fourier transform
+is called the amplitude and the imaginary part is called the phase.
+
+\subsection{Fast Fourier transform}
+\label{sec:fft}
+The Fourier transform is a very useful tool for the analysis of signals,
+but it is computationally expensive. The Fast Fourier transform (FFT) \cite{fft} is
+an algorithm that is used to calculate the Fourier transform
+of a signal in a shorter time: it reduces the time nedded to Nlog (N),
+ obtaining a speed-up of a factor of N/log (N).\newline
+The FFT is used  in many different fields of science such as
+signal processing, image processing, etc. .
+
+\subsection{Short Time Fourier Transform}
+\label{sec:stft}
+The Short Time Fourier Transform (STFT) \cite{stft} \cite{stft2}
+is a method used to calculate the
+Fourier transform of a signal. It is used with non stationary signals
+to find the frequency components of a signal over time.
+The STFT equation is defined as:
+\begin{equation}
+\label{eq:stft}
+S(\tau) = s(t) \cdot h(t-\tau)
+\end{equation}
+where $s(t)$ is the signal, $h(t)$ is the window function and $\tau$ is
+the time. \newline
+The STFT can be used to find the frequency components of a signal:
+\begin{equation}
+\label{eq:stft2}
+S(\omega)= \frac{1}{2\pi}\cdot \int_{-\infty}^{\infty} s(\tau) \cdot h(t-\tau) e^{-i\omega t} d\tau
+\end{equation}
+where $s(\tau)$ is the signal, $h(t)$ is the window function and $\omega$
+is the frequency. \newline
+
+\subsection{Wigner-Ville distribution}
+\label{sec:wvd}
+The Wigner-Ville distribution (WVD) \cite{wvd} is a method used to provide
+the description of a signal in the time-frequency domain with higher resolution.
+It is described by the following equation:
+\begin{equation}
+\label{eq:wvd}
+W(\tau, \omega) = \int_{-\infty}^{\infty} s(t-\tau) \cdot s^*(t-\tau) e^{-2\pi\omega \tau} d\tau
+\end{equation}
+where $s(t)$ is the signal, $\tau$ is the time and $\omega$ is the frequency.
+The main problem of the WVD is that it introduces the so called cross terms.
+In fact, for a signal
+\begin{equation} x(t)=x_1(t)+x_2(t)
+\end{equation}
+the corresponding WVD is:
+\begin{equation}
+WVD(t,f)= WVDx_1(t,f) + WVDx_2(t,f) + 2Re[WVDx_1x_2(t,f)]
+\end{equation}
+where $2Re[WVDx_1x_2(t,f)]$ is the cross term
+which is removable at the expense of a loss of resolution.  \newline
 \section{EEG denoising}
 \section{Machine learning}
 \chapter{Methodology}
 \section{Data}
+The data used in this thesis are the EEG signals of the EEGdenoiseNet 
+dataset \cite{EEGdenoiseNet}. It is comprehensive benchmark dataset
+ that proves to be an exemplary resource for training and evaluating
+  deep learning-based EEG denoising models. It is composed of 4514 clean 
+  EEG epochs, 3400 EOG epochs, and 5598 EMG epochs, making it an inclusive 
+  and extensive dataset that caters to the needs of researchers and
+ practitioners alike.
+
+The incorporation of these various types of epochs in the dataset
+enables to generate a considerable number of noisy EEG epochs
+with their corresponding ground truth data. As a result, this compilation 
+has proven to be an invaluable resource for model training and testing,
+ facilitating an enhanced understanding of EEG denoising.
+
 \section{Preprocessing}
 \section{Denoising}
 \section{Machine learning}
@@ -147,6 +234,13 @@ and fast way, to accomodate the needs of all the different EEG applications.
 \begin{thebibliography}{1}
 \bibitem{EEG artifact}{iang, X.; Bian, G.-B.; Tian, Z. Removal of Artifacts from EEG Signals: A Review. Sensors 2019, 19, 987.}
 \bibitem{denoising challenges}{Wajid Mumtaz, Suleman Rasheed, Alina Irfan, Review of challenges associated with the EEG artifact removal methods, Biomedical Signal Processing and Control, Volume 68, 2021, 102741, ISSN 1746-8094}
+\bibitem{fourier} {Boashash, B., ed. (2003), Time–Frequency Signal Analysis and Processing: A Comprehensive Reference, Oxford: Elsevier Science, ISBN 978-0-08-044335-5.}
+\bibitem{fft} {Cooley, James W. (1987). The Re-Discovery of the Fast Fourier Transform Algorithm (PDF). Microchimica Acta. Vol. III. Vienna, Austria. pp. 33–45. Archived (PDF) from the original on 2016-08-20.}
+\bibitem{stft} {R. Álvarez, E. Borbor and F. Grijalva, ''Comparison of methods for signal analysis in the time-frequency domain,'' 2019 IEEE Fourth Ecuador Technical Chapters Meeting (ETCM), 2019, pp. 1-6, doi: 10.1109/ETCM48019.2019.9014860.}
+\bibitem{stft2} {W. -k. Lu and Q. Zhang, "Deconvolutive Short-Time Fourier Transform Spectrogram," in IEEE Signal Processing Letters, vol. 16, no. 7, pp. 576-579, July 2009, doi: 10.1109/LSP.2009.2020887.}
+\bibitem{wvd} {E. Chassande-Mottin and A. Pai, "Discrete time and frequency Wigner-Ville distribution: Moyal's formula and aliasing," in IEEE Signal Processing Letters, vol. 12, no. 7, pp. 508-511, July 2005, doi: 10.1109/LSP.2005.849493}
+
+\bibitem{EEGdenoiseNet}{EEGdenoiseNet: A Comprehensive Benchmark Dataset for EEG Denoising, https://arxiv.org/abs/2103.03894}
 \end{thebibliography}
 \chapter{Appendix}
 
