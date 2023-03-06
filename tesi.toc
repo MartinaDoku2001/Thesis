@@ -12,12 +12,12 @@
 \contentsline {subsection}{\numberline {2.1.4}Wigner-Ville distribution}{14}{subsection.2.1.4}%
 \contentsline {subsection}{\numberline {2.1.5}Wavelet transform}{14}{subsection.2.1.5}%
 \contentsline {subsection}{\numberline {2.1.6}Matching Pursuit}{15}{subsection.2.1.6}%
-\contentsline {section}{\numberline {2.2}EEG denoising}{16}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}regression}{16}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}blind source separation}{16}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}wavelet transform}{16}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}empirical mode decomposition}{16}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}filtering techniques}{16}{subsection.2.2.5}%
+\contentsline {section}{\numberline {2.2}EEG denoising}{15}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Regression}{15}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Blind source separation}{16}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Wavelet transform}{16}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Empirical Mode Decomposition}{16}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Filtering techniques}{16}{subsection.2.2.5}%
 \contentsline {section}{\numberline {2.3}Machine learning}{16}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Fully connected neural network}{16}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Convolutional neural network}{16}{subsection.2.3.2}%

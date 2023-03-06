@@ -278,11 +278,32 @@ MP iteratively decomposes the residue $R_{f}$  by projecting it on a vector
 of D that matches $R_{f}$ at best. \newline
 \section{EEG denoising}
 \label{sec:denoising}
-\subsection{regression}
-\subsection{blind source separation}
-\subsection{wavelet transform}
-\subsection{empirical mode decomposition}
-\subsection{filtering techniques}
+The denoising of EEG signals is performed using techniques developed from
+the field of signal processing, but more suited to the specific characteristics
+of EEG signals and artifacts. Here we present the most common methods.
+\subsection{Regression}
+\label{sec:regression}
+The regression method \cite{regression}, considers the EEG signal to be a
+linear combination of the artifacts and the clean EEG signal. In particular,
+the EEG signal is modeled as:
+\begin{equation}
+\label{eq:regression}
+EEG = \alpha \cdot EMG + \beta \cdot EOG + \gamma \cdot ECG + \delta \cdot CEEG
+\end{equation}
+where $EEG$ is the registered EEG signal, $EMG$ is the muscle artifact
+, $EOG$ is the ocular artifact,
+$ECG$ is the cardiac artifact
+and $CEEG$ is the clean EEG signal. \newline
+The regression coefficients $\alpha, \beta, \gamma, \delta$ are estimated
+using the least squares method. \newline
+The regression method is simple and fast, but it doesn't take into account
+the temporal correlation between the artifacts and the EEG signal, the so 
+called cross terms. Furthermore it requires the knowledge of the artifacts
+signals. \newline
+\subsection{Blind source separation}
+\subsection{Wavelet transform}
+\subsection{Empirical Mode Decomposition}
+\subsection{Filtering techniques}
 \section{Machine learning}
 \subsection{Fully connected neural network}
 \subsection{Convolutional neural network}
@@ -317,7 +338,7 @@ has proven to be an invaluable resource for model training and testing,
 \section{Future work}
 \chapter{Bibliography}
 \begin{thebibliography}{1}
-\bibitem{EEG artifact}{iang, X.; Bian, G.-B.; Tian, Z. Removal of Artifacts from EEG Signals: A Review. Sensors 2019, 19, 987.}
+\bibitem{EEG artifact}{Jiang, X.; Bian, G.-B.; Tian, Z. Removal of Artifacts from EEG Signals: A Review. Sensors 2019, 19, 987.}
 \bibitem{denoising challenges}{Wajid Mumtaz, Suleman Rasheed, Alina Irfan, Review of challenges associated with the EEG artifact removal methods, Biomedical Signal Processing and Control, Volume 68, 2021, 102741, ISSN 1746-8094}
 \bibitem{fourier} {Boashash, B., ed. (2003), Time–Frequency Signal Analysis and Processing: A Comprehensive Reference, Oxford: Elsevier Science, ISBN 978-0-08-044335-5.}
 \bibitem{fft} {Cooley, James W. (1987). The Re-Discovery of the Fast Fourier Transform Algorithm (PDF). Microchimica Acta. Vol. III. Vienna, Austria. pp. 33–45. Archived (PDF) from the original on 2016-08-20.}
@@ -327,7 +348,9 @@ has proven to be an invaluable resource for model training and testing,
 \bibitem{wavelet}{ S. Zhou, B. Tang and R. Chen, "Comparison between Non-stationary Signals Fast Fourier Transform and Wavelet Analysis," 2009 International Asia Symposium on Intelligent Interaction and Affective Computing, Wuhan, China, 2009, pp. 128-129, doi: 10.1109/ASIA.2009.31.}
 \bibitem{wavelet2}{ V. M. Pukhova and M. S. Stepanova, "Up-Chirplet and Down-Chirplet Transforms of Non-Stationary Signals," 2019 IEEE Conference of Russian Young Researchers in Electrical and Electronic Engineering (EIConRus), Saint Petersburg and Moscow, Russia, 2019, pp. 1221-1225, doi: 10.1109/EIConRus.2019.8657179.}
 \bibitem{mp} {S. G. Mallat and Zhifeng Zhang, "Matching pursuits with time-frequency dictionaries," in IEEE Transactions on Signal Processing, vol. 41, no. 12, pp. 3397-3415, Dec. 1993, doi: 10.1109/78.258082.}
-
+\bibitem{regression}{Klados, M.A.; Papadelis, C.; Braun, C.; Bamidis, P.D. REG-ICA: A hybrid methodology combining blind source separation and regression techniques for the rejection of ocular artifacts. 
+Biomed. Signal Process Control 
+}
 \bibitem{EEGdenoiseNet}{EEGdenoiseNet: A Comprehensive Benchmark Dataset for EEG Denoising, https://arxiv.org/abs/2103.03894}
 \end{thebibliography}
 \chapter{Appendix}
