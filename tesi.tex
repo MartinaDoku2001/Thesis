@@ -8,7 +8,7 @@
     linkcolor=black,
     urlcolor=black,
 }
-\title{EEG signal denoising using machine learning techniques}
+\title{EEG signal denoising and arifact removal using \\ machine learning techniques}
 \author{Martina Doku}
 \IDnumber{1938629}
 \course{Applied Computer Science and Artificial Intelligence}
@@ -84,38 +84,38 @@ in the thesis. The first part is dedicated to the EEG signal, the second
 part is dedicated to the EEG denoising.
 \subsection{EEG}
 When talking about EEG,in this thesis, we are referring to the
- electroencephalogram, in particular we are interested in the 
- EEG waves. Electroencephalogram (EEG) waves are the patterns 
- of electrical activity that are recorded by EEG measurements. 
- These waves have different frequencies and amplitudes, and they 
- reveal different states of brain activity. We divide the EEG waves in 
- 5 main categories depending on their frquency:Alpha, Beta, Theta, 
- Delta and Gamma waves.
+electroencephalogram, in particular we are interested in the 
+EEG waves. Electroencephalogram (EEG) waves are the patterns 
+of electrical activity that are recorded by EEG measurements. 
+These waves have different frequencies and amplitudes, and they 
+reveal different states of brain activity. We divide the EEG waves in 
+5 main categories depending on their frquency:Alpha, Beta, Theta, 
+Delta and Gamma waves.
 
 
- Alpha waves are typically observed when someone is relaxed and awake,
-  with a frequency of 8-13 Hz. Beta waves, on the other hand, are 
-  associated with active cognitive processing and have a higher frequency 
-  of 14-30 Hz. Theta waves are usually observed during drowsiness or
-   light sleep and have a frequency of 4-7 Hz, while delta waves are
-    typically observed during deep sleep and have a frequency of less 
-    than 4 Hz.
+Alpha waves are typically observed when someone is relaxed and awake,
+with a frequency of 8-13 Hz. Beta waves, on the other hand, are 
+associated with active cognitive processing and have a higher frequency 
+of 14-30 Hz. Theta waves are usually observed during drowsiness or
+light sleep and have a frequency of 4-7 Hz, while delta waves are
+typically observed during deep sleep and have a frequency of less 
+than 4 Hz.
  
- Gamma waves have a frequency of 30-100 Hz and are associated with higher 
- cognitive functions such as attention and memory. Mu waves, with a 
- frequency of 8-13 Hz, are observed in the sensorimotor cortex during 
- movement and motor planning.
+Gamma waves have a frequency of 30-100 Hz and are associated with higher 
+cognitive functions such as attention and memory. Mu waves, with a 
+frequency of 8-13 Hz, are observed in the sensorimotor cortex during 
+movement and motor planning.
  
- It's important to remember that EEG waves are not distinct entities but 
- represent a continuous spectrum of activity that can be influenced by
-  various factors such as task demands, attention, and emotion. Interpreting EEG waves requires expertise 
-  and context since different patterns of EEG activity may reflect 
-  different states of brain activity depending on the individual and the 
-  experimental conditions. Furthermore, research has shown that EEG waves
-   can be useful in clinical diagnosis and prognosis, as well as in the
-    assessment of cognitive function and brain injury. Therefore, 
-    understanding the various EEG waves and their characteristics 
-    can provide valuable insights into brain function and activity.
+It's important to remember that EEG waves are not distinct entities but 
+represent a continuous spectrum of activity that can be influenced by
+various factors such as task demands, attention, and emotion. Interpreting EEG waves requires expertise 
+and context since different patterns of EEG activity may reflect 
+different states of brain activity depending on the individual and the 
+experimental conditions. Furthermore, research has shown that EEG waves
+can be useful in clinical diagnosis and prognosis, as well as in the
+assessment of cognitive function and brain injury. Therefore, 
+understanding the various EEG waves and their characteristics 
+can provide valuable insights into brain function and activity.
 \subsection{EEG denoising}
 EEG signals can be influenced by various factor that alter the real waves 
 originated from neural activities, those factors are defined as artifacts. 
@@ -133,7 +133,7 @@ Denoising of EEG data is an essential task to be able to work on data and to
 extract meaningful information from it. The denoising process is complex and
 it does lead to different level of quality of the data depending on the 
 method used, the quality of the data and the type of artifact.\\ \\
-There are several challenges \cite{denoising challenges} related both 
+There are several challenges\cite{denoising challenges} related both 
 to single methods characteristic and general artifact removal.
 For example, some methods are computationally expensive and require a lot
 of time to be applied, some methods are not able to remove all kind of
@@ -155,16 +155,14 @@ part we will explore the latest, machine learning related, methods.
 In this section we will present the basic techniques used for the analysis
 of signals that 
 constituted a base for the ones developed for the analysis of EEG data.
-\subsection{Fourier transform}
-\label{sec:fourier}
+\subsection{Fourier transform}\label{sec:fourier}
 The first method used for the removal of artifacts from signals is the
-Fourier transform \cite{fourier}. The Fourier transform is a mathematical tool used
+Fourier transform\cite{fourier}. The Fourier transform is a mathematical tool used
  used to decompose a signal into sine and cosine functions, that are 
 used as basis functions for the original signal.
 It is defined as:
 
-\begin{equation}
-\label{eq:fourier}
+\begin{equation}\label{eq:fourier}
 F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t} dt
 \end{equation}
 
@@ -173,19 +171,17 @@ transform of a signal is a complex number, which can be decomposed into
 its real and imaginary parts. The real part of the Fourier transform
 is called the amplitude and the imaginary part is called the phase.
 
-\subsection{Fast Fourier transform}
-\label{sec:fft}
+\subsection{Fast Fourier transform}\label{sec:fft}
 The Fourier transform is a very useful tool for the analysis of signals,
-but it is computationally expensive. The Fast Fourier transform (FFT) \cite{fft} is
+but it is computationally expensive. The Fast Fourier transform (FFT)\cite{fft} is
 an algorithm that is used to calculate the Fourier transform
 of a signal in a shorter time: it reduces the time nedded to Nlog (N),
  obtaining a speed-up of a factor of N/log (N).\newline
 The FFT is used  in many different fields of science such as
-signal processing, image processing, etc. .
+signal processing, image processing, etc\ldots
 
-\subsection{Short Time Fourier Transform}
-\label{sec:stft}
-The Short Time Fourier Transform (STFT) \cite{stft} \cite{stft2}
+\subsection{Short Time Fourier Transform}\label{sec:stft}
+The Short Time Fourier Transform (STFT)\cite{stft}\cite{stft2}
 is a method used to calculate the
 Fourier transform of a signal. It is used with non stationary signals
 to find the frequency components of a signal over time.
@@ -204,9 +200,8 @@ S(\omega)= \frac{1}{2\pi}\cdot \int_{-\infty}^{\infty} s(\tau) \cdot h(t-\tau) e
 where $s(\tau)$ is the signal, $h(t)$ is the window function and $\omega$
 is the frequency. \newline
 
-\subsection{Wigner-Ville distribution}
-\label{sec:wvd}
-The Wigner-Ville distribution (WVD) \cite{wvd} is a method used to provide
+\subsection{Wigner-Ville distribution}\label{sec:wvd}
+The Wigner-Ville distribution (WVD)\cite{wvd} is a method used to provide
 the description of a signal in the time-frequency domain with higher resolution.
 It is described by the following equation:
 \begin{equation}
@@ -225,9 +220,8 @@ WVD(t,f)= WVDx_1(t,f) + WVDx_2(t,f) + 2Re[WVDx_1x_2(t,f)]
 where $2Re[WVDx_1x_2(t,f)]$ is the cross term
 which is removable at the expense of a loss of resolution.  \newline
 
-\subsection{Wavelet transform}
-\label{sec:wavelet}
-The wavelet transform \cite{wavelet} is a method used to find the frequency
+\subsection{Wavelet transform}\label{sec:wavelet}
+The wavelet transform\cite{wavelet} is a method used to find the frequency
 components of a signal over time. It is used with non stationary signals and it
 provides a better time-frequency resolution than the STFT and the WVD 
 since it gives a better simultaneous time-frequency localization. \newline
@@ -247,13 +241,12 @@ A possible choice for the wavelet function is the Morlet wavelet:
 where $\omega_0$ is the central frequency of the wavelet and $c$ is the
 width of the wavelet. \newline
 
-\subsection{Matching Pursuit}
-\label{sec:mp}
-The Matching Pursuit (MP) \cite{mp} is a greedy algorithm used to approximate a
+\subsection{Matching Pursuit}\label{sec:mp}
+The Matching Pursuit (MP)\cite{mp} is a greedy algorithm used to approximate a
 signal with a linear combination of basis functions called time-frequency 
 atoms, selected from a dictionary of functions. \newline
 A general family of time-frequency atoms can be generated by scaling, translating 
-and modulating a single window function g(t) as follows:
+and modulating a single window function $g(t)$ as follows:
 \begin{equation}
 \label{eq:mp}
 g_{\gamma}(t) = \frac{1}{\sqrt{s}} \cdot g(\frac{t-u}{s}) \cdot e^{i\xi t}
@@ -276,14 +269,12 @@ where $R_{f}$ is the residual vector after approximating f in the direction
  of $g_{\gamma}$. \newline
 MP iteratively decomposes the residue $R_{f}$  by projecting it on a vector
 of D that matches $R_{f}$ at best. \newline
-\section{EEG denoising}
-\label{sec:denoising}
+\section{EEG denoising}\label{sec:denoising}
 The denoising of EEG signals is performed using techniques developed from
 the field of signal processing, but more suited to the specific characteristics
 of EEG signals and artifacts. Here we present the most common methods.
-\subsection{Regression}
-\label{sec:regression}
-The regression method \cite{regression}, considers the EEG signal to be a
+\subsection{Regression}\label{sec:regression}
+The regression method\cite{regression}, considers the EEG signal to be a
 linear combination of the artifacts and the clean EEG signal. In particular,
 the EEG signal is modeled as:
 \begin{equation}
@@ -300,9 +291,102 @@ The regression method is simple and fast, but it doesn't take into account
 the temporal correlation between the artifacts and the EEG signal, the so 
 called cross terms. Furthermore it requires the knowledge of the artifacts
 signals. \newline
-\subsection{Blind source separation}
-\subsection{Wavelet transform}
-\subsection{Empirical Mode Decomposition}
+\subsection{Blind source separation}\label{sec:bss}
+Blind source separation (BSS)\cite{bss} is a  class of methods used to separate a
+mixture of signals into their individual components. 
+There are several BSS algorithms, all based on an unsupervised component 
+separation. 
+The most common BSS algorithms are the Principal Component Analysis (PCA),
+the Principal Component Analysis (ICA) and the Canonical Correlation Analysis.
+\newline
+
+\subsubsection{Principal Component Analysis}
+The PCA\cite{pca} is a method used to find a linear transformation of the
+mixture signals that maximizes the variance of the transformed signals. 
+First, data are standardized by subtracting the mean and dividing by the
+standard deviation.
+\begin{equation}
+\label{eq:pca}
+\textbf{Z} = (\textbf{X} - \textbf{m})/\textbf{s}
+\end{equation}
+Then, the covariance matrix is computed. 
+\begin{equation}
+\label{eq:pca2}
+\textbf{C} = \frac{1}{n-1}\textbf{Z}^T\textbf{Z}
+\end{equation}
+The eigenvectors of the covariance matrix are the principal components of the data while the
+eigenvalues are the variances of the principal components.
+\begin{equation}
+\label{eq:pca3}
+\textbf{C}\textbf{v}_i = \lambda_i\textbf{v}_i
+\end{equation}
+The principal components found by projecting x onto those
+ perpendicular basis vectors are uncorrelated, and their directions 
+ orthogonal. This scheme is very efficient in redundancy reduction,
+  and can be said to maximize the amount of information spanned by a
+subset of dimensions of the initial vector. \newline
+
+\subsubsection{Independent Component Analysis}
+The ICA\cite{ica} is a method used to find a linear transformation of the
+mixture signals that maximizes the non-Gaussianity of the transformed signals.
+It consists in decomposing the signal in Independent components and 
+discarding the ones containing artifacts. In blind source separation, the original independent
+sources are assumed to be unknown, and we only have
+access to their weighted sum.\cite{ica2} \newline
+The signal is modeled as:
+\begin{equation}
+\label{eq:ica}
+x(t) = \sum_{i=1}^{N} a_i \cdot s_i(t)
+\end{equation}
+where $x(t)$ is the mixture signal, $s_i(t)$ is the $i$-th source signal
+and $a_i$ is the mixing coefficient. \newline
+The ICA algorithm aims to find the source signals $s_i(t)$ and the mixing
+coefficients $a_i$ that maximize the non-Gaussianity of the mixture signal
+$x(t)$. 
+It is based on the assumption that the sources are statistically independent.
+\newline
+
+\subsubsection{Canonical Correlation Analysis}
+The CCA\cite{cca} is a method used to find a linear transformation of the
+mixture signals that maximizes the correlation between the transformed signals.
+More specifically, CCA identifies two sets of variables, X and Y, and 
+finds linear combinations of X and Y that are maximally correlated. 
+These linear combinations are called canonical variates.
+ The first canonical variate is the linear combination of X and Y that 
+ has the highest correlation, and each subsequent canonical variate is 
+ the linear combination that has the highest correlation subject to being
+  orthogonal to the previous canonical variates.
+\newline
+
+\subsection{Empirical Mode Decomposition}\label{sec:emd}
+The EMD\cite{emd} is a method used to decompose a signal into a set of
+intrinsic mode functions (IMFs). The EMD is a data-driven method that
+does not require any prior knowledge of the signal. \newline
+It decomposes a signal into a finite number of intrinsic mode functions
+ (IMFs), which are functions that capture the local behavior of the signal.
+  EMD is based on the concept of sifting, which involves iteratively
+ extracting the local maxima and minima of the signal to generate IMFs.
+The basic steps of EMD are as follows:
+\begin{itemize}
+    \item Given a signal $x(t)$, find all of its local maxima and minima.
+    \item Interpolate between the local maxima and minima to create an
+    upper and lower envelope for the signal. This step effectively
+     eliminates the high-frequency components of the signal and 
+     captures its slowly varying behavior.
+    \item Calculate the mean of the upper and lower envelopes to obtain a
+     first IMF, $c_1(t)$.
+    \item Subtract $c_1(t)$ from the original signal to obtain a new signal,
+        $r_1(t) = x(t) - c_1(t)$.
+    \item Repeat steps 1-4 on the residual signal $r_1(t)$ to obtain the
+        second IMF, $c_2(t)$.
+    \item Continue this process until a stopping criterion is met, such as
+        the number of IMFs or the amplitude of the residual signal falling
+        below a certain threshold.
+\end{itemize}
+The resulting IMFs are functions that oscillate around zero with a 
+characteristic scale and capture the local behavior of the signal at 
+different scales. The final residual signal is a monotonic function that 
+represents the long-term trend of the signal.
 \subsection{Filtering techniques}
 \section{Machine learning}
 \subsection{Fully connected neural network}
@@ -312,9 +396,9 @@ signals. \newline
 \subsection{Generative adversarial network}
 \subsection{Autoencoder}
 \chapter{Methodology}
-\section{Data}
+\section{Data}\label{sec:data}
 The data used in this thesis are the EEG signals of the EEGdenoiseNet 
-dataset \cite{EEGdenoiseNet}. It is comprehensive benchmark dataset
+dataset\cite{EEGdenoiseNet}. It is comprehensive benchmark dataset
  that proves to be an exemplary resource for training and evaluating
   deep learning-based EEG denoising models. It is composed of 4514 clean 
   EEG epochs, 3400 EOG epochs, and 5598 EMG epochs, making it an inclusive 
@@ -336,25 +420,28 @@ has proven to be an invaluable resource for model training and testing,
 \chapter{Conclusions and future work}
 \section{Conclusions}
 \section{Future work}
-\chapter{Bibliography}
-\begin{thebibliography}{1}
-\bibitem{EEG artifact}{Jiang, X.; Bian, G.-B.; Tian, Z. Removal of Artifacts from EEG Signals: A Review. Sensors 2019, 19, 987.}
-\bibitem{denoising challenges}{Wajid Mumtaz, Suleman Rasheed, Alina Irfan, Review of challenges associated with the EEG artifact removal methods, Biomedical Signal Processing and Control, Volume 68, 2021, 102741, ISSN 1746-8094}
-\bibitem{fourier} {Boashash, B., ed. (2003), Time–Frequency Signal Analysis and Processing: A Comprehensive Reference, Oxford: Elsevier Science, ISBN 978-0-08-044335-5.}
-\bibitem{fft} {Cooley, James W. (1987). The Re-Discovery of the Fast Fourier Transform Algorithm (PDF). Microchimica Acta. Vol. III. Vienna, Austria. pp. 33–45. Archived (PDF) from the original on 2016-08-20.}
-\bibitem{stft} {R. Álvarez, E. Borbor and F. Grijalva, ''Comparison of methods for signal analysis in the time-frequency domain,'' 2019 IEEE Fourth Ecuador Technical Chapters Meeting (ETCM), 2019, pp. 1-6, doi: 10.1109/ETCM48019.2019.9014860.}
-\bibitem{stft2} {W. -k. Lu and Q. Zhang, "Deconvolutive Short-Time Fourier Transform Spectrogram," in IEEE Signal Processing Letters, vol. 16, no. 7, pp. 576-579, July 2009, doi: 10.1109/LSP.2009.2020887.}
-\bibitem{wvd} {E. Chassande-Mottin and A. Pai, "Discrete time and frequency Wigner-Ville distribution: Moyal's formula and aliasing," in IEEE Signal Processing Letters, vol. 12, no. 7, pp. 508-511, July 2005, doi: 10.1109/LSP.2005.849493}
-\bibitem{wavelet}{ S. Zhou, B. Tang and R. Chen, "Comparison between Non-stationary Signals Fast Fourier Transform and Wavelet Analysis," 2009 International Asia Symposium on Intelligent Interaction and Affective Computing, Wuhan, China, 2009, pp. 128-129, doi: 10.1109/ASIA.2009.31.}
-\bibitem{wavelet2}{ V. M. Pukhova and M. S. Stepanova, "Up-Chirplet and Down-Chirplet Transforms of Non-Stationary Signals," 2019 IEEE Conference of Russian Young Researchers in Electrical and Electronic Engineering (EIConRus), Saint Petersburg and Moscow, Russia, 2019, pp. 1221-1225, doi: 10.1109/EIConRus.2019.8657179.}
-\bibitem{mp} {S. G. Mallat and Zhifeng Zhang, "Matching pursuits with time-frequency dictionaries," in IEEE Transactions on Signal Processing, vol. 41, no. 12, pp. 3397-3415, Dec. 1993, doi: 10.1109/78.258082.}
-\bibitem{regression}{Klados, M.A.; Papadelis, C.; Braun, C.; Bamidis, P.D. REG-ICA: A hybrid methodology combining blind source separation and regression techniques for the rejection of ocular artifacts. 
-Biomed. Signal Process Control 
-}
-\bibitem{EEGdenoiseNet}{EEGdenoiseNet: A Comprehensive Benchmark Dataset for EEG Denoising, https://arxiv.org/abs/2103.03894}
-\end{thebibliography}
 \chapter{Appendix}
-
+\begin{thebibliography}{1}
+    \bibitem{EEG artifact}{Jiang, X.; Bian, G.-B.; Tian, Z. Removal of Artifacts from EEG Signals: A Review. Sensors 2019, 19, 987.}
+    \bibitem{denoising challenges}{Wajid Mumtaz, Suleman Rasheed, Alina Irfan, Review of challenges associated with the EEG artifact removal methods, Biomedical Signal Processing and Control, Volume 68, 2021, 102741, ISSN 1746-8094}
+    \bibitem{fourier} {Boashash, B., ed. (2003), Time–Frequency Signal Analysis and Processing: A Comprehensive Reference, Oxford: Elsevier Science, ISBN 978-0-08-044335-5.}
+    \bibitem{fft} {Cooley, James W. (1987). The Re-Discovery of the Fast Fourier Transform Algorithm (PDF). Microchimica Acta. Vol. III. Vienna, Austria. pp. 33–45. Archived (PDF) from the original on 2016-08-20.}
+    \bibitem{stft} {R. Álvarez, E. Borbor and F. Grijalva, ''Comparison of methods for signal analysis in the time-frequency domain,'' 2019 IEEE Fourth Ecuador Technical Chapters Meeting (ETCM), 2019, pp. 1-6, doi: 10.1109/ETCM48019.2019.9014860.}
+    \bibitem{stft2} {W. -k. Lu and Q. Zhang, "Deconvolutive Short-Time Fourier Transform Spectrogram," in IEEE Signal Processing Letters, vol. 16, no. 7, pp. 576-579, July 2009, doi: 10.1109/LSP.2009.2020887.}
+    \bibitem{wvd} {E. Chassande-Mottin and A. Pai, "Discrete time and frequency Wigner-Ville distribution: Moyal's formula and aliasing," in IEEE Signal Processing Letters, vol. 12, no. 7, pp. 508-511, July 2005, doi: 10.1109/LSP.2005.849493}
+    \bibitem{wavelet}{ S. Zhou, B. Tang and R. Chen, "Comparison between Non-stationary Signals Fast Fourier Transform and Wavelet Analysis," 2009 International Asia Symposium on Intelligent Interaction and Affective Computing, Wuhan, China, 2009, pp. 128-129, doi: 10.1109/ASIA.2009.31.}
+    \bibitem{wavelet2}{ V. M. Pukhova and M. S. Stepanova, "Up-Chirplet and Down-Chirplet Transforms of Non-Stationary Signals," 2019 IEEE Conference of Russian Young Researchers in Electrical and Electronic Engineering (EIConRus), Saint Petersburg and Moscow, Russia, 2019, pp. 1221-1225, doi: 10.1109/EIConRus.2019.8657179.}
+    \bibitem{mp} {S. G. Mallat and Zhifeng Zhang, "Matching pursuits with time-frequency dictionaries," in IEEE Transactions on Signal Processing, vol. 41, no. 12, pp. 3397-3415, Dec. 1993, doi: 10.1109/78.258082.}
+    \bibitem{regression}{Klados, M.A.; Papadelis, C.; Braun, C.; Bamidis, P.D. REG-ICA: A hybrid methodology combining blind source separation and regression techniques for the rejection of ocular artifacts.Biomed. Signal Process Control  }
+    \bibitem{bss}{J. A. Nascimento, J. M. S. Nascimento, and J. M. C. Nascimento, "Blind source separation: A review," in IEEE Signal Processing Magazine, vol. 26, no. 6, pp. 22-38, Nov. 2009, doi: 10.1109/MSP.2009.937000.}
+    \bibitem{pca}{Casarotto, S.; Bianchi, A.M.; Cerutti, S.; Chiarenza, G.A. Principal component analysis for reduction of ocular artefacts in event-related potentials of normal and dyslexic children. Clin. Neurophysiol. 2004, 115, 609–619.}
+    \bibitem{ica}{Jung, T.P.; Makieg, S.; Bell, A.J.; Sejnowski, T.J. Independent component analysis of electroencephalographic and event-related potential data. Cent. Audit. Process. Neural Model. 1996, 2, 1548–1551.}
+    \bibitem{ica2}{Vigário, R. Extraction of ocular artifacts from EEG using independent component analysis. Electroencephalogr. Clin. Neurophysiol. 1997, 103, 395–404}
+    \bibitem{cca}{N. Robinson, K. P. Thomas and A. P. Vinod, "Canonical correlation analysis of EEG for classification of motor imagery," 2017 IEEE International Conference on Systems, Man, and Cybernetics (SMC), Banff, AB, Canada, 2017, pp. 2317-2321, doi: 10.1109/SMC.2017.8122967.}
+    \bibitem{emd}{V. Bajaj and R. B. Pachori, "Classification of Seizure and Nonseizure EEG Signals Using Empirical Mode Decomposition," in IEEE Transactions on Information Technology in Biomedicine, vol. 16, no. 6, pp. 1135-1142, Nov. 2012, doi: 10.1109/TITB.2011.2181403.}
+    \bibitem{EEGdenoiseNet}{EEGdenoiseNet: A Comprehensive Benchmark Dataset for EEG Denoising, https://arxiv.org/abs/2103.03894}
+    
+    \end{thebibliography}
 
 
 \end{document}

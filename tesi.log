@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  6 MAR 2023 14:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  7 MAR 2023 12:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -447,7 +447,7 @@ LaTeX Font Info:    Trying to load font information for T1+lmss on input line 23
  (c:/texlive/2022/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<sapienzalogo.pdf, id=164, 288.07625pt x 89.33376pt>
+<sapienzalogo.pdf, id=156, 288.07625pt x 89.33376pt>
 File: sapienzalogo.pdf Graphic file (type pdf)
 <use sapienzalogo.pdf>
 Package pdftex.def Info: sapienzalogo.pdf  used on input line 23.
@@ -530,69 +530,90 @@ Underfull \hbox (badness 10000) in paragraph at lines 132--148
 ]
 Chapter 2.
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 203--206
+Underfull \hbox (badness 10000) in paragraph at lines 199--202
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--227
+Underfull \hbox (badness 10000) in paragraph at lines 219--222
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 246--249
+Underfull \hbox (badness 10000) in paragraph at lines 240--243
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 274--279
+Underfull \hbox (badness 10000) in paragraph at lines 267--272
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--303
+Underfull \hbox (badness 10000) in paragraph at lines 283--294
 
  []
 
-[15] [16]
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 295--302
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--328
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 340--348
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 350--360
+
+ []
+
+
+Overfull \hbox (4.21254pt too wide) in paragraph at lines 372--376
+\T1/lmr/m/n/10.95 lower en-ve-lope for the sig-nal. This step ef-fec-tively elim-i-nates the high-frequency
+ []
+
+[17] [18]
 Chapter 3.
-[17
+[19
 
-] [18
+] [20
 
 ]
 Chapter 4.
-[19] [20
-
-]
-Chapter 5.
 [21] [22
 
 ]
-Chapter 6.
+Chapter 5.
 [23] [24
 
-] [25] [26]
-Chapter 7.
-[27
+]
+Chapter 6.
+[25] [26
 
-] (./tesi.aux)
+] [27] [28] (./tesi.aux)
 Package rerunfilecheck Info: File `tesi.out' has not changed.
-(rerunfilecheck)             Checksum: F505F908ADC7B03165FD32F074450161;5692.
+(rerunfilecheck)             Checksum: 98BB7DD3248D42C7C41B9AAC75532E81;5438.
  ) 
 Here is how much of TeX's memory you used:
- 12325 strings out of 476093
- 196656 string characters out of 5795583
+ 12357 strings out of 476093
+ 196936 string characters out of 5795583
  1863787 words of memory out of 5000000
- 32425 multiletter control sequences out of 15000+600000
- 590490 words of font info for 73 fonts, out of 8000000 for 9000
+ 32441 multiletter control sequences out of 15000+600000
+ 602456 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,13n,131p,377b,551s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,13n,131p,381b,551s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tesi.pdf (27 pages, 338148 bytes).
+Output written on tesi.pdf (28 pages, 345324 bytes).
 PDF statistics:
- 486 PDF objects out of 1000 (max. 8388607)
- 414 compressed objects within 5 object streams
- 94 named destinations out of 1000 (max. 500000)
- 326 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 501 PDF objects out of 1000 (max. 8388607)
+ 428 compressed objects within 5 object streams
+ 106 named destinations out of 1000 (max. 500000)
+ 310 words of extra memory for PDF output out of 10000 (max. 10000000)
 
