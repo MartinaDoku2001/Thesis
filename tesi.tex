@@ -548,10 +548,76 @@ Fully connected layers: The fully connected layers perform classification
  or regression on the feature maps produced by the convolutional and
   pooling layers. The operation of a fully connected layer is similar 
   to that of a fully connected neural network.
-\subsection{Recurrent neural network}
 \subsection{Long short-term memory}
-\subsection{Generative adversarial network}
-\subsection{Autoencoder}
+Long Short-Term Memory (LSTM) Networks are a type of recurrent neural 
+network (RNN) that are specifically designed to address the vanishing 
+gradient problem in traditional RNNs. LSTMs have a memory cell that is
+ able to maintain information over long periods of time, and they use 
+ three gates - the input gate, the forget gate, and the output gate -
+  to regulate the flow of information into and out of the memory cell.
+
+Here are the key equations that govern the behavior of an LSTM:
+
+Input gate: determines how much of the new input should be added to the 
+memory cell. The equation for the input gate is:
+\begin{equation}
+  i_t = \sigma(W_i [h_{t-1}, x_t] + b_i)
+  \end{equation}
+
+where $i_t$ is the input gate activation vector, $x_t$ is the input vector 
+at time t, $h_{t-1}$ is the hidden state vector from the previous time 
+step, $W_i$ is the weight matrix for the input gate, and $b_i$ is the bias 
+vector for the input gate.
+
+Forget gate: determines how much of the previous memory cell state 
+should be retained. The equation for the forget gate is:
+\begin{equation}
+  f_t = \sigma(W_f [h_{t-1}, x_t] + b_f)
+  \end{equation}
+
+where $f_t$ is the forget gate activation vector, $x_t$ is the input 
+vector at time t, $h_{t-1}$ is the hidden state vector from the previous time
+ step, $W_f$ is the weight matrix for the forget gate, and $b_f$ is the bias 
+ vector for the forget gate.
+
+Memory update: combines the input with the previous memory cell
+ state to create a new memory cell state. The equation for the
+  memory update is:
+  \begin{equation}
+    g_t = \tanh(W_g [h_{t-1}, x_t] + b_g)
+    \end{equation}
+
+where $g_t$ is the candidate memory cell state, $x_t$ is the input vector 
+at time t, $h_{t-1}$ is the hidden state vector from the previous time step,
+ $W_g$ is the weight matrix for the memory update, and $b_g$ is the bias vector
+  for the memory update.
+
+Output gate: determines how much of the new memory cell state should be 
+output. The equation for the output gate is:
+
+\begin{equation}
+  o_t = \sigma(W_o [h_{t-1}, x_t] + b_o)
+  \end{equation}
+
+where $o_t$ is the output gate activation vector, $x_t$ is the input vector
+ at time t, $h_{t-1}$ is the hidden state vector from the previous time step,
+  $W_o$ is the weight matrix for the output gate, and $b_o$ is the bias vector 
+  for the output gate.
+
+Hidden state update: combines the new memory cell state with the output gate
+ to create the new hidden state. The equation for the hidden state update is:
+
+ \begin{equation}
+  h_t = o_t \tanh(c_t)
+  \end{equation}
+
+where $h_t$ is the new hidden state, $o_t$ is the output gate activation vector,
+ $c_t$ is the new memory cell state, and tanh is the hyperbolic tangent function.
+
+These equations allow an LSTM network to selectively forget or remember
+ information over time, making it well-suited for modeling sequences of
+  data where long-term dependencies are important
+\subsection{Transformer}
 \chapter{Methodology}
 \section{Data}\label{sec:data}
 The data used in this thesis are the EEG signals of the EEGdenoiseNet 
