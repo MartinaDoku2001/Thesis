@@ -1,6 +1,8 @@
 \documentclass[a4paper]{sapthesis}
 \usepackage{hyperref}
 \usepackage{color}
+\usepackage{graphicx}
+\graphicspath{{./images/}}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -455,21 +457,26 @@ architecture commonly used in deep learning. In this type of neural network,
  layer and all the neurons in the subsequent layer. These connections are 
  weighted, and each neuron computes a weighted sum of its inputs, passes
   this sum through an activation function, and then forwards the result to
- the next layer.\newline
-
+ the next layer.\newline \\
 The architecture of a fully connected neural network consists of one or
- more layers of neurons, including an input layer, one or more hidden 
+ more layers of neurons[\ref{sec:neuron}], including an input layer, one or more hidden 
  layers, and an output layer. The input layer receives the data to be
   processed, and each neuron in this layer represents a feature of the 
   input. The hidden layers perform complex computations on the input data,
 and the output layer produces the final output of the network. The 
 number of neurons in the input and output layers is determined by the
-size of the input and output data.\newline
+size of the input and output data.
+\begin{figure}[h]
+\includegraphics{fully_connected}
+\centering
+\caption{Fully connected neural network}\label{fig:fully_connected}
+
+\end{figure}
 
 The operation of a fully connected neural network can be described 
-mathematically using the following equations:\newline
-
-Linear transformation: Each neuron in the hidden layers and output layer
+mathematically using the following equations.
+\subsubsection{Linear transformation}
+Each neuron in the hidden layers and output layer
  performs a linear transformation of its inputs, which is a weighted sum 
  of the outputs of the neurons in the previous layer. The linear 
  transformation of neuron i in layer l can be expressed as:
@@ -479,18 +486,18 @@ where $n^{l-1}$ is the number of neurons in the previous layer,
  $w_{ij}^l$ is the weight of the connection between neuron j in layer 
  l-1 and neuron i in layer l, $a_j^{l-1}$ is the output of neuron j 
  in layer l-1, $b_i^l$ is the bias term of neuron i in layer l, and
-  $z_i^l$ is the pre-activation value of neuron i in layer l.\newline
-
-Activation function: The pre-activation values of each neuron are 
+  $z_i^l$ is the pre-activation value of neuron i in layer l.
+  \subsubsection{Activation function}
+The pre-activation values of each neuron are 
 passed through an activation function to introduce non-linearity
  into the network. Commonly used activation functions include sigmoid,
   tanh, ReLU, and softmax. The activation function of neuron i in layer
 l can be expressed as:
 $$a_i^l = \sigma(z_i^l)$$
 
-where $\sigma$ is the activation function.\newline
-
-Output computation: The output of the network is produced by the output
+where $\sigma$ is the activation function.
+\subsubsection{Output computation}
+ The output of the network is produced by the output
  layer, which applies a final activation function to the pre-activation
   values of its neurons. The activation function of the output layer 
   depends on the task the network is designed to perform. The output of neuron i in the output layer can be expressed as:
@@ -617,7 +624,80 @@ where $h_t$ is the new hidden state, $o_t$ is the output gate activation vector,
 These equations allow an LSTM network to selectively forget or remember
  information over time, making it well-suited for modeling sequences of
   data where long-term dependencies are important
+
 \subsection{Transformer}
+The Transformer is a neural network architecture designed for natural
+ language processing tasks. It was introduced in the paper "Attention
+  is All You Need" by Vaswani et al. in 2017\cite{attention}, and has since become 
+  a cornerstone of many state-of-the-art language models.\newline
+
+The basic architecture of the Transformer consists of an encoder and a 
+decoder, both of which are composed of a stack of identical layers. Each 
+layer has two sub-layers: a multi-head self-attention mechanism, followed 
+by a position-wise fully connected feed-forward network.\newline
+
+The self-attention mechanism is a mechanism that allows the model to 
+attend to different parts of the input sequence. Given an input sequence
+ of length $n$, it computes a set of $n$ output vectors by taking a 
+ weighted sum of all the input vectors, where the weights are computed 
+ by a softmax function over a set of attention scores. These scores are
+  computed by taking the dot product between a query vector and all the 
+  key vectors, which are learned parameters of the model. The query and
+   key vectors are obtained by projecting the input vectors into a 
+high-dimensional space, which is learned during training.\newline
+
+The equations for the self-attention mechanism can be written as follows:
+
+$$\text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
+
+where $Q$, $K$, and $V$ are the query, key, and value matrices, 
+respectively, each of which has dimensions $n\times d_k$, $n\times d_k$,
+ and $n\times d_v$, and $d_k$ and $d_v$ are the dimensions of the 
+ query/key and value spaces, respectively.\newline
+
+The multi-head attention mechanism allows the model to attend to different
+ aspects of the input sequence simultaneously. It does this by 
+computing $h$ different sets of query, key, and value vectors,
+each of which is obtained by projecting the input vectors into
+$d_k$, $d_k$, and $d_v$-dimensional spaces, respectively. 
+The resulting $h$ sets of output vectors are concatenated
+ and linearly transformed to produce the final output.\newline
+
+ The equations for the multi-head attention mechanism can be written as 
+ follows:
+ \begin{align*}
+ \text{MultiHead}(Q,K,V) &= \text{Concat}(head_1,\ldots,head_h)W^O \
+\end{align*}
+
+where:
+ \begin{align*}
+   head_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
+ \end{align*}
+ where $W_i^Q$, $W_i^K$, and $W_i^V$ are learned projection matrices for
+  the $i$-th head, each of which has dimensions $d_{model}\times d_k$,
+   $d_{model}\times d_k$, and $d_{model}\times d_v$, respectively.
+    $W^O$ is a learned projection matrix that maps the concatenated
+ output of the attention heads back to the original dimensionality of
+  the input.\newline
+ 
+The position-wise feed-forward network is a simple two-layer neural 
+network that operates on each position of the input sequence 
+independently. It is applied to each output vector of the self-attention
+ mechanism, and has the effect of transforming the vector into a 
+ higher-dimensional space, followed by a projection back into the
+  original dimensionality.\newline
+
+The equations for the position-wise feed-forward network can be written
+ as follows:
+ $$\text{FFN}(x) = \text{ReLU}(xW_1+b_1)W_2+b_2$$
+
+ In this equation, $x$ is the input vector of size $d_{model}$,
+  $W_1$ and $W_2$ are learned weight matrices of sizes 
+  $d_{model}\times d_{ff}$ and $d_{ff}\times d_{model}$,
+respectively, $b_1$ and $b_2$ are learned bias vectors of
+size $d_{ff}$ and $d_{model}$, respectively, and ReLU is the
+rectified linear unit activation function. The output of the
+position-wise feed-forward network is also a vector of size $d_{model}$.
 \chapter{Methodology}
 \section{Data}\label{sec:data}
 The data used in this thesis are the EEG signals of the EEGdenoiseNet 
@@ -645,6 +725,9 @@ has proven to be an invaluable resource for model training and testing,
 \section{Future work}
 \chapter{Appendix}
 \section {Neural network}
+\subsection{Neuron}\label{sec:neuron}
+A neuron is a basic unit of a neural network. It is composed of an
+  activation function and a set of weights and biases.
 \subsection{Loss function} \label{sec:loss}
 To train the network, a loss function is used to measure
  the difference between the predicted output and the true output. Commonly
