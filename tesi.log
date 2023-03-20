@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.20)  20 MAR 2023 20:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.20)  20 MAR 2023 20:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -618,17 +618,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 431--434
  []
 
 [18]
-<./images//fully_connected.png, id=366, 767.86874pt x 488.57532pt>
-File: ./images//fully_connected.png Graphic file (type png)
-<use ./images//fully_connected.png>
-Package pdftex.def Info: ./images//fully_connected.png  used on input line 462.
+<./images//fully_connected_nn.png, id=366, 767.86874pt x 488.57532pt>
+File: ./images//fully_connected_nn.png Graphic file (type png)
+<use ./images//fully_connected_nn.png>
+Package pdftex.def Info: ./images//fully_connected_nn.png  used on input line 462.
 (pdftex.def)             Requested size: 383.93343pt x 244.28706pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 445--467
 
  []
 
-[19 <./images//fully_connected.png>]
+[19 <./images//fully_connected_nn.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 498--500
 
  []
@@ -739,14 +739,14 @@ Package rerunfilecheck Info: File `tesi.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  12490 strings out of 475385
- 203047 string characters out of 2776435
+ 203080 string characters out of 2776435
  551370 words of memory out of 3000000
  33539 multiletter control sequences out of 15000+600000
  559428 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,131p,396b,549s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro10.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tesi.pdf (36 pages, 622048 bytes).
+Output written on tesi.pdf (36 pages, 622177 bytes).
 PDF statistics:
  576 PDF objects out of 1000 (max. 8388607)
  134 named destinations out of 1000 (max. 500000)

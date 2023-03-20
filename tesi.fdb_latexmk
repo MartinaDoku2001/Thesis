@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1679339570 "c:/Users/Utente/Documents/GitHub/Thesis/tesi.tex" "tesi.pdf" "tesi" 1679339572 0
+["pdflatex"] 1679340939 "c:/Users/Utente/Documents/GitHub/Thesis/tesi.tex" "tesi.pdf" "tesi" 1679340941 0
   "C:/Users/Utente/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1679320653 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Utente/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1679320567 10788482 9411aeb342a82af99aa63dab047a90f1 ""
   "C:/Users/Utente/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -132,17 +132,17 @@
   "C:/Users/Utente/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657797096 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "C:/Users/Utente/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Utente/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656233319 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "c:/Users/Utente/Documents/GitHub/Thesis/tesi.tex" 1679339567 41536 548cd805d8fdf32141b29dac67032b9f ""
+  "c:/Users/Utente/Documents/GitHub/Thesis/tesi.tex" 1679340938 41539 9335ffe4d58c6a5ff4e09bbb026ef7fc ""
   "images//convolution_nn.png" 1679334510 69016 002a73878675126b1529b0bc935b18b9 ""
-  "images//fully_connected.png" 1679334194 75955 f886cc2aac16b4ecb41fc4726e24f557 ""
+  "images//fully_connected_nn.png" 1679340897 76314 b8c91025a3d778c36753d488a5b72755 ""
   "images//lstm.png" 1679339483 39240 623263cfdda4ae352def32f712d9687a ""
   "images//waves.png" 1679326257 66660 0a63046efc62a1376021836ee9991bb8 ""
   "sapienzalogo.pdf" 1679317971 16467 ae993a07c0ae9d5e7c2133cabeec0ab9 ""
   "sapthesis.cls" 1679317971 30813 4362e4b52ded79e45c4b15d1ecb6e5cc ""
-  "tesi.aux" 1679339572 10909 00c7c5fc81e4d5be84128405cdd16e19 "pdflatex"
-  "tesi.out" 1679339572 5519 a29d4420f593238af5c796c70ee275cc "pdflatex"
-  "tesi.tex" 1679339567 41536 548cd805d8fdf32141b29dac67032b9f ""
-  "tesi.toc" 1679339572 3807 29cde7a5751947546a97a32fee5df240 "pdflatex"
+  "tesi.aux" 1679340941 10909 00c7c5fc81e4d5be84128405cdd16e19 "pdflatex"
+  "tesi.out" 1679340941 5519 a29d4420f593238af5c796c70ee275cc "pdflatex"
+  "tesi.tex" 1679340938 41539 9335ffe4d58c6a5ff4e09bbb026ef7fc ""
+  "tesi.toc" 1679340941 3807 29cde7a5751947546a97a32fee5df240 "pdflatex"
   (generated)
   "tesi.aux"
   "tesi.log"
