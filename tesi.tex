@@ -30,11 +30,11 @@ thesis is dedicated to the introduction of the problem, the statement
 of the research questions and an overview of the basic concepts.
 The second part is dedicated to history and 
 the state of
-the art of the signal analysis, and more specifically of the EEG signal
+the art of signal analysis, and more specifically of the EEG signal
 analysis and denoising methods. The third part is dedicated to the
  machine learning techniques.
 The fourth part is dedicated to the experimental results and the last part
-is dedicated to the conclusions and future work.
+is dedicated to the conclusions and future works.
 \end{abstract}
 \tableofcontents
 \chapter{Introduction}
@@ -50,19 +50,14 @@ the brain. EEG signals are still among the less explored ones in the
 field of signal processing, despite their widespread use in clinical 
 practice and research. In recent years, there has been a growing 
 interest in developing denoising methods for EEG data to improve their 
-quality and reliability.
-
-
+quality and reliability.\newline \\
 The main objective of this thesis is to investigate and compare different
  EEG denoising methods, and to evaluate their performance in terms of 
  signal quality, artifact removal, and preservation of underlying brain
 activity. Specifically, we will focus on the most recent machine learning
-techniques, such as generative adversarial networks (GANs), autoencoders
-(AEs), and deep learning (DL) models. We will also investigate the 
+techniques, advanced models like the 'transformers'. We will also investigate the 
 potential of combining different denoising methods to improve the 
-performance of EEG denoising.
-
-
+performance of EEG denoising.\newline \\
 Overall, this thesis aims to provide a better understanding of the strengths
  and limitations of different EEG denoising methods, and to help researchers
   and clinicians make informed decisions when selecting the most appropriate
@@ -92,22 +87,19 @@ of electrical activity that are recorded by EEG measurements.
 These waves have different frequencies and amplitudes, and they 
 reveal different states of brain activity. We divide the EEG waves in 
 5 main categories depending on their frquency:Alpha, Beta, Theta, 
-Delta and Gamma waves.
-
-
-Alpha waves are typically observed when someone is relaxed and awake,
-with a frequency of 8-13 Hz. Beta waves, on the other hand, are 
-associated with active cognitive processing and have a higher frequency 
-of 14-30 Hz. Theta waves are usually observed during drowsiness or
-light sleep and have a frequency of 4-7 Hz, while delta waves are
-typically observed during deep sleep and have a frequency of less 
-than 4 Hz.
- 
-Gamma waves have a frequency of 30-100 Hz and are associated with higher 
-cognitive functions such as attention and memory. Mu waves, with a 
-frequency of 8-13 Hz, are observed in the sensorimotor cortex during 
-movement and motor planning.
- 
+Delta and Gamma waves.\begin{figure}[h]
+  \includegraphics[scale=0.6]{waves}
+  \centering
+  \caption{Types of EEG waves}\label{fig:waves}
+  
+  \end{figure}\newline \\
+Delta waves are typically observed during deep sleep and have a frequency
+of less than 4 Hz. Theta waves are associated to light sleep or 
+drowsiness and have a frequency of 4-7 Hz. Alpha waves correspond to the 
+relaxed and awake state, witha frequency of 8-13 Hz. Beta waves, on the other 
+hand, are associated with active cognitive processing and have a higher 
+frequency of 14-30 Hz. Gamma waves have a frequency of 30-100 Hz and are associated with higher 
+cognitive functions such as attention and memory.\newline \\
 It's important to remember that EEG waves are not distinct entities but 
 represent a continuous spectrum of activity that can be influenced by
 various factors such as task demands, attention, and emotion. Interpreting EEG waves requires expertise 
@@ -467,7 +459,7 @@ and the output layer produces the final output of the network. The
 number of neurons in the input and output layers is determined by the
 size of the input and output data.
 \begin{figure}[h]
-\includegraphics{fully_connected}
+\includegraphics[scale=0.5]{fully_connected}
 \centering
 \caption{Fully connected neural network}\label{fig:fully_connected}
 
@@ -523,7 +515,12 @@ perform feature extraction by applying filters to local regions of the
 input data, producing feature maps that highlight different aspects of 
 the input data. The fully connected layers perform classification or
  regression on the feature maps produced by the convolutional layers.\newline
-
+ \begin{figure}[h]
+  \includegraphics[scale=0.5]{convolution_nn}
+  \centering
+  \caption{Convolutional neural network}\label{fig:convolution_nn}
+  
+  \end{figure}
 The operation of a CNN can be described mathematically using the following
 equations:
 
@@ -562,7 +559,13 @@ gradient problem in traditional RNNs. LSTMs have a memory cell that is
  able to maintain information over long periods of time, and they use 
  three gates - the input gate, the forget gate, and the output gate -
   to regulate the flow of information into and out of the memory cell.
-
+  \begin{figure}[h]
+    \includegraphics[scale=0.5]{lstm}
+    \centering
+    \caption{Long Short Term Memory Architecture}\label{fig:lstm}
+    
+    \end{figure}
+    
 Here are the key equations that govern the behavior of an LSTM:
 
 Input gate: determines how much of the new input should be added to the 
