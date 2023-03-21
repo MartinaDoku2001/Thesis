@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  21 MAR 2023 17:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  21 MAR 2023 17:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -558,10 +558,10 @@ Chapter 2.
 <./images//fft_waves_result.png, id=280, 913.4125pt x 498.86375pt>
 File: ./images//fft_waves_result.png Graphic file (type png)
 <use ./images//fft_waves_result.png>
-Package pdftex.def Info: ./images//fft_waves_result.png  used on input line 177.
+Package pdftex.def Info: ./images//fft_waves_result.png  used on input line 176.
 (pdftex.def)             Requested size: 456.70514pt x 249.43126pt.
 
-Overfull \hbox (60.70514pt too wide) in paragraph at lines 177--180
+Overfull \hbox (60.70514pt too wide) in paragraph at lines 176--179
  [][] 
  []
 
@@ -569,92 +569,92 @@ Overfull \hbox (60.70514pt too wide) in paragraph at lines 177--180
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 199--202
+Underfull \hbox (badness 10000) in paragraph at lines 198--201
 
  []
 
 [14 <./images//fft_waves_result.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 219--222
+Underfull \hbox (badness 10000) in paragraph at lines 218--221
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--243
+Underfull \hbox (badness 10000) in paragraph at lines 239--242
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--272
+Underfull \hbox (badness 10000) in paragraph at lines 266--271
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 283--294
+Underfull \hbox (badness 10000) in paragraph at lines 282--293
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--302
+Underfull \hbox (badness 10000) in paragraph at lines 294--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--328
+Underfull \hbox (badness 10000) in paragraph at lines 321--327
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 340--348
+Underfull \hbox (badness 10000) in paragraph at lines 339--347
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--360
+Underfull \hbox (badness 10000) in paragraph at lines 349--359
 
  []
 
 [17]
-Overfull \hbox (4.21254pt too wide) in paragraph at lines 372--376
+Overfull \hbox (4.21254pt too wide) in paragraph at lines 371--375
 \T1/lmr/m/n/10.95 lower en-ve-lope for the sig-nal. This step ef-fec-tively elim-i-nates the high-frequency
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 412--414
+Underfull \hbox (badness 10000) in paragraph at lines 411--413
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 437--440
+Underfull \hbox (badness 10000) in paragraph at lines 436--439
 
  []
 
 <./images//fully_connected_nn.png, id=370, 767.86874pt x 488.57532pt>
 File: ./images//fully_connected_nn.png Graphic file (type png)
 <use ./images//fully_connected_nn.png>
-Package pdftex.def Info: ./images//fully_connected_nn.png  used on input line 468.
+Package pdftex.def Info: ./images//fully_connected_nn.png  used on input line 467.
 (pdftex.def)             Requested size: 383.93343pt x 244.28706pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--473
+Underfull \hbox (badness 10000) in paragraph at lines 450--472
 
  []
 
 [19] [20 <./images//fully_connected_nn.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 504--506
+Underfull \hbox (badness 10000) in paragraph at lines 503--505
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 512--517
+Underfull \hbox (badness 10000) in paragraph at lines 511--516
 
  []
 
 <./images//convolution_nn.png, id=389, 967.36406pt x 446.41782pt>
 File: ./images//convolution_nn.png Graphic file (type png)
 <use ./images//convolution_nn.png>
-Package pdftex.def Info: ./images//convolution_nn.png  used on input line 525.
+Package pdftex.def Info: ./images//convolution_nn.png  used on input line 524.
 (pdftex.def)             Requested size: 483.68085pt x 223.20836pt.
 
-Overfull \hbox (87.68085pt too wide) in paragraph at lines 525--527
+Overfull \hbox (87.68085pt too wide) in paragraph at lines 524--526
  [][] 
  []
 
@@ -662,69 +662,69 @@ Overfull \hbox (87.68085pt too wide) in paragraph at lines 525--527
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 538--541
+Underfull \hbox (badness 10000) in paragraph at lines 537--540
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 548--549
+Underfull \hbox (badness 10000) in paragraph at lines 547--548
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 550--554
+Underfull \hbox (badness 10000) in paragraph at lines 549--553
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 555--556
+Underfull \hbox (badness 10000) in paragraph at lines 554--555
 
  []
 
 <./images//lstm.png, id=395, 718.18312pt x 437.38406pt>
 File: ./images//lstm.png Graphic file (type png)
 <use ./images//lstm.png>
-Package pdftex.def Info: ./images//lstm.png  used on input line 569.
+Package pdftex.def Info: ./images//lstm.png  used on input line 568.
 (pdftex.def)             Requested size: 359.09068pt x 218.69148pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [22 <./images//convolution_nn.png>] [23 <./images//lstm.png>]
 
-LaTeX Warning: Citation `attention' on page 24 undefined on input line 640.
+LaTeX Warning: Citation `attention' on page 24 undefined on input line 639.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 638--642
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 643--647
+Underfull \hbox (badness 10000) in paragraph at lines 637--641
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 648--657
+Underfull \hbox (badness 10000) in paragraph at lines 642--646
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 662--666
+Underfull \hbox (badness 10000) in paragraph at lines 647--656
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 667--674
+Underfull \hbox (badness 10000) in paragraph at lines 661--665
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--673
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 684--691
+Underfull \hbox (badness 10000) in paragraph at lines 683--690
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 692--698
+Underfull \hbox (badness 10000) in paragraph at lines 691--697
 
  []
 
@@ -762,7 +762,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  84i,13n,131p,381b,551s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tesi.pdf (36 pages, 628346 bytes).
+Output written on tesi.pdf (36 pages, 628280 bytes).
 PDF statistics:
  586 PDF objects out of 1000 (max. 8388607)
  497 compressed objects within 5 object streams
