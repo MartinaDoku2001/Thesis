@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  21 MAR 2023 17:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  24 MAR 2023 18:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -559,9 +559,9 @@ Chapter 2.
 File: ./images//fft_waves_result.png Graphic file (type png)
 <use ./images//fft_waves_result.png>
 Package pdftex.def Info: ./images//fft_waves_result.png  used on input line 176.
-(pdftex.def)             Requested size: 456.70514pt x 249.43126pt.
+(pdftex.def)             Requested size: 411.03183pt x 224.4866pt.
 
-Overfull \hbox (60.70514pt too wide) in paragraph at lines 176--179
+Overfull \hbox (15.03183pt too wide) in paragraph at lines 176--179
  [][] 
  []
 
@@ -573,12 +573,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 198--201
 
  []
 
-[14 <./images//fft_waves_result.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 218--221
 
  []
 
-
+[14 <./images//fft_waves_result.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 239--242
 
  []
@@ -631,100 +631,92 @@ Underfull \hbox (badness 10000) in paragraph at lines 436--439
 <./images//fully_connected_nn.png, id=370, 767.86874pt x 488.57532pt>
 File: ./images//fully_connected_nn.png Graphic file (type png)
 <use ./images//fully_connected_nn.png>
-Package pdftex.def Info: ./images//fully_connected_nn.png  used on input line 467.
+Package pdftex.def Info: ./images//fully_connected_nn.png  used on input line 469.
 (pdftex.def)             Requested size: 383.93343pt x 244.28706pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 450--472
+Underfull \hbox (badness 10000) in paragraph at lines 450--476
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 450--476
 
  []
 
 [19] [20 <./images//fully_connected_nn.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 503--505
+Underfull \hbox (badness 10000) in paragraph at lines 509--515
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 511--516
-
- []
-
-<./images//convolution_nn.png, id=389, 967.36406pt x 446.41782pt>
+<./images//convolution_nn.png, id=390, 967.36406pt x 446.41782pt>
 File: ./images//convolution_nn.png Graphic file (type png)
 <use ./images//convolution_nn.png>
-Package pdftex.def Info: ./images//convolution_nn.png  used on input line 524.
+Package pdftex.def Info: ./images//convolution_nn.png  used on input line 530.
 (pdftex.def)             Requested size: 483.68085pt x 223.20836pt.
 
-Overfull \hbox (87.68085pt too wide) in paragraph at lines 524--526
+Overfull \hbox (87.68085pt too wide) in paragraph at lines 530--532
  [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 517--536
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 517--536
+
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 537--540
-
- []
-
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 547--548
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 549--553
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 554--555
-
- []
-
-<./images//lstm.png, id=395, 718.18312pt x 437.38406pt>
+<./images//lstm.png, id=400, 718.18312pt x 437.38406pt>
 File: ./images//lstm.png Graphic file (type png)
 <use ./images//lstm.png>
-Package pdftex.def Info: ./images//lstm.png  used on input line 568.
+Package pdftex.def Info: ./images//lstm.png  used on input line 571.
 (pdftex.def)             Requested size: 359.09068pt x 218.69148pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [22 <./images//convolution_nn.png>] [23 <./images//lstm.png>]
 
-LaTeX Warning: Citation `attention' on page 24 undefined on input line 639.
+LaTeX Warning: Citation `attention' on page 24 undefined on input line 642.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 637--641
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 642--646
+Underfull \hbox (badness 10000) in paragraph at lines 640--644
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 647--656
+Underfull \hbox (badness 10000) in paragraph at lines 645--649
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 661--665
+Underfull \hbox (badness 10000) in paragraph at lines 650--659
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 666--673
+Underfull \hbox (badness 10000) in paragraph at lines 664--668
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 669--676
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 683--690
+Underfull \hbox (badness 10000) in paragraph at lines 686--693
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 691--697
+Underfull \hbox (badness 10000) in paragraph at lines 694--700
 
  []
 
@@ -754,18 +746,18 @@ Package rerunfilecheck Info: File `tesi.out' has not changed.
 (rerunfilecheck)             Checksum: A29D4420F593238AF5C796C70EE275CC;5519.
  ) 
 Here is how much of TeX's memory you used:
- 12465 strings out of 476093
- 199081 string characters out of 5795583
+ 12478 strings out of 476093
+ 199274 string characters out of 5795583
  1863787 words of memory out of 5000000
- 32517 multiletter control sequences out of 15000+600000
+ 32522 multiletter control sequences out of 15000+600000
  602456 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,131p,381b,551s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tesi.pdf (36 pages, 628280 bytes).
+Output written on tesi.pdf (36 pages, 628953 bytes).
 PDF statistics:
- 586 PDF objects out of 1000 (max. 8388607)
- 497 compressed objects within 5 object streams
- 135 named destinations out of 1000 (max. 500000)
+ 596 PDF objects out of 1000 (max. 8388607)
+ 506 compressed objects within 6 object streams
+ 143 named destinations out of 1000 (max. 500000)
  351 words of extra memory for PDF output out of 10000 (max. 10000000)
 

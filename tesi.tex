@@ -173,7 +173,7 @@ of a signal in a shorter time: it reduces the time nedded to Nlog (N),
 The FFT is used  in many different fields of science such as
 signal processing, image processing, etc\ldots
 \begin{figure}[h]
-  \includegraphics[scale=0.5]{fft_waves_result}
+  \includegraphics[scale=0.45]{fft_waves_result}
   \centering
   \caption{Result of the FFT of a signal
   }\label{fig:fft}
@@ -444,32 +444,33 @@ The latest approaches involve the use of machine learning techniques
 to denoise EEG signals. Machine learning is a subfield of artificial
 intelligence that focuses on the development of computer programs that
 can learn from data. In the following chapter we will discuss the
-different architectures of neural networks that jave been used in 
-previous works and in this thesis.
+different architectures of neural networks that have been used in 
+previous works and that will be exploited in the proposed approach.
 \subsection{Fully connected neural network}
 Fully Connected Neural Networks, also known as Feedforward Neural Networks
-or Multilayer Perceptrons, are a type of artificial neural network 
-architecture commonly used in deep learning. In this type of neural network,
- each neuron in a layer is connected to all the neurons in the previous 
- layer and all the neurons in the subsequent layer. These connections are 
- weighted, and each neuron computes a weighted sum of its inputs, passes
+or Multilayer Perceptrons, are the the most common type of neural networks.
+They consist of neurons[\ref{sec:neuron}], organized in layers and each of
+ the neurons in a layer
+ is connected to all the ones in the previous and subsequent layers. 
+These connections are weighted, and each neuron computes a weighted sum of its inputs, passes
   this sum through an activation function, and then forwards the result to
  the next layer.\newline \\
-The architecture of a fully connected neural network consists of one or
- more layers of neurons[\ref{sec:neuron}], including an input layer, one or more hidden 
+The architecture of a Fully Connected Neural Network consists of one or
+ more layers of neurons, including an input layer, one or more hidden 
  layers, and an output layer. The input layer receives the data to be
   processed, and each neuron in this layer represents a feature of the 
   input. The hidden layers perform complex computations on the input data,
 and the output layer produces the final output of the network. The 
 number of neurons in the input and output layers is determined by the
-size of the input and output data.
+size of the input and output data, while the number of neurons in the
+hidden layers is a hyperparameter that can be tuned to improve the
+performance of the network.
 \begin{figure}[h]
 \includegraphics[scale=0.5]{fully_connected_nn}
 \centering
 \caption{Fully connected neural network}\label{fig:fully_connected}
 
-\end{figure}
-
+\end{figure}\newline \\
 The operation of a fully connected neural network can be described 
 mathematically using the following equations.
 \subsubsection{Linear transformation}
@@ -477,8 +478,10 @@ Each neuron in the hidden layers and output layer
  performs a linear transformation of its inputs, which is a weighted sum 
  of the outputs of the neurons in the previous layer. The linear 
  transformation of neuron i in layer l can be expressed as:
-$$z_i^l = \sum_{j=1}^{n^{l-1}} w_{ij}^l a_j^{l-1} + b_i^l$$
-
+ \begin{equation}
+  \label{eq:linear_transformation}
+z_i^l = \sum_{j=1}^{n^{l-1}} w_{ij}^l a_j^{l-1} + b_i^l
+\end{equation}
 where $n^{l-1}$ is the number of neurons in the previous layer,
  $w_{ij}^l$ is the weight of the connection between neuron j in layer 
  l-1 and neuron i in layer l, $a_j^{l-1}$ is the output of neuron j 
@@ -490,70 +493,70 @@ passed through an activation function to introduce non-linearity
  into the network. Commonly used activation functions include sigmoid,
   tanh, ReLU, and softmax. The activation function of neuron i in layer
 l can be expressed as:
-$$a_i^l = \sigma(z_i^l)$$
-
+\begin{equation}
+\label{eq:activation_function}
+a_i^l = \sigma(z_i^l)
+\end{equation}
 where $\sigma$ is the activation function.
 \subsubsection{Output computation}
  The output of the network is produced by the output
  layer, which applies a final activation function to the pre-activation
   values of its neurons. The activation function of the output layer 
   depends on the task the network is designed to perform. The output of neuron i in the output layer can be expressed as:
-$$\hat{y_i} = \sigma(z_i^L)$$
-
+\begin{equation}
+\label{eq:output}
+  \hat{y_i} = \sigma(z_i^L)
+\end{equation}
 where L is the index of the output layer, $\sigma$ is the output activation
- function, and $\hat{y_i}$ is the predicted value of the i-th output.\newline
-
+ function, and $\hat{y_i}$ is the predicted value of the i-th output.\newline \\
 The network is trained by adjusting the weights and biases using
 backpropagation [\ref{sec:backpropagation}] with respect to a loss function
  [\ref{sec:loss}].
 
 \subsection{Convolutional neural network}
 Convolutional Neural Networks (CNNs) are a type of artificial neural network
- architecture commonly used in deep learning for image and video analysis.
-  Unlike fully connected neural networks, CNNs take into account the spatial
-   structure of input data, such as images, by using convolutional layers 
-   that apply filters to local regions of the input data.\newline
-
-The architecture of a CNN consists of one or more convolutional layers, 
+ architecture commonly used in deep learning for multidimensional data
+  analysis.
+Unlike fully connected neural networks, CNNs take into account the spatial
+structure of input data, such as images, by using convolutional layers 
+that apply filters to local regions of the input.\newline \\
+The architecture of a CNN consists of one or more convolutional layers paired 
+with their activation functions,
 followed by one or more fully connected layers. The convolutional layers 
 perform feature extraction by applying filters to local regions of the 
 input data, producing feature maps that highlight different aspects of 
 the input data. The fully connected layers perform classification or
- regression on the feature maps produced by the convolutional layers.\newline
- \begin{figure}[h]
+ regression on the feature maps produced by the convolutional layers.\begin{figure}[h]
   \includegraphics[scale=0.5]{convolution_nn}
   \centering
   \caption{Convolutional neural network}\label{fig:convolution_nn}
-  
-  \end{figure}
+  \end{figure}\newline \\
 The operation of a CNN can be described mathematically using the following
 equations:
-
-Convolution: In the convolutional layers, a set of filters or kernels is 
+\subsubsection{Convolutional layer}
+In the convolutional layers, a set of filters or kernels is 
 applied to local regions of the input data to produce feature maps. The 
 convolution operation can be expressed as:
-$$z_{i,j,k} = \sum_{l=1}^{d_{in}}\sum_{m=1}^{f}\sum_{n=1}^{f} x_{i+m-1,j+n-1,l}w_{m,n,l,k} + b_k$$
-
+\begin{equation}
+  \label{eq:convolution}
+  z_{i,j,k} = \sum_{l=1}^{d_{in}}\sum_{m=1}^{f}\sum_{n=1}^{f} x_{i+m-1,j+n-1,l}w_{m,n,l,k} + b_k
+\end{equation}
 where $x$ is the input data, $w$ is the filter, $b$ is the bias, $d_{in}$ 
 is the number of input channels, $f$ is the size of the filter, $z$ is the 
-output feature map, and $i,j,k$ are the indices of the feature map.\newline
-
-Activation function: The pre-activation values of each neuron are passed 
-through an activation function to introduce non-linearity into the network.
- Commonly used activation functions include ReLU and sigmoid. The activation
-  function of neuron i in layer l can be expressed as:
-$$a_{i,j,k}^l = \sigma(z_{i,j,k}^l)$$
-
-where $\sigma$ is the activation function.\newline
-
-Pooling: The pooling layer downsamples the output of the convolutional 
+output feature map, and $i,j,k$ are the indices of the feature map. 
+\subsubsection{Pooling layer}
+The pooling layer downsamples the output of the convolutional 
 layer, reducing the size of the feature maps and introducing translation
  invariance. Commonly used pooling operations include max pooling and
-  average pooling.\newline
-
-Flattening: The output of the pooling layer is flattened into a vector\newline
-
-Fully connected layers: The fully connected layers perform classification
+average pooling that perform a max or average operation on local regions
+ of the input data, respectively.
+\subsubsection{Flattening}
+The output of the pooling layer is flattened into a
+ single vector, with dimension equal to the number of neurons of the
+ input layer of the fully connected part of the network,
+ to which it is passed.
+\subsubsection{Fully connected layer}
+The fully connected layers perform classification
  or regression on the feature maps produced by the convolutional and
   pooling layers. The operation of a fully connected layer is similar 
   to that of a fully connected neural network.

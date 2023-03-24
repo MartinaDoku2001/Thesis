@@ -28,6 +28,10 @@
 \contentsline {subsubsection}{Activation function}{20}{section*.11}%
 \contentsline {subsubsection}{Output computation}{21}{section*.12}%
 \contentsline {subsection}{\numberline {2.3.2}Convolutional neural network}{21}{subsection.2.3.2}%
+\contentsline {subsubsection}{Convolutional layer}{21}{section*.14}%
+\contentsline {subsubsection}{Pooling layer}{22}{section*.15}%
+\contentsline {subsubsection}{Flattening}{22}{section*.16}%
+\contentsline {subsubsection}{Fully connected layer}{22}{section*.17}%
 \contentsline {subsection}{\numberline {2.3.3}Long short-term memory}{22}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}Transformer}{24}{subsection.2.3.4}%
 \contentsline {chapter}{\numberline {3}Methodology}{27}{chapter.3}%
