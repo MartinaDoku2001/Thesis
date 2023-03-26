@@ -198,7 +198,12 @@ S(\omega)= \frac{1}{2\pi}\cdot \int_{-\infty}^{\infty} s(\tau) \cdot h(t-\tau) e
 \end{equation}
 where $s(\tau)$ is the signal, $h(t)$ is the window function and $\omega$
 is the frequency. \newline
-
+%\begin{figure}[h]
+%  \includegraphics[scale=0.45]{stft_waves_result}
+%  \centering
+%  \caption{Result of the STFT of a signal
+%  }\label{fig:stft} 
+%  \end{figure}
 \subsection{Wigner-Ville distribution}\label{sec:wvd}
 The Wigner-Ville distribution (WVD)\cite{wvd} is a method used to provide
 the description of a signal in the time-frequency domain with higher resolution.
@@ -218,7 +223,12 @@ WVD(t,f)= WVDx_1(t,f) + WVDx_2(t,f) + 2Re[WVDx_1x_2(t,f)]
 \end{equation}
 where $2Re[WVDx_1x_2(t,f)]$ is the cross term
 which is removable at the expense of a loss of resolution.  \newline
-
+\begin{figure}[h]
+  \includegraphics[scale=0.45]{wvd_waves_result}
+  \centering
+  \caption{Result of the WVD of a signal
+  }\label{fig:wvd}
+\end{figure}
 \subsection{Wavelet transform}\label{sec:wavelet}
 The wavelet transform\cite{wavelet} is a method used to find the frequency
 components of a signal over time. It is used with non stationary signals and it
@@ -562,8 +572,8 @@ The fully connected layers perform classification
   to that of a fully connected neural network.
 \subsection{Long short-term memory}
 Long Short-Term Memory (LSTM) Networks are a type of recurrent neural 
-network (RNN) that are specifically designed to address the vanishing 
-gradient problem in traditional RNNs. LSTMs have a memory cell that is
+network (RNN) specifically designed to address the vanishing 
+gradient problem[\ref{sec:vanishing_gradient}] in traditional RNNs. LSTMs have a memory cell that is
  able to maintain information over long periods of time, and they use 
  three gates - the input gate, the forget gate, and the output gate -
   to regulate the flow of information into and out of the memory cell.
@@ -571,67 +581,57 @@ gradient problem in traditional RNNs. LSTMs have a memory cell that is
     \includegraphics[scale=0.5]{lstm}
     \centering
     \caption{Long Short Term Memory Architecture}\label{fig:lstm}
-    
-    \end{figure}
-    
+    \end{figure} 
 Here are the key equations that govern the behavior of an LSTM:
-
-Input gate: determines how much of the new input should be added to the 
+\subsubsection{Input gate}
+The input gate determines how much of the new input should be added to the 
 memory cell. The equation for the input gate is:
 \begin{equation}
   i_t = \sigma(W_i [h_{t-1}, x_t] + b_i)
   \end{equation}
-
 where $i_t$ is the input gate activation vector, $x_t$ is the input vector 
 at time t, $h_{t-1}$ is the hidden state vector from the previous time 
 step, $W_i$ is the weight matrix for the input gate, and $b_i$ is the bias 
 vector for the input gate.
-
-Forget gate: determines how much of the previous memory cell state 
+\subsubsection{Forget gate}
+The forget gate determines how much of the previous memory cell state 
 should be retained. The equation for the forget gate is:
 \begin{equation}
   f_t = \sigma(W_f [h_{t-1}, x_t] + b_f)
   \end{equation}
-
 where $f_t$ is the forget gate activation vector, $x_t$ is the input 
 vector at time t, $h_{t-1}$ is the hidden state vector from the previous time
  step, $W_f$ is the weight matrix for the forget gate, and $b_f$ is the bias 
  vector for the forget gate.
-
-Memory update: combines the input with the previous memory cell
+\subsubsection{Candidate memory cell state}
+The memory update combines the input with the previous memory cell
  state to create a new memory cell state. The equation for the
   memory update is:
   \begin{equation}
     g_t = \tanh(W_g [h_{t-1}, x_t] + b_g)
     \end{equation}
-
 where $g_t$ is the candidate memory cell state, $x_t$ is the input vector 
 at time t, $h_{t-1}$ is the hidden state vector from the previous time step,
  $W_g$ is the weight matrix for the memory update, and $b_g$ is the bias vector
   for the memory update.
-
-Output gate: determines how much of the new memory cell state should be 
+\subsubsection{Output gate}
+The output gate determines how much of the new memory cell state should be 
 output. The equation for the output gate is:
-
 \begin{equation}
   o_t = \sigma(W_o [h_{t-1}, x_t] + b_o)
   \end{equation}
-
 where $o_t$ is the output gate activation vector, $x_t$ is the input vector
  at time t, $h_{t-1}$ is the hidden state vector from the previous time step,
   $W_o$ is the weight matrix for the output gate, and $b_o$ is the bias vector 
   for the output gate.
-
-Hidden state update: combines the new memory cell state with the output gate
+\subsubsection{Hidden state update}
+The new memory cell state is combined with the output gate
  to create the new hidden state. The equation for the hidden state update is:
-
  \begin{equation}
   h_t = o_t \tanh(c_t)
   \end{equation}
-
 where $h_t$ is the new hidden state, $o_t$ is the output gate activation vector,
- $c_t$ is the new memory cell state, and tanh is the hyperbolic tangent function.
-
+ $c_t$ is the new memory cell state, and tanh is the hyperbolic tangent function.\newline \\
 These equations allow an LSTM network to selectively forget or remember
  information over time, making it well-suited for modeling sequences of
   data where long-term dependencies are important
@@ -737,19 +737,69 @@ has proven to be an invaluable resource for model training and testing,
 \chapter{Appendix}
 \section {Neural network}
 \subsection{Neuron}\label{sec:neuron}
-A neuron is a basic unit of a neural network. It is composed of an
-  activation function and a set of weights and biases.
+A neuron, also known as a node or a perceptron, is a fundamental building
+ block of a neural network. It is a mathematical function that receives one
+or more inputs and produces an output based on those inputs. \newline 
+A typical neuron in a neural network consists of three main components:\newline \\
+Inputs: These are the signals or information that the neuron receives from 
+other neurons or from the outside world.
+ Each input is assigned a weight, which determines how important it is 
+ to the neuron's output. \newline \\
+Activation Function: The activation function is a non-linear function 
+that takes the weighted sum of the inputs and produces an output. 
+The output of the activation function is then passed on to the next 
+layer of neurons in the network.\newline \\
+Bias: The bias is an additional input that is used to adjust the output 
+of the activation function. It can be thought of as a threshold that the 
+weighted sum of the inputs must cross before the neuron "fires" or 
+produces an output.
 \subsection{Loss function} \label{sec:loss}
-To train the network, a loss function is used to measure
- the difference between the predicted output and the true output. Commonly
-  used loss functions include mean squared error, cross-entropy, and binary
-   cross-entropy.
+A loss function is a mathematical function that measures the difference 
+between the predicted output of the network and the actual output (or 
+"ground truth") for a given set of input data.\newline 
+The goal of a neural network is typically to minimize the difference 
+between the predicted output and the ground truth. The loss function 
+provides a quantitative measure of this difference, which the network 
+can use to adjust its parameters (such as the weights and biases of the 
+neurons) in order to improve its predictions.\newline 
+There are many different types of loss functions that can be used in a 
+neural network, depending on the specific task the network is trying to 
+perform. Some common examples include:
+\begin{itemize}
+\item{Mean Squared Error (MSE)}: This is a popular loss function for regression 
+problems, where the goal is to predict a continuous output value. It 
+measures the average squared difference between the predicted and actual 
+values.
+\item{Binary Cross-Entropy}: This is a loss function that is commonly used for 
+binary classification problems, where the goal is to predict a binary 
+output (e.g., 0 or 1). It measures the difference between the predicted 
+probability of the positive class and the true probability (which is 
+either 0 or 1).
+\item{Categorical Cross-Entropy}: This is a loss function that is commonly used 
+for multi-class classification problems, where the goal is to predict one 
+of several possible output classes. It measures the difference between the 
+predicted probability distribution over the classes and the true 
+distribution (which is typically represented as a one-hot encoded vector).
+\end{itemize}
+By minimizing the loss function during training, the neural network 
+can adjust its parameters to improve its predictions on the training 
+data. However, it's important to also evaluate the performance of the 
+network on a separate set of validation or test data to ensure that 
+it is not overfitting to the training data.
 \subsection{Backpropagation}\label{sec:backpropagation}
  The weights and biases of the network are updated during 
 training using an algorithm called backpropagation, which computes the 
 gradient of the loss function with respect to the network parameters.
  The gradient is then used to update the weights and biases of the network
   using an optimization algorithm such as stochastic gradient descent.
+
+\subsection{Vanishing gradient problem}\label{sec:vanishing_gradient}
+The vanishing gradient problem is a common problem in deep neural networks
+ that occurs when the gradient of the loss function with respect to the
+  weights and biases of the network is very small. This problem can be 
+  solved by using a different activation function, such as the rectified 
+  linear unit (ReLU) activation function, which does not suffer from the 
+  vanishing gradient problem.
 \begin{thebibliography}{1}
     \bibitem{EEG artifact}{Jiang, X.; Bian, G.-B.; Tian, Z. Removal of Artifacts from EEG Signals: A Review. Sensors 2019, 19, 987.}
     \bibitem{denoising challenges}{Wajid Mumtaz, Suleman Rasheed, Alina Irfan, Review of challenges associated with the EEG artifact removal methods, Biomedical Signal Processing and Control, Volume 68, 2021, 102741, ISSN 1746-8094}

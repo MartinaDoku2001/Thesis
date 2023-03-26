@@ -15,25 +15,30 @@
 \contentsline {section}{\numberline {2.2}EEG denoising}{16}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Regression}{16}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Blind source separation}{16}{subsection.2.2.2}%
-\contentsline {subsubsection}{Principal Component Analysis}{16}{section*.4}%
-\contentsline {subsubsection}{Independent Component Analysis}{17}{section*.5}%
-\contentsline {subsubsection}{Canonical Correlation Analysis}{17}{section*.6}%
-\contentsline {subsection}{\numberline {2.2.3}Empirical Mode Decomposition}{17}{subsection.2.2.3}%
+\contentsline {subsubsection}{Principal Component Analysis}{17}{section*.5}%
+\contentsline {subsubsection}{Independent Component Analysis}{17}{section*.6}%
+\contentsline {subsubsection}{Canonical Correlation Analysis}{18}{section*.7}%
+\contentsline {subsection}{\numberline {2.2.3}Empirical Mode Decomposition}{18}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Filtering techniques}{18}{subsection.2.2.4}%
-\contentsline {subsubsection}{Adaptive filtering}{18}{section*.7}%
-\contentsline {subsubsection}{Wiener filtering}{19}{section*.8}%
+\contentsline {subsubsection}{Adaptive filtering}{18}{section*.8}%
+\contentsline {subsubsection}{Wiener filtering}{19}{section*.9}%
 \contentsline {section}{\numberline {2.3}Machine learning}{19}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Fully connected neural network}{19}{subsection.2.3.1}%
-\contentsline {subsubsection}{Linear transformation}{20}{section*.10}%
-\contentsline {subsubsection}{Activation function}{20}{section*.11}%
-\contentsline {subsubsection}{Output computation}{21}{section*.12}%
+\contentsline {subsection}{\numberline {2.3.1}Fully connected neural network}{20}{subsection.2.3.1}%
+\contentsline {subsubsection}{Linear transformation}{20}{section*.11}%
+\contentsline {subsubsection}{Activation function}{21}{section*.12}%
+\contentsline {subsubsection}{Output computation}{21}{section*.13}%
 \contentsline {subsection}{\numberline {2.3.2}Convolutional neural network}{21}{subsection.2.3.2}%
-\contentsline {subsubsection}{Convolutional layer}{21}{section*.14}%
-\contentsline {subsubsection}{Pooling layer}{22}{section*.15}%
-\contentsline {subsubsection}{Flattening}{22}{section*.16}%
-\contentsline {subsubsection}{Fully connected layer}{22}{section*.17}%
-\contentsline {subsection}{\numberline {2.3.3}Long short-term memory}{22}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Transformer}{24}{subsection.2.3.4}%
+\contentsline {subsubsection}{Convolutional layer}{22}{section*.15}%
+\contentsline {subsubsection}{Pooling layer}{22}{section*.16}%
+\contentsline {subsubsection}{Flattening}{22}{section*.17}%
+\contentsline {subsubsection}{Fully connected layer}{23}{section*.18}%
+\contentsline {subsection}{\numberline {2.3.3}Long short-term memory}{23}{subsection.2.3.3}%
+\contentsline {subsubsection}{Input gate}{23}{section*.20}%
+\contentsline {subsubsection}{Forget gate}{24}{section*.21}%
+\contentsline {subsubsection}{Candidate memory cell state}{24}{section*.22}%
+\contentsline {subsubsection}{Output gate}{24}{section*.23}%
+\contentsline {subsubsection}{Hidden state update}{24}{section*.24}%
+\contentsline {subsection}{\numberline {2.3.4}Transformer}{25}{subsection.2.3.4}%
 \contentsline {chapter}{\numberline {3}Methodology}{27}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Data}{27}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Preprocessing}{27}{section.3.2}%
@@ -49,4 +54,5 @@
 \contentsline {section}{\numberline {6.1}Neural network}{33}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Neuron}{33}{subsection.6.1.1}%
 \contentsline {subsection}{\numberline {6.1.2}Loss function}{33}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Backpropagation}{33}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.3}Backpropagation}{34}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}Vanishing gradient problem}{34}{subsection.6.1.4}%
