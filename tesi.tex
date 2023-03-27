@@ -640,32 +640,43 @@ These equations allow an LSTM network to selectively forget or remember
 The Transformer is a neural network architecture designed for natural
  language processing tasks. It was introduced in the paper "Attention
   is All You Need" by Vaswani et al. in 2017\cite{attention}, and has since become 
-  a cornerstone of many state-of-the-art language models.\newline
-
-The basic architecture of the Transformer consists of an encoder and a 
-decoder, both of which are composed of a stack of identical layers. Each 
-layer has two sub-layers: a multi-head self-attention mechanism, followed 
-by a position-wise fully connected feed-forward network.\newline
-
-The self-attention mechanism is a mechanism that allows the model to 
-attend to different parts of the input sequence. Given an input sequence
- of length $n$, it computes a set of $n$ output vectors by taking a 
- weighted sum of all the input vectors, where the weights are computed 
- by a softmax function over a set of attention scores. These scores are
-  computed by taking the dot product between a query vector and all the 
-  key vectors, which are learned parameters of the model. The query and
-   key vectors are obtained by projecting the input vectors into a 
-high-dimensional space, which is learned during training.\newline
-
-The equations for the self-attention mechanism can be written as follows:
-
-$$\text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
-
-where $Q$, $K$, and $V$ are the query, key, and value matrices, 
-respectively, each of which has dimensions $n\times d_k$, $n\times d_k$,
- and $n\times d_v$, and $d_k$ and $d_v$ are the dimensions of the 
- query/key and value spaces, respectively.\newline
-
+  a popular choice for many NLP and sequential data tasks.\newline \\
+ The Transformer
+   is a type of encoder-decoder architecture, where the encoder is used 
+   to encode the input sequence into a fixed-length vector, and the 
+   decoder is used to decode the vector into an output sequence, both 
+   encoder and decoder parts are composed of a stack of identical layers.
+    Each layer has two sub-layers: a multi-head self-attention mechanism, followed 
+  by a position-wise fully connected feed-forward network.
+\subsubsection{Self-attention}
+The self-attention mechanism allows the model to 
+attend to different parts of the input sequence. Given an input sequence,
+we define the query, key, and value vectors as follows:
+\begin{equation}
+  Q = W_qX
+  \end{equation}
+\begin{equation}
+  K = W_kX
+  \end{equation}
+\begin{equation}
+  V = W_vX
+  \end{equation}
+where $X$ is the input sequence, $W_q$, $W_k$, and $W_v$ are the weight
+  matrices for the query, key, and value vectors, respectively, and $Q$,
+  $K$, and $V$ are the query, key, and value vectors, respectively. 
+  
+  Those values are then used to compute the attention scores as follows:
+  \begin{equation}
+    A = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)
+    \end{equation}
+where $A$ is the attention matrix, $d_k$ is the dimensionality of the
+  key vectors, and $\text{softmax}$ is the softmax function. The 
+  attention matrix is then used to compute the output vectors as follows:
+  \begin{equation}
+    O = AV
+    \end{equation}
+where $O$ is the output matrix. 
+\subsubsection{Multi-head attention}
 The multi-head attention mechanism allows the model to attend to different
  aspects of the input sequence simultaneously. It does this by 
 computing $h$ different sets of query, key, and value vectors,
@@ -673,13 +684,11 @@ each of which is obtained by projecting the input vectors into
 $d_k$, $d_k$, and $d_v$-dimensional spaces, respectively. 
 The resulting $h$ sets of output vectors are concatenated
  and linearly transformed to produce the final output.\newline
-
  The equations for the multi-head attention mechanism can be written as 
  follows:
  \begin{align*}
  \text{MultiHead}(Q,K,V) &= \text{Concat}(head_1,\ldots,head_h)W^O \
 \end{align*}
-
 where:
  \begin{align*}
    head_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
@@ -689,19 +698,17 @@ where:
    $d_{model}\times d_k$, and $d_{model}\times d_v$, respectively.
     $W^O$ is a learned projection matrix that maps the concatenated
  output of the attention heads back to the original dimensionality of
-  the input.\newline
- 
+  the input.
+\subsubsection{Position-wise feed-forward network}
 The position-wise feed-forward network is a simple two-layer neural 
 network that operates on each position of the input sequence 
 independently. It is applied to each output vector of the self-attention
  mechanism, and has the effect of transforming the vector into a 
  higher-dimensional space, followed by a projection back into the
   original dimensionality.\newline
-
 The equations for the position-wise feed-forward network can be written
  as follows:
  $$\text{FFN}(x) = \text{ReLU}(xW_1+b_1)W_2+b_2$$
-
  In this equation, $x$ is the input vector of size $d_{model}$,
   $W_1$ and $W_2$ are learned weight matrices of sizes 
   $d_{model}\times d_{ff}$ and $d_{ff}\times d_{model}$,
@@ -820,7 +827,7 @@ The vanishing gradient problem is a common problem in deep neural networks
     \bibitem{emd}{V. Bajaj and R. B. Pachori, "Classification of Seizure and Nonseizure EEG Signals Using Empirical Mode Decomposition," in IEEE Transactions on Information Technology in Biomedicine, vol. 16, no. 6, pp. 1135-1142, Nov. 2012, doi: 10.1109/TITB.2011.2181403.}
     \bibitem{adaptive}{He, P., Wilson, G. Russell, C. Removal of ocular artifacts from electro-encephalogram by adaptive filtering. Med. Biol. Eng. Comput. 42, 407–412 (2004). https://doi.org/10.1007/BF02344717}
     \bibitem{wiener}{Somers, B., Francart, T., Bertrand, A. (2018). A generic EEG artifact removal algorithm based on the multi-channel Wiener filter. Journal of neural engineering, 15(3), 036007.}
-    
+    \bibitem{attention}{Vaswani, A., Shazeer, N.M., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.N., Kaiser, L., Polosukhin, I. (2017). Attention is All you Need. ArXiv, abs/1706.03762.}
     \bibitem{EEGdenoiseNet}{EEGdenoiseNet: A Comprehensive Benchmark Dataset for EEG Denoising, https://arxiv.org/abs/2103.03894}
     
     \end{thebibliography}

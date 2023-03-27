@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  27 MAR 2023 11:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  27 MAR 2023 18:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -701,44 +701,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 632--638
  []
 
 
-LaTeX Warning: Citation `attention' on page 25 undefined on input line 642.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 640--644
+Underfull \hbox (badness 10000) in paragraph at lines 640--651
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 645--649
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 650--659
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 664--668
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 669--676
-
- []
-
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 686--693
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 694--700
-
- []
-
-[26]
+[25] [26]
 Chapter 3.
 [27
 
@@ -755,45 +722,39 @@ Chapter 5.
 ]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 740--756
+Underfull \hbox (badness 10000) in paragraph at lines 747--763
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 740--756
+Underfull \hbox (badness 10000) in paragraph at lines 747--763
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 740--756
+Underfull \hbox (badness 10000) in paragraph at lines 747--763
 
  []
 
 [33] [34] [35
 
 ] [36] (./tesi.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `tesi.out' has not changed.
 (rerunfilecheck)             Checksum: E5B9214E27F0E11D56AA6FB8A9CEFBC7;5717.
  ) 
 Here is how much of TeX's memory you used:
- 12511 strings out of 476093
- 200125 string characters out of 5795583
+ 12521 strings out of 476093
+ 200258 string characters out of 5795583
  1863787 words of memory out of 5000000
- 32547 multiletter control sequences out of 15000+600000
+ 32548 multiletter control sequences out of 15000+600000
  602456 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,131p,381b,551s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tesi.pdf (36 pages, 705778 bytes).
+Output written on tesi.pdf (36 pages, 706772 bytes).
 PDF statistics:
- 616 PDF objects out of 1000 (max. 8388607)
- 522 compressed objects within 6 object streams
- 151 named destinations out of 1000 (max. 500000)
+ 627 PDF objects out of 1000 (max. 8388607)
+ 533 compressed objects within 6 object streams
+ 160 named destinations out of 1000 (max. 500000)
  369 words of extra memory for PDF output out of 10000 (max. 10000000)
 
