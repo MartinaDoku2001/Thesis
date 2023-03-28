@@ -645,9 +645,29 @@ The Transformer is a neural network architecture designed for natural
    is a type of encoder-decoder architecture, where the encoder is used 
    to encode the input sequence into a fixed-length vector, and the 
    decoder is used to decode the vector into an output sequence, both 
-   encoder and decoder parts are composed of a stack of identical layers.
-    Each layer has two sub-layers: a multi-head self-attention mechanism, followed 
-  by a position-wise fully connected feed-forward network.
+   encoder and decoder parts are composed of a stack of one of more layers.
+    Each layer is composed of a multi-head self-attention mechanism, followed 
+  by a position-wise fully connected feed-forward network.\newline
+\begin{figure}[h]
+  \includegraphics[scale=0.42]{transformer}
+  \centering
+  \caption{Transformer Architecture}\label{fig:transformer}
+  \end{figure}
+We will now go over the different components of the Transformer in more
+ detail.
+\subsubsection{Embedding}
+The embedding layer precedes the encoder (and decoder) parts, it is used to convert 
+the input sequence (or output sequence) into a vector
+ representation. It is composed of two parts: an 
+ embedding matrix, and a positional encoding matrix. The embedding matrix
+  is used to convert the input sequence into a vector representation, and
+   the positional encoding matrix is used to encode the position of each 
+   token in the sequence. The embedding layer is defined as follows:
+   \begin{equation}
+     E = W_eX + W_p
+     \end{equation}
+where $X$ is the input sequence, $W_e$ is the embedding matrix, $W_p$ is the
+ positional encoding matrix, and $E$ is the embedding vector.
 \subsubsection{Self-attention}
 The self-attention mechanism allows the model to 
 attend to different parts of the input sequence. Given an input sequence,
@@ -699,6 +719,17 @@ where:
     $W^O$ is a learned projection matrix that maps the concatenated
  output of the attention heads back to the original dimensionality of
   the input.
+\subsubsection{Add and normalize}
+The add and normalize layer is used to add the input to the output of the
+  multi-head attention mechanism, and then normalize the result. The
+    equations for the add and norm layer can be written as follows:
+    \begin{align*}
+      \text{AddNorm}(x,y) &= \text{LayerNorm}(x+y) \\
+      \text{LayerNorm}(x) &= \text{Norm}(x+\text{Sublayer}(x))
+      \end{align*}
+where $x$ is the input vector, $y$ is the output of the multi-head
+  attention mechanism, and $\text{Sublayer}(x)$ is the sublayer that
+    is being normalized.
 \subsubsection{Position-wise feed-forward network}
 The position-wise feed-forward network is a simple two-layer neural 
 network that operates on each position of the input sequence 
@@ -716,6 +747,16 @@ respectively, $b_1$ and $b_2$ are learned bias vectors of
 size $d_{ff}$ and $d_{model}$, respectively, and ReLU is the
 rectified linear unit activation function. The output of the
 position-wise feed-forward network is also a vector of size $d_{model}$.
+\subsubsection{Linear and softmax}
+The linear and softmax layer is used to convert the output of the decoder
+ into a probability distribution over the target vocabulary. The equations for the
+   linear and softmax layer can be written as follows:
+   \begin{align*}
+     \text{Linear}(x) &= xW+b \\
+     \text{Softmax}(x) &= \text{softmax}(x)
+     \end{align*}
+where $x$ is the input vector, $W$ is the learned weight matrix, and $b$
+  is the learned bias vector.
 \chapter{Methodology}
 \section{Data}\label{sec:data}
 The data used in this thesis are the EEG signals of the EEGdenoiseNet 
@@ -724,15 +765,40 @@ dataset\cite{EEGdenoiseNet}. It is comprehensive benchmark dataset
   deep learning-based EEG denoising models. It is composed of 4514 clean 
   EEG epochs, 3400 EOG epochs, and 5598 EMG epochs, making it an inclusive 
   and extensive dataset that caters to the needs of researchers and
- practitioners alike.
-
+ practitioners alike.\newline \\
 The incorporation of these various types of epochs in the dataset
 enables to generate a considerable number of noisy EEG epochs
 with their corresponding ground truth data. As a result, this compilation 
 has proven to be an invaluable resource for model training and testing,
  facilitating an enhanced understanding of EEG denoising.
-
 \section{Preprocessing}
+The preprocessing of the EEG signals is an important step in the
+pipeline of the proposed model. It is used to generate the noisy EEG
+signals that are used as input to the model.
+The processing step used is proposed by the authors of the EEGdenoiseNet
+dataset\cite{EEGdenoiseNet}. It is a simple yet effective method that
+is used to generate noisy EEG signals from the clean EEG signals and clean 
+EMG and EOG signals present in the dataset.
+The preprocessing step is performed as follows:
+\begin{enumerate}
+\item The clean EEG signals and noise signals are augmented adding 
+random disturb
+\item The EEG signals are partially reused to match the EMG and EOG
+signals
+\item Data are divided in training, validation, and test sets
+\item The noise signals are added to the EEG signals
+\item The noisy EEG signals are normalized by dividing them by the
+standard deviation
+\end{enumerate}
+At the end of the preprocessing step, the dataset is composed of:
+\begin{itemize}
+\item 44780 training EMG contaminated EEG samples
+\item 5600 validation EMG contaminated EEG samples
+\item 5600 test EMG contaminated EEG samples
+\item 27200 training EOG contaminated EEG samples
+\item 3400 validation EOG contaminated EEG samples
+\item 3400 test EOG contaminated EEG samples
+\end{itemize}
 \section{Denoising}
 \section{Machine learning}
 \chapter{Experimental results}
