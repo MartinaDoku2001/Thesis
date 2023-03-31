@@ -223,12 +223,12 @@ WVD(t,f)= WVDx_1(t,f) + WVDx_2(t,f) + 2Re[WVDx_1x_2(t,f)]
 \end{equation}
 where $2Re[WVDx_1x_2(t,f)]$ is the cross term
 which is removable at the expense of a loss of resolution.  \newline
-\begin{figure}[h]
-  \includegraphics[scale=0.45]{wvd_waves_result}
-  \centering
-  \caption{Result of the WVD of a signal
-  }\label{fig:wvd}
-\end{figure}
+%\begin{figure}[h]
+%  \includegraphics[scale=0.45]{wvd_waves_result}
+%  \centering
+%  \caption{Result of the WVD of a signal
+%  }\label{fig:wvd}
+%\end{figure}
 \subsection{Wavelet transform}\label{sec:wavelet}
 The wavelet transform\cite{wavelet} is a method used to find the frequency
 components of a signal over time. It is used with non stationary signals and it
@@ -242,6 +242,12 @@ W(\tau, \omega) = \int_{-\infty}^{\infty} s(t-\tau) \cdot \psi(t-\tau) e^{-2\pi\
 \end{equation}
 where $s(t)$ is the signal, $\tau$ is the time, $\omega$ is the frequency
 and $\psi(t)$ is the wavelet function. \newline
+\begin{figure}[h]
+  \includegraphics[scale=0.45]{wavelet_result}
+  \centering
+  \caption{Result of the wavelet transform decomposition of a signal
+  }\label{fig:wt}
+\end{figure}
 A possible choice for the wavelet function is the Morlet wavelet:
 \begin{equation}
 \label{eq:wavelet2}
