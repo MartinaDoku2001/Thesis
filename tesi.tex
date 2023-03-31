@@ -808,8 +808,87 @@ At the end of the preprocessing step, the dataset is composed of:
 \section{Denoising}
 \section{Machine learning}
 \chapter{Experimental results}
-\section{Results}
-\section{Discussion}
+This chapter presents the experimental results of the proposed model and
+the baseline models. The results are presented in the form of comparison tables
+and graphs. 
+\section{Evaluation Metrics}
+The results of the proposed model and the baseline models are compared 
+in terms of the Relative Root Mean Squared Error (RRMSE), Peak 
+Signal-to-Noise Ratio (PSNR) and Structural Similarity Index Measure (SSIM).
+\subsubsection{RRMSE}
+The RRMSE is a metric that is used to measure the performance of the
+denoising model. It measures the difference between the original signal
+ and the denoised signal, normalized by the amplitude of the original 
+ signal and it is defined as follows:
+\begin{equation}
+\text{RRMSE} = \frac{\sqrt{\sum_{i=1}^{N} (x_i - \hat{x_i})^2}}{max(x) - min(x)}
+\end{equation}
+where $x$ is the original signal of length $n$, $\hat{x}$ is the denoised 
+signal of the same length, and $\text{max}(x)$ and $\text{min}(x)$ are the 
+maximum and minimum values of the original signal, respectively. The 
+numerator of the equation is the root mean square error (RMSE) between 
+the original and denoised signals, and the denominator scales the error 
+by the amplitude of the original signal.\newline
+The RRMSE ranges from 0 to 1, 
+with 0 indicating perfect denoising and 1 indicating no denoising at all.
+\subsubsection{PSNR}
+The PSNR is a metric that is used to measure the performance of the
+denoising model.It measures the ratio of the maximum possible power of 
+the signal to the power of the noise that has been added or removed. 
+It is defined as follows:
+\begin{equation}
+\text{PSNR} = 10 \log_{10} \left(\frac{\text{MAX}^2}{\text{MSE}}\right)
+\end{equation}
+where $\text{MAX}$ is the maximum possible value of the signal, 
+and $\text{MSE}$ is the mean squared error between the original 
+signal $x$ and the denoised signal $\hat{x}$:
+\begin{equation}
+\text{MSE} = \frac{1}{N}\sum_{i=1}^{N} (x_i - \hat{x_i})^2
+\end{equation}
+The PSNR is expressed in decibels (dB), and a higher value indicates 
+better denoising performance. A PSNR of 20 dB or lower is generally 
+considered to indicate poor quality, while a PSNR of 30 dB or higher 
+is considered to indicate good quality.
+\subsubsection{SSIM}
+The SSIM is a metric that is used to measure the performance of the
+denoising model. It is designed to capture the similarity between the 
+original signal and the denoised signal in terms of luminance, 
+contrast, and structural information. It is defined as follows:
+\begin{equation}
+\text{SSIM} = \frac{(2\mu_x\mu_{\hat{x}} + c_1)(2\sigma_{x {\hat{x}}} + c_2)}{(\mu_x^2 + \mu_{\hat{x}}^2 + c_1)(\sigma_x^2 + \sigma_{\hat{x}}^2 + c_2)}
+\end{equation}
+where $x$ is the original signal, $\hat{x}$ is the denoised signal, 
+$\mu_x$ and $\mu_{\hat{x}}$ are the mean values of $x$ and $\hat{x}$, 
+$\sigma_x$ and $\sigma_{\hat{x}}$ are their standard deviations, and 
+$\sigma_{x\hat{x}}$ is their covariance. The constants $c_1$ and $c_2$ 
+are small values added to avoid division by zero.\newline
+The SSIM ranges from 0 to 1, with 1 indicating perfect similarity between 
+the original and denoised signals. A higher SSIM value generally indicates 
+better denoising performance. However, it is important to note that SSIM 
+is designed for image denoising and may not always be appropriate for 
+other types of signals.
+
+\section{Results and discussion}
+\subsection{Results}
+\begin{table}[h!]
+\centering
+\caption{Comparison of the results of the proposed model and the baseline models}
+\label{tab:rrmse}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Model} & \textbf{RRMSE} & \textbf{PSNR} & \textbf{SSIM} \\ 
+\hline
+\textbf{FCNN} & 0.0000 & 100.0000 & 1.0000 \\
+\hline
+\textbf{CNN} & 0.0000 & 100.0000 & 1.0000 \\
+\hline
+\textbf{LSTM} & 0.0000 & 100.0000 & 1.0000 \\
+\hline
+\textbf{Proposed Model} & 0.0000 & 100.0000 & 1.0000 \\
+\hline
+\end{tabular}
+\end{table}
+
 \chapter{Conclusions and future work}
 \section{Conclusions}
 \section{Future work}

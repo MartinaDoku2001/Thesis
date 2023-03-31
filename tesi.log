@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  31 MAR 2023 09:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  31 MAR 2023 19:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -447,7 +447,7 @@ LaTeX Font Info:    Trying to load font information for T1+lmss on input line 25
  (c:/texlive/2022/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<sapienzalogo.pdf, id=168, 288.07625pt x 89.33376pt>
+<sapienzalogo.pdf, id=172, 288.07625pt x 89.33376pt>
 File: sapienzalogo.pdf Graphic file (type pdf)
 <use sapienzalogo.pdf>
 Package pdftex.def Info: sapienzalogo.pdf  used on input line 25.
@@ -526,7 +526,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--68
 [9
 
 ]
-<./images//waves.png, id=265, 576.65437pt x 363.60844pt>
+<./images//waves.png, id=270, 576.65437pt x 363.60844pt>
 File: ./images//waves.png Graphic file (type png)
 <use ./images//waves.png>
 Package pdftex.def Info: ./images//waves.png  used on input line 91.
@@ -555,7 +555,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 126--142
 
 ]
 Chapter 2.
-<./images//fft_waves_result.png, id=285, 913.4125pt x 498.86375pt>
+<./images//fft_waves_result.png, id=290, 913.4125pt x 498.86375pt>
 File: ./images//fft_waves_result.png Graphic file (type png)
 <use ./images//fft_waves_result.png>
 Package pdftex.def Info: ./images//fft_waves_result.png  used on input line 176.
@@ -569,7 +569,7 @@ Overfull \hbox (15.03183pt too wide) in paragraph at lines 176--179
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [13]
-<./images//stft_waves_result.png, id=302, 913.4125pt x 390.45876pt>
+<./images//stft_waves_result.png, id=307, 913.4125pt x 390.45876pt>
 File: ./images//stft_waves_result.png Graphic file (type png)
 <use ./images//stft_waves_result.png>
 Package pdftex.def Info: ./images//stft_waves_result.png  used on input line 202.
@@ -588,7 +588,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 223--232
  []
 
 [14 <./images//fft_waves_result.png>]
-<./images//wavelet_result.png, id=320, 913.4125pt x 390.45876pt>
+<./images//wavelet_result.png, id=326, 913.4125pt x 390.45876pt>
 File: ./images//wavelet_result.png Graphic file (type png)
 <use ./images//wavelet_result.png>
 Package pdftex.def Info: ./images//wavelet_result.png  used on input line 246.
@@ -651,7 +651,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 452--455
 
  []
 
-<./images//fully_connected_nn.png, id=388, 767.86874pt x 488.57532pt>
+<./images//fully_connected_nn.png, id=393, 767.86874pt x 488.57532pt>
 File: ./images//fully_connected_nn.png Graphic file (type png)
 <use ./images//fully_connected_nn.png>
 Package pdftex.def Info: ./images//fully_connected_nn.png  used on input line 485.
@@ -674,7 +674,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 525--531
 
  []
 
-<./images//convolution_nn.png, id=407, 967.36406pt x 446.41782pt>
+<./images//convolution_nn.png, id=412, 967.36406pt x 446.41782pt>
 File: ./images//convolution_nn.png Graphic file (type png)
 <use ./images//convolution_nn.png>
 Package pdftex.def Info: ./images//convolution_nn.png  used on input line 546.
@@ -695,7 +695,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 533--552
  []
 
 [22 <./images//convolution_nn.png>]
-<./images//lstm.png, id=415, 718.18312pt x 437.38406pt>
+<./images//lstm.png, id=420, 718.18312pt x 437.38406pt>
 File: ./images//lstm.png Graphic file (type png)
 <use ./images//lstm.png>
 Package pdftex.def Info: ./images//lstm.png  used on input line 587.
@@ -709,7 +709,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 638--644
 
  []
 
-<./images//transformer.png, id=439, 914.66719pt x 442.65375pt>
+<./images//transformer.png, id=444, 914.66719pt x 442.65375pt>
 File: ./images//transformer.png Graphic file (type png)
 <use ./images//transformer.png>
 Package pdftex.def Info: ./images//transformer.png  used on input line 658.
@@ -732,26 +732,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 768--780
 Chapter 4.
 [31
 
-] [32
-
-]
+] [32]
 Chapter 5.
-[33] [34
+[33
+
+] [34
 
 ]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 819--835
+Underfull \hbox (badness 10000) in paragraph at lines 898--914
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 819--835
+Underfull \hbox (badness 10000) in paragraph at lines 898--914
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 819--835
+Underfull \hbox (badness 10000) in paragraph at lines 898--914
 
  []
 
@@ -759,21 +759,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 819--835
 
 ] [38] (./tesi.aux)
 Package rerunfilecheck Info: File `tesi.out' has not changed.
-(rerunfilecheck)             Checksum: E5B9214E27F0E11D56AA6FB8A9CEFBC7;5717.
+(rerunfilecheck)             Checksum: 75308D4483C3DBE57E410AA9A959551F;5938.
  ) 
 Here is how much of TeX's memory you used:
- 12545 strings out of 476093
- 200649 string characters out of 5795583
+ 12558 strings out of 476093
+ 200841 string characters out of 5795583
  1863787 words of memory out of 5000000
- 32560 multiletter control sequences out of 15000+600000
+ 32564 multiletter control sequences out of 15000+600000
  602456 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,131p,381b,551s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tesi.pdf (38 pages, 758238 bytes).
+Output written on tesi.pdf (38 pages, 764718 bytes).
 PDF statistics:
- 652 PDF objects out of 1000 (max. 8388607)
- 555 compressed objects within 6 object streams
- 172 named destinations out of 1000 (max. 500000)
- 374 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 668 PDF objects out of 1000 (max. 8388607)
+ 571 compressed objects within 6 object streams
+ 181 named destinations out of 1000 (max. 500000)
+ 382 words of extra memory for PDF output out of 10000 (max. 10000000)
 
