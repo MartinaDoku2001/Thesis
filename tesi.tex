@@ -169,9 +169,7 @@ but it is computationally expensive. The Fast Fourier transform (FFT)\cite{fft} 
 an algorithm that is used to calculate the Fourier transform
 of a signal in a shorter time: it reduces the time nedded to Nlog (N),
  obtaining a speed-up of a factor of N/log (N).\newline
-The FFT is used  in many different fields of science such as
-signal processing, image processing, etc\ldots
-\begin{figure}[h]
+\begin{figure}[h!]
   \includegraphics[scale=0.45]{fft_waves_result}
   \centering
   \caption{Result of the FFT of a signal
@@ -182,7 +180,8 @@ signal processing, image processing, etc\ldots
 The Short Time Fourier Transform (STFT)\cite{stft}\cite{stft2}
 is a method used to calculate the
 Fourier transform of a signal. It is used with non stationary signals
-to find the frequency components of a signal over time.
+to find the frequency components of a signal over time performing 
+a Fourier transform on each time window.
 The STFT equation is defined as:
 \begin{equation}
 \label{eq:stft}
