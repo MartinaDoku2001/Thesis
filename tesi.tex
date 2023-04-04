@@ -872,17 +872,19 @@ other types of signals.
 \centering
 \caption{Comparison of the results of the proposed model and the baseline models}
 \label{tab:rrmse}
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-\textbf{Model} & \textbf{RRMSE} & \textbf{PSNR} & \textbf{SSIM} \\ 
+\multicolumn{1}{|c|}{} & \multicolumn{3}{c|}{\textbf{EMG}} & \multicolumn{3}{c|}{\textbf{EOG}} \\ \cline{2-7}
 \hline
-\textbf{FCNN} & 0.0000 & 100.0000 & 1.0000 \\
+\textbf{Model} & \textbf{RRMSE} & \textbf{PSNR} & \textbf{SSIM} & \textbf{RRMSE} & \textbf{PSNR} & \textbf{SSIM} \\ 
 \hline
-\textbf{CNN} & 0.0000 & 100.0000 & 1.0000 \\
+\textbf{FCNN} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\
 \hline
-\textbf{LSTM} & 0.0000 & 100.0000 & 1.0000 \\
+\textbf{CNN} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\ 
 \hline
-\textbf{Proposed Model} & 0.0000 & 100.0000 & 1.0000 \\
+\textbf{LSTM} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\ 
+\hline
+\textbf{Proposed Model} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\
 \hline
 \end{tabular}
 \end{table}
