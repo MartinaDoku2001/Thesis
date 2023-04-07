@@ -55,7 +55,7 @@ The main objective of this thesis is to investigate and compare different
  EEG denoising methods, and to evaluate their performance in terms of 
  signal quality, artifact removal, and preservation of underlying brain
 activity. Specifically, we will focus on the most recent machine learning
-techniques, advanced models like the 'transformers'. We will also investigate the 
+techniques, advanced models like the''transformers''. We will also investigate the 
 potential of combining different denoising methods to improve the 
 performance of EEG denoising.\newline \\
 Overall, this thesis aims to provide a better understanding of the strengths
@@ -94,10 +94,10 @@ Delta and Gamma waves.\begin{figure}[h]
   \end{figure}\newline \\
 Delta waves are typically observed during deep sleep and have a frequency
 of less than 4 Hz. Theta waves are associated to light sleep or 
-drowsiness and have a frequency of 4-7 Hz. Alpha waves correspond to the 
-relaxed and awake state, witha frequency of 8-13 Hz. Beta waves, on the other 
+drowsiness and have a frequency of 4$-$7 Hz. Alpha waves correspond to the 
+relaxed and awake state, witha frequency of 8$-$13 Hz. Beta waves, on the other 
 hand, are associated with active cognitive processing and have a higher 
-frequency of 14-30 Hz. Gamma waves have a frequency of 30-100 Hz and are associated with higher 
+frequency of 14$-$30 Hz. Gamma waves have a frequency of 30$-$100 Hz and are associated with higher 
 cognitive functions such as attention and memory.\newline \\
 It's important to remember that EEG waves are not distinct entities but 
 represent a continuous spectrum of activity that can be influenced by
@@ -390,7 +390,7 @@ The basic steps of EMD are as follows:
      first IMF, $c_1(t)$.
     \item Subtract $c_1(t)$ from the original signal to obtain a new signal,
         $r_1(t) = x(t) - c_1(t)$.
-    \item Repeat steps 1-4 on the residual signal $r_1(t)$ to obtain the
+    \item Repeat steps 1$-$4 on the residual signal $r_1(t)$ to obtain the
         second IMF, $c_2(t)$.
     \item Continue this process until a stopping criterion is met, such as
         the number of IMFs or the amplitude of the residual signal falling
@@ -400,7 +400,7 @@ The resulting IMFs are functions that oscillate around zero with a
 characteristic scale and capture the local behavior of the signal at 
 different scales. The final residual signal is a monotonic function that 
 represents the long-term trend of the signal.
-\subsection{Filtering techniques} \label{sec:filtering}
+\subsection{Filtering techniques}\label{sec:filtering}
 \subsubsection{Adaptive filtering}
 Adaptive filtering\cite{adaptive} is a method used to estimate the
 unknown input signal from the noisy output signal. It is based on the
@@ -413,7 +413,7 @@ The basic steps of adaptive filtering are as follows:
     \item Initialize the filter coefficients $w_0$.
     \item For each sample $y(t)$, compute the error signal $e(t)$.
     \item Update the filter coefficients $w(t)$.
-    \item Repeat steps 2-4 until a stopping criterion is met.
+    \item Repeat steps 2$-$4 until a stopping criterion is met.
     
 \end{itemize}
 The error signal is defined as the difference between the noisy signal
@@ -579,7 +579,7 @@ Long Short-Term Memory (LSTM) Networks are a type of recurrent neural
 network (RNN) specifically designed to address the vanishing 
 gradient problem[\ref{sec:vanishing_gradient}] in traditional RNNs. LSTMs have a memory cell that is
  able to maintain information over long periods of time, and they use 
- three gates - the input gate, the forget gate, and the output gate -
+ three gates $-$ the input gate, the forget gate, and the output gate $-$
   to regulate the flow of information into and out of the memory cell.
   \begin{figure}[h]
     \includegraphics[scale=0.5]{lstm}
@@ -668,7 +668,7 @@ the input sequence (or output sequence) into a vector
    the positional encoding matrix is used to encode the position of each 
    token in the sequence. The embedding layer is defined as follows:
    \begin{equation}
-     E = W_eX + W_p
+     E = W_{e}X + W_p
      \end{equation}
 where $X$ is the input sequence, $W_e$ is the embedding matrix, $W_p$ is the
  positional encoding matrix, and $E$ is the embedding vector.
@@ -677,13 +677,13 @@ The self-attention mechanism allows the model to
 attend to different parts of the input sequence. Given an input sequence,
 we define the query, key, and value vectors as follows:
 \begin{equation}
-  Q = W_qX
+  Q = W_{q}X
   \end{equation}
 \begin{equation}
-  K = W_kX
+  K = W_{k}X
   \end{equation}
 \begin{equation}
-  V = W_vX
+  V = W_{v}X
   \end{equation}
 where $X$ is the input sequence, $W_q$, $W_k$, and $W_v$ are the weight
   matrices for the query, key, and value vectors, respectively, and $Q$,
@@ -743,7 +743,9 @@ independently. It is applied to each output vector of the self-attention
   original dimensionality.\newline
 The equations for the position-wise feed-forward network can be written
  as follows:
- $$\text{FFN}(x) = \text{ReLU}(xW_1+b_1)W_2+b_2$$
+ \begin{equation}
+   \text{FFN}(x) = \text{ReLU}(xW_1+b_1)W_2+b_2
+   \end{equation}
  In this equation, $x$ is the input vector of size $d_{model}$,
   $W_1$ and $W_2$ are learned weight matrices of sizes 
   $d_{model}\times d_{ff}$ and $d_{ff}\times d_{model}$,
@@ -803,8 +805,36 @@ At the end of the preprocessing step, the dataset is composed of:
 \item 3400 validation EOG contaminated EEG samples
 \item 3400 test EOG contaminated EEG samples
 \end{itemize}
-\section{Denoising}
-\section{Machine learning}
+\section{Comparison models}
+The proposed model is compared with models proposed in previous works.\cite{EEGdenoiseNet}
+\subsection{FCNN}
+The proposed FCNN model is composed of:
+\begin{itemize}
+\item 3 dense layers with ReLU activation function
+\item 3 dropout layers eith probability 0.3
+\item a final dense layer
+\end{itemize}
+\subsection{CNN}
+The proposed CNN model is composed of: 
+\begin{itemize}
+\item 4 convolutional layers with relu activation function
+\item 4 batch normalization layers
+\item 4 dropout layers with probability 0.3
+\item a flattening and dense layer
+\end{itemize}
+\subsection{LSTM}
+The proposed LSTM model is composed of:
+\begin{itemize}
+\item 1 LSTM layers with 512 units
+\item 3 dense layers with ReLU activation function
+\item 3 dropout layers eith probability 0.3
+\end{itemize}
+\subsection{Transformer}
+The proposed Transformer model is composed of:
+\begin{itemize}
+\item to fill
+\end{itemize}
+\section{Proposed model architecture}
 \chapter{Experimental results}
 This chapter presents the experimental results of the proposed model and
 the baseline models. The results are presented in the form of comparison tables
@@ -819,7 +849,7 @@ denoising model. It measures the difference between the original signal
  and the denoised signal, normalized by the amplitude of the original 
  signal and it is defined as follows:
 \begin{equation}
-\text{RRMSE} = \frac{\sqrt{\sum_{i=1}^{N} (x_i - \hat{x_i})^2}}{max(x) - min(x)}
+\text{RRMSE} = \frac{\sqrt{\sum_{i=1}^{N} (x_i - \hat{x_i})^2}}{\max(x) - \min(x)}
 \end{equation}
 where $x$ is the original signal of length $n$, $\hat{x}$ is the denoised 
 signal of the same length, and $\text{max}(x)$ and $\text{min}(x)$ are the 
