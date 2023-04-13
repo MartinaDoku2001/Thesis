@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  7 APR 2023 14:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  12 APR 2023 13:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -721,57 +721,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 768--780
 
  []
 
-[29] [30]
-Chapter 4.
-[31
+[29] [30] [31] [32
 
 ]
-Overfull \hbox (14.9443pt too wide) in paragraph at lines 905--920
+Chapter 4.
+[33]
+Overfull \hbox (14.92972pt too wide) in paragraph at lines 914--931
  [][] 
  []
 
-[32]
+[34]
 Chapter 5.
-[33
+[35
 
-] [34
+] [36
 
 ]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 928--944
+Underfull \hbox (badness 10000) in paragraph at lines 939--955
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 928--944
+Underfull \hbox (badness 10000) in paragraph at lines 939--955
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 928--944
+Underfull \hbox (badness 10000) in paragraph at lines 939--955
 
  []
 
-[35] [36] [37
+[37] [38] [39
 
-] [38] (./tesi.aux)
+] [40] (./tesi.aux)
 Package rerunfilecheck Info: File `tesi.out' has not changed.
 (rerunfilecheck)             Checksum: 556AB2065DA6F026E44733F626B179D7;6397.
  ) 
 Here is how much of TeX's memory you used:
- 12566 strings out of 476093
- 200977 string characters out of 5795583
- 1863787 words of memory out of 5000000
- 32567 multiletter control sequences out of 15000+600000
+ 12575 strings out of 476093
+ 201102 string characters out of 5795583
+ 1864787 words of memory out of 5000000
+ 32573 multiletter control sequences out of 15000+600000
  602456 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,131p,381b,551s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tesi.pdf (38 pages, 765162 bytes).
+Output written on tesi.pdf (40 pages, 767015 bytes).
 PDF statistics:
- 690 PDF objects out of 1000 (max. 8388607)
- 593 compressed objects within 6 object streams
- 186 named destinations out of 1000 (max. 500000)
+ 706 PDF objects out of 1000 (max. 8388607)
+ 606 compressed objects within 7 object streams
+ 189 named destinations out of 1000 (max. 500000)
  414 words of extra memory for PDF output out of 10000 (max. 10000000)
 

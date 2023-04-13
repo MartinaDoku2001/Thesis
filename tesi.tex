@@ -807,14 +807,14 @@ At the end of the preprocessing step, the dataset is composed of:
 \end{itemize}
 \section{Comparison models}
 The proposed model is compared with models proposed in previous works.\cite{EEGdenoiseNet}
-\subsection{FCNN}
+\subsection{FCNN}\label{sec:model_fcnn}
 The proposed FCNN model is composed of:
 \begin{itemize}
 \item 3 dense layers with ReLU activation function
 \item 3 dropout layers eith probability 0.3
 \item a final dense layer
 \end{itemize}
-\subsection{CNN}
+\subsection{CNN}\label{sec:model_cnn}
 The proposed CNN model is composed of: 
 \begin{itemize}
 \item 4 convolutional layers with relu activation function
@@ -822,19 +822,28 @@ The proposed CNN model is composed of:
 \item 4 dropout layers with probability 0.3
 \item a flattening and dense layer
 \end{itemize}
-\subsection{LSTM}
+\subsection{LSTM}\label{sec:model_lstm}
 The proposed LSTM model is composed of:
 \begin{itemize}
 \item 1 LSTM layers with 512 units
 \item 3 dense layers with ReLU activation function
 \item 3 dropout layers eith probability 0.3
 \end{itemize}
-\subsection{Transformer}
-The proposed Transformer model is composed of:
+\subsection{Transformer}\label{sec:model_transformer}
+The proposed Transformer model taken fris composed of four parts including:
 \begin{itemize}
-\item to fill
+\item reshape layer
+\item self-attention block
+\item feed forward block
+\item normalization layer
 \end{itemize}
-\section{Proposed model architecture}
+ Specifically, the 1-D EEG signal is reshaped into 2-D form firstly and then 
+ it was sent into the 2-D transformer encoder, which consists of 
+ alternating layers of self-attention blocks and feed forward blocks. 
+ Normalization layer and residual connections are applied after every block.
+  The output of transformer encoder is reshaped into one dimension as the
+   final output. 
+\section{Proposed model architecture}\label{sec:model_proposed}
 \chapter{Experimental results}
 This chapter presents the experimental results of the proposed model and
 the baseline models. The results are presented in the form of comparison tables
@@ -908,13 +917,15 @@ other types of signals.
 \hline
 \textbf{Model} & \textbf{RRMSE} & \textbf{PSNR} & \textbf{SSIM} & \textbf{RRMSE} & \textbf{PSNR} & \textbf{SSIM} \\ 
 \hline
-\textbf{FCNN} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\
+\textbf{\hyperref[sec:model_fcnn]{FCNN}} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\
 \hline
-\textbf{CNN} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\ 
+\textbf{\hyperref[sec:model_cnn]{CNN}} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\
 \hline
-\textbf{LSTM} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\ 
+\textbf{\hyperref[sec:model_lstm]{LSTM}} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\
 \hline
-\textbf{Proposed Model} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\
+\textbf{\hyperref[sec:model_transformer]{Transformer}} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\
+\hline
+\textbf{\hyperref[sec:model_proposed]{Proposed Model}} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\
 \hline
 \end{tabular}
 \end{table}
@@ -1010,6 +1021,7 @@ The vanishing gradient problem is a common problem in deep neural networks
     \bibitem{wiener}{Somers, B., Francart, T., Bertrand, A. (2018). A generic EEG artifact removal algorithm based on the multi-channel Wiener filter. Journal of neural engineering, 15(3), 036007.}
     \bibitem{attention}{Vaswani, A., Shazeer, N.M., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.N., Kaiser, L., Polosukhin, I. (2017). Attention is All you Need. ArXiv, abs/1706.03762.}
     \bibitem{EEGdenoiseNet}{EEGdenoiseNet: A Comprehensive Benchmark Dataset for EEG Denoising, https://arxiv.org/abs/2103.03894}
+    \bibitem{EEGDNet}{Xiaorong Pu, Peng Yi, Kecheng Chen, Zhaoqi Ma, Di Zhao, Yazhou Ren, EEGDnet: Fusing non-local and local self-similarity for EEG signal denoising with transformer,  Computers in Biology and Medicine, ISSN 0010-4825,https://doi.org/10.1016/j.compbiomed.2022.106248.}
     
     \end{thebibliography}
 
