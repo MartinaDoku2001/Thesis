@@ -868,6 +868,21 @@ the original and denoised signals, and the denominator scales the error
 by the amplitude of the original signal.\newline
 The RRMSE ranges from 0 to 1, 
 with 0 indicating perfect denoising and 1 indicating no denoising at all.
+\subsubsection{CC}
+The cross-correlation (CC) is a commonly used metric for evaluating the
+ similarity between two signals. It measures the degree to which the two
+  signals are similar in terms of their shape and magnitude. Here is the 
+equation of CC:
+\begin{equation}
+\text{CC}(x,\hat{x}) = \frac{\sum_{i=1}^{N} (x_i - \bar{x})(\hat{x_i} - \bar{\hat{x}})}{\sqrt{\sum_{i=1}^{N} (x_i - \bar{x})^2 \sum_{i=1}^{N} (\hat{x_i} - \bar{\hat{x}})^2}}
+\end{equation}
+where $x$ is the original signal, $\hat{x}$ is the denoised signal, 
+$n$ is the length of the signals, $\bar{x}$ and $\bar{\hat{x}}$ are 
+the mean values of $x$ and $\hat{x}$, respectively.\newline
+The CC ranges from -1 to 1, with 1 indicating perfect correlation between 
+the original and denoised signals, -1 indicating perfect anti-correlation, 
+and 0 indicating no correlation. A higher CC value generally indicates 
+better denoising performance.
 \subsubsection{PSNR}
 The PSNR is a metric that is used to measure the performance of the
 denoising model.It measures the ratio of the maximum possible power of 
@@ -911,21 +926,21 @@ other types of signals.
 \centering
 \caption{Comparison of the results of the proposed model and the baseline models}
 \label{tab:rrmse}
-\begin{tabular}{|c|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 \hline
-\multicolumn{1}{|c|}{} & \multicolumn{3}{c|}{\textbf{EMG}} & \multicolumn{3}{c|}{\textbf{EOG}} \\ \cline{2-7}
+\multicolumn{1}{|c|}{} & \multicolumn{4}{c|}{\textbf{EMG}} & \multicolumn{4}{c|}{\textbf{EOG}} \\ \cline{2-7}
 \hline
-\textbf{Model} & \textbf{RRMSE} & \textbf{PSNR} & \textbf{SSIM} & \textbf{RRMSE} & \textbf{PSNR} & \textbf{SSIM} \\ 
+\textbf{Model} & \textbf{RRMSE} & \textbf{CC} & \textbf{PSNR} & \textbf{SSIM} & \textbf{RRMSE} & \textbf{CC} & \textbf{PSNR} & \textbf{SSIM} \\ 
 \hline
-\textbf{\hyperref[sec:model_fcnn]{FCNN}} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\
+\textbf{\hyperref[sec:model_fcnn]{FCNN}} & 0.0000 & 1.0000 & 100.0000 & 1.0000 & 0.0000 & 1.0000 & 100.0000 & 1.0000 \\
 \hline
-\textbf{\hyperref[sec:model_cnn]{CNN}} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\
+\textbf{\hyperref[sec:model_cnn]{CNN}} & 0.0000 & 1.0000 & 100.0000 & 1.0000 & 0.0000 & 1.0000 & 100.0000 & 1.0000 \\
 \hline
-\textbf{\hyperref[sec:model_lstm]{LSTM}} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\
+\textbf{\hyperref[sec:model_lstm]{LSTM}} & 0.0000 & 1.0000 & 100.0000 & 1.0000 & 0.0000 & 1.0000 & 100.0000 & 1.0000 \\
 \hline
-\textbf{\hyperref[sec:model_transformer]{Transformer}} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\
+\textbf{\hyperref[sec:model_transformer]{Transformer}} & 0.0000 & 1.0000 & 100.0000 & 1.0000 & 0.0000 & 1.0000 & 100.0000 & 1.0000 \\
 \hline
-\textbf{\hyperref[sec:model_proposed]{Proposed Model}} & 0.0000 & 100.0000 & 1.0000 & 0.0000 & 100.0000 & 1.0000 \\
+\textbf{\hyperref[sec:model_proposed]{Proposed Model}} & 0.0000 & 1.0000 & 100.0000 & 1.0000 & 0.0000 & 1.0000 & 100.0000 & 1.0000 \\
 \hline
 \end{tabular}
 \end{table}
