@@ -829,7 +829,7 @@ The proposed LSTM model is composed of:
 \item 3 dense layers with ReLU activation function
 \item 3 dropout layers eith probability 0.3
 \end{itemize}
-\subsection{Transformer}\label{sec:model_transformer}
+\subsection{Transformer-FCNN}\label{sec:model_transformer_fcnn}
 The proposed Transformer model taken fris composed of four parts including:
 \begin{itemize}
 \item reshape layer
@@ -843,6 +843,7 @@ The proposed Transformer model taken fris composed of four parts including:
  Normalization layer and residual connections are applied after every block.
   The output of transformer encoder is reshaped into one dimension as the
    final output. 
+\subsection{Trnasformer-GRU}\label{sec:model_transformer_gru}
 \section{Proposed model architecture}\label{sec:model_proposed}
 \chapter{Experimental results}
 This chapter presents the experimental results of the proposed model and
@@ -932,13 +933,15 @@ other types of signals.
 \hline
 \textbf{Model} & \textbf{RRMSE} & \textbf{CC} & \textbf{PSNR} & \textbf{SSIM} & \textbf{RRMSE} & \textbf{CC} & \textbf{PSNR} & \textbf{SSIM} \\ 
 \hline
-\textbf{\hyperref[sec:model_fcnn]{FCNN}} & 0.0000 & 1.0000 & 100.0000 & 1.0000 & 0.0000 & 1.0000 & 100.0000 & 1.0000 \\
+\textbf{\hyperref[sec:model_fcnn]{FCNN}} & 0.5 & 0.85&  &  & 0.375 & 0.91 & &  \\
 \hline
-\textbf{\hyperref[sec:model_cnn]{CNN}} & 0.0000 & 1.0000 & 100.0000 & 1.0000 & 0.0000 & 1.0000 & 100.0000 & 1.0000 \\
+\textbf{\hyperref[sec:model_cnn]{CNN}} & 0.6 & 0.81 & & & 0.31 & 0.92 & & \\
 \hline
-\textbf{\hyperref[sec:model_lstm]{LSTM}} & 0.0000 & 1.0000 & 100.0000 & 1.0000 & 0.0000 & 1.0000 & 100.0000 & 1.0000 \\
+\textbf{\hyperref[sec:model_lstm]{LSTM}} & 0.5 & 0.86 & & & 0.38 &0.92 &  & \\
 \hline
-\textbf{\hyperref[sec:model_transformer]{Transformer}} & 0.0000 & 1.0000 & 100.0000 & 1.0000 & 0.0000 & 1.0000 & 100.0000 & 1.0000 \\
+\textbf{\hyperref[sec:model_transformer_fcnn]{Transformer FCNN}} & 0.0000 & 1.0000 & 100.0000 & 1.0000 & 0.0000 & 1.0000 & 100.0000 & 1.0000 \\
+\hline
+\textbf{\hyperref[sec:model_transformer_gru]{Transformer GRU}} & 0.0000 & 1.0000 & 100.0000 & 1.0000 & 0.0000 & 1.0000 & 100.0000 & 1.0000 \\
 \hline
 \textbf{\hyperref[sec:model_proposed]{Proposed Model}} & 0.0000 & 1.0000 & 100.0000 & 1.0000 & 0.0000 & 1.0000 & 100.0000 & 1.0000 \\
 \hline

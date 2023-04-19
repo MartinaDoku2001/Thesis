@@ -52,7 +52,8 @@
 \contentsline {subsection}{\numberline {3.3.1}FCNN}{30}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}CNN}{30}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}LSTM}{30}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Transformer}{31}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.4}Transformer-FCNN}{31}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Trnasformer-GRU}{31}{subsection.3.3.5}%
 \contentsline {section}{\numberline {3.4}Proposed model architecture}{31}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Experimental results}{33}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Evaluation Metrics}{33}{section.4.1}%
