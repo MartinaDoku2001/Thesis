@@ -30,7 +30,7 @@
 \contentsline {subsection}{\numberline {2.3.2}Convolutional neural network}{21}{subsection.2.3.2}%
 \contentsline {subsubsection}{Convolutional layer}{22}{section*.16}%
 \contentsline {subsubsection}{Pooling layer}{22}{section*.17}%
-\contentsline {subsubsection}{Flattening}{23}{section*.18}%
+\contentsline {subsubsection}{Flattening}{22}{section*.18}%
 \contentsline {subsubsection}{Fully connected layer}{23}{section*.19}%
 \contentsline {subsection}{\numberline {2.3.3}Long short-term memory}{23}{subsection.2.3.3}%
 \contentsline {subsubsection}{Input gate}{23}{section*.21}%
