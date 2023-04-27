@@ -2,6 +2,7 @@
 \usepackage{hyperref}
 \usepackage{color}
 \usepackage{graphicx}
+\usepackage{subfigure}
 \graphicspath{{./images/}}
 \hypersetup{
     colorlinks,
@@ -806,31 +807,104 @@ At the end of the preprocessing step, the dataset is composed of:
 \item 3400 test EOG contaminated EEG samples
 \end{itemize}
 \section{Comparison models}
-The proposed model is compared with models proposed in previous works.\cite{EEGdenoiseNet}
+The proposed model is compared with models proposed in previous works.
 \subsection{FCNN}\label{sec:model_fcnn}
-The proposed FCNN model is composed of:
+The proposed FCNN model is taken from\cite{EEGdenoiseNet} and it is 
+composed of:
 \begin{itemize}
-\item 3 dense layers with ReLU activation function
+\item 3 dense layers with ReLU activation function of 512 units
 \item 3 dropout layers eith probability 0.3
-\item a final dense layer
+\item a final dense layer with 512 units
 \end{itemize}
+It was trained on 60 epochs with a batch size of 40 for both EOG and EMG.
 \subsection{CNN}\label{sec:model_cnn}
-The proposed CNN model is composed of: 
+The proposed CNN model is taken from\cite{EEGdenoiseNet} and it is 
+composed of: 
 \begin{itemize}
 \item 4 convolutional layers with relu activation function
 \item 4 batch normalization layers
 \item 4 dropout layers with probability 0.3
-\item a flattening and dense layer
+\item a flattening and dense layer with 512 units
 \end{itemize}
+It was trained on 40 epochs with a batch size of 40 for EOG and 
+10 epochs with a batch size of 40 for EMG.
 \subsection{LSTM}\label{sec:model_lstm}
-The proposed LSTM model is composed of:
+The proposed LSTM model is taken from\cite{EEGdenoiseNet} and it is 
+composed of: 
 \begin{itemize}
 \item 1 LSTM layers with 512 units
 \item 3 dense layers with ReLU activation function
 \item 3 dropout layers eith probability 0.3
+\item a final dense layer with 512 units
 \end{itemize}
+It was trained on 100 epochs with a batch size of 40 for EOG and 
+60 epochs with a batch size of 40 for EMG.
+\begin{figure}
+\centering
+\includegraphics[width=0.5\linewidth]{images/models_architecture_basic.png}
+\caption{a) FCNN architecture b) CNN architecture c) LSTM architecture}
+\end{figure}
+\subsection{GAN}\label{sec:model_gan}
+The proposed GAN model is proposed in the following paper \cite{GAN model}
+and it is composed of a generator and a discriminator. \newline
+The generator is composed of \hyperref[fig:generator_structure]{[\ref{fig:generator_structure}]}:
+\begin{itemize}
+\item 3 composed convolutional layers with relu activation function each
+made of:
+\begin{itemize}
+\item a double convolutional layer with batch normalization and relu
+\item a single convolutional layer with batch normalization 
+\item an addition layer (of the output of the previous two layers)
+\item a ReLU activation function
+\end{itemize}
+\item 3 transconvolutional layers with relu activation function
+\end{itemize}
+The discriminator is composed of \hyperref[fig:discriminator_structure]{[\ref{fig:discriminator_structure}]}:
+\begin{itemize}
+  \item 3 composed convolutional layers with relu activation function each
+  made of:
+  \begin{itemize}
+  \item a double convolutional layer with batch normalization and relu
+  \item a single convolutional layer with batch normalization 
+  \item an addition layer (of the output of the previous two layers)
+  \item a ReLU activation function
+  \end{itemize}
+  \item 2 convolution layers with relu activation function
+\end{itemize}
+\begin{figure}[h]
+  \begin{minipage}
+    {0.5\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/generator_structure.png}
+    \caption{generator structure}
+    \label{fig:generator_structure}
+  \end{minipage}
+  \begin{minipage}
+    {0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{images/discriminator_structure.png}
+    \caption{dicriminator} structure
+    \label{fig:discriminator_structure}
+  \end{minipage}
+\label{fig:gan_structure}
+\end{figure}
+The discriminator can be seen as a binary classification classifier.
+ The loss $L_D$
+ of the discriminator depends on these two outputs. If the output 
+ value is large which means that the data are clean; otherwise, the data 
+ are noisy.\newline
+ For the generator, the loss $L_G$
+ depends on the feedback from the discriminator. The purpose of the generator
+  is to generate more clean data to make the output value D(G(S))
+ from the discriminator become very large. At the same time, the mean 
+ square error between the clean data y and the generated data G(S)
+ should also be considered as another updating factor because the generator should also ensure that the generated data G(S)
+ cannot lose too much original data information. Therefore, the mean 
+ square error and the output of the discriminator are jointly used to 
+ calculate the loss $L_G$ of the generator.
 \subsection{Transformer-FCNN}\label{sec:model_transformer_fcnn}
-The proposed Transformer model taken fris composed of four parts including:
+The proposed Transformer model is tajen from\cite{EEGdenoiseNet} and it is
+composed of four parts including:
 \begin{itemize}
 \item reshape layer
 \item self-attention block
@@ -843,7 +917,31 @@ The proposed Transformer model taken fris composed of four parts including:
  Normalization layer and residual connections are applied after every block.
   The output of transformer encoder is reshaped into one dimension as the
    final output. 
-\subsection{Trnasformer-GRU}\label{sec:model_transformer_gru}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\linewidth]{images/model_architecture_transformer_fully_connected.PNG}
+\caption{Transformer-FCNN architecture}
+\end{figure}
+\subsection{Transformer-GRU}\label{sec:model_transformer_gru}
+The proposed Transformer-GRU model is taken from\cite{transformer GRU} and it 
+primarily consists of:
+\begin{itemize}
+  \item the bidirectional GRU layer
+  \item the self-attention layer
+  \item the dense layer
+\end{itemize}
+The input of the network is the noise-contaminated EEG signal segment. 
+Then the signal segment is processed through the encoded and decoded 
+network framework, and finally, the network output is the reconstruction 
+of the contaminated signal. The encoding and decoding layers have a 
+similar structure; the decoding layer is depicted in the figure. 
+The encoding layer consists of a bidirectional GRU layer and a 
+self-attention mechanism layer.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\linewidth]{images/model_architecture_transformer_gru.PNG}
+\caption{Transformer-GRU architecture}
+\end{figure}
 \section{Proposed model architecture}\label{sec:model_proposed}
 \chapter{Experimental results}
 This chapter presents the experimental results of the proposed model and
@@ -920,7 +1018,6 @@ the original and denoised signals. A higher SSIM value generally indicates
 better denoising performance. However, it is important to note that SSIM 
 is designed for image denoising and may not always be appropriate for 
 other types of signals.
-
 \section{Results and discussion}
 \subsection{Results}
 \begin{table}[h!]
@@ -939,9 +1036,11 @@ other types of signals.
 \hline
 \textbf{\hyperref[sec:model_lstm]{LSTM}} & 0.5 & 0.86 & & & 0.38 &0.92 &  & \\
 \hline
-\textbf{\hyperref[sec:model_transformer_fcnn]{Transformer FCNN}} & 0.0000 & 1.0000 & 100.0000 & 1.0000 & 0.0000 & 1.0000 & 100.0000 & 1.0000 \\
+\textbf{\hyperref[sec:model_gan]{GAN}} & 0.0757 &  0.7771 & & & 0.0757 & 0.7771  & & \\
 \hline
-\textbf{\hyperref[sec:model_transformer_gru]{Transformer GRU}} & 0.0000 & 1.0000 & 100.0000 & 1.0000 & 0.0000 & 1.0000 & 100.0000 & 1.0000 \\
+\textbf{\hyperref[sec:model_transformer_fcnn]{Transformer FCNN}} &0.677 & 0.732 & &  & 0.497 & 0.868 &  & \\
+\hline
+\textbf{\hyperref[sec:model_transformer_gru]{Transformer GRU}} & 0.0215 & 0.9325 & 24.615 &  & 0.006125 & 0.965 & 32.245 &  \\
 \hline
 \textbf{\hyperref[sec:model_proposed]{Proposed Model}} & 0.0000 & 1.0000 & 100.0000 & 1.0000 & 0.0000 & 1.0000 & 100.0000 & 1.0000 \\
 \hline
@@ -1040,7 +1139,8 @@ The vanishing gradient problem is a common problem in deep neural networks
     \bibitem{attention}{Vaswani, A., Shazeer, N.M., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.N., Kaiser, L., Polosukhin, I. (2017). Attention is All you Need. ArXiv, abs/1706.03762.}
     \bibitem{EEGdenoiseNet}{EEGdenoiseNet: A Comprehensive Benchmark Dataset for EEG Denoising, https://arxiv.org/abs/2103.03894}
     \bibitem{EEGDNet}{Xiaorong Pu, Peng Yi, Kecheng Chen, Zhaoqi Ma, Di Zhao, Yazhou Ren, EEGDnet: Fusing non-local and local self-similarity for EEG signal denoising with transformer,  Computers in Biology and Medicine, ISSN 0010-4825,https://doi.org/10.1016/j.compbiomed.2022.106248.}
-    
+    \bibitem{GAN model}{An, Y.; Lam, H.K.; Ling, S.H. Auto-Denoising for EEG Signals Using Generative Adversarial Network. Sensors 2022, 22, 1750. https://doi.org/10.3390/s22051750}    
+    \bibitem{transformer GRU}{	Wenlong Wang, Baojiang Li, Haiyan Wang, A Novel End-to-end Network Based on a bidirectional GRU and a Self-Attention Mechanism for Denoising of Electroencephalography Signals, Neuroscience, https://doi.org/10.1016/j.neuroscience.2022.10.006.}
     \end{thebibliography}
 
 
