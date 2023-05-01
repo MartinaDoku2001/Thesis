@@ -542,7 +542,7 @@ perform feature extraction by applying filters to local regions of the
 input data, producing feature maps that highlight different aspects of 
 the input data. The fully connected layers perform classification or
  regression on the feature maps produced by the convolutional layers.\begin{figure}[h]
-  \includegraphics[scale=0.5]{convolution_nn}
+  \includegraphics[scale=0.55]{convolution_nn}
   \centering
   \caption{Convolutional neural network}\label{fig:convolution_nn}
   \end{figure}\newline \\
@@ -583,7 +583,7 @@ gradient problem[\ref{sec:vanishing_gradient}] in traditional RNNs. LSTMs have a
  three gates $-$ the input gate, the forget gate, and the output gate $-$
   to regulate the flow of information into and out of the memory cell.
   \begin{figure}[h]
-    \includegraphics[scale=0.5]{lstm}
+    \includegraphics[scale=0.55]{lstm}
     \centering
     \caption{Long Short Term Memory Architecture}\label{fig:lstm}
     \end{figure} 
@@ -640,6 +640,60 @@ where $h_t$ is the new hidden state, $o_t$ is the output gate activation vector,
 These equations allow an LSTM network to selectively forget or remember
  information over time, making it well-suited for modeling sequences of
   data where long-term dependencies are important
+\subsection{Gated recurrent unit}
+The GRU is a type of recurrent neural network architecture that aims to 
+address the problem of vanishing gradients in traditional RNNs. It uses 
+gating mechanisms to control the flow of information between the hidden 
+states of the network, allowing it to selectively retain or discard 
+information over time.\newline
+\begin{figure}[h!]
+  \includegraphics[scale=0.6]{gru}
+  \centering
+  \caption{Gated Recurrent Unit}\label{fig:gru}
+  \end{figure}
+The GRU has two gates: the reset gate and the update gate. These gates 
+are composed of sigmoid activation functions that take the current 
+input and previous hidden state as inputs. 
+\subsubsection{Reset gate}
+The reset gate controls how much of the previous hidden state should be 
+forgotten. The equation for the reset gate is:
+\begin{equation}
+  r_t = \sigma(W_r x_t + U_r h_{t-1} + b_r)
+  \end{equation}
+where $x_t$ is the current input at time $t$, $h_{t-1}$ is the previous
+  hidden state, $W_r$, $U_r$ are learned weight matrices, and $b_r$ is a 
+  learned bias vector. $\sigma$ is the sigmoid activation function.
+\subsubsection{Update gate}
+The update gate controls how much of the current input 
+should be incorporated into the new hidden state. The equation for the
+  update gate is:
+\begin{equation}
+  z_t = \sigma(W_z x_t + U_z h_{t-1} + b_z)
+  \end{equation}
+where $x_t$ is the current input at time $t$, $h_{t-1}$ is the previous
+  hidden state, $W_z$, $U_z$ are learned weight matrices, and $b_z$ is a 
+  learned bias vector. $\sigma$ is the sigmoid activation function.
+\subsubsection{Candidate activation}
+The candidate activation is a new candidate hidden state that can be
+  incorporated into the new hidden state based on the reset gate. The
+    equation for the candidate activation is:
+\begin{equation}
+  \tilde{h_t} = \tanh(W_h x_t + U_h (r_t \odot h_{t-1}) + b_h)
+  \end{equation}
+where $x_t$ is the current input at time $t$, $h_{t-1}$ is the previous
+  hidden state, $W_h$, $U_h$ are learned weight matrices, and $b_h$ is a 
+  learned bias vector. $\tanh$ is the hyperbolic tangent activation 
+  function and where $\odot$ is the element-wise multiplication 
+  (Hadamard product).
+\subsubsection{Hidden state update}
+The new hidden state is a combination of the previous hidden state and
+  the candidate activation, based on the update gate. The equation for
+    the hidden state update is:
+\begin{equation}
+  h_t = (1 - z_t) \odot h_{t-1} + z_t \odot \tilde{h_t}
+  \end{equation}
+where $\odot$ is the element-wise multiplication (Hadamard product) and 
+$\tanh$ is the hyperbolic tangent activation function. 
 
 \subsection{Transformer}
 The Transformer is a neural network architecture designed for natural
@@ -841,69 +895,11 @@ It was trained on 100 epochs with a batch size of 40 for EOG and
 60 epochs with a batch size of 40 for EMG.
 \begin{figure}
 \centering
-\includegraphics[width=0.5\linewidth]{images/models_architecture_basic.png}
+\includegraphics[width=0.6\linewidth]{images/models_architecture_basic.png}
 \caption{a) FCNN architecture b) CNN architecture c) LSTM architecture}
 \end{figure}
-\subsection{GAN}\label{sec:model_gan}
-The proposed GAN model is proposed in the following paper \cite{GAN model}
-and it is composed of a generator and a discriminator. \newline
-The generator is composed of \hyperref[fig:generator_structure]{[\ref{fig:generator_structure}]}:
-\begin{itemize}
-\item 3 composed convolutional layers with relu activation function each
-made of:
-\begin{itemize}
-\item a double convolutional layer with batch normalization and relu
-\item a single convolutional layer with batch normalization 
-\item an addition layer (of the output of the previous two layers)
-\item a ReLU activation function
-\end{itemize}
-\item 3 transconvolutional layers with relu activation function
-\end{itemize}
-The discriminator is composed of \hyperref[fig:discriminator_structure]{[\ref{fig:discriminator_structure}]}:
-\begin{itemize}
-  \item 3 composed convolutional layers with relu activation function each
-  made of:
-  \begin{itemize}
-  \item a double convolutional layer with batch normalization and relu
-  \item a single convolutional layer with batch normalization 
-  \item an addition layer (of the output of the previous two layers)
-  \item a ReLU activation function
-  \end{itemize}
-  \item 2 convolution layers with relu activation function
-\end{itemize}
-\begin{figure}[h]
-  \begin{minipage}
-    {0.5\textwidth}
-    \centering
-    \includegraphics[width=0.9\textwidth]{images/generator_structure.png}
-    \caption{generator structure}
-    \label{fig:generator_structure}
-  \end{minipage}
-  \begin{minipage}
-    {0.5\textwidth}
-    \centering
-    \includegraphics[width=1\textwidth]{images/discriminator_structure.png}
-    \caption{dicriminator} structure
-    \label{fig:discriminator_structure}
-  \end{minipage}
-\label{fig:gan_structure}
-\end{figure}
-The discriminator can be seen as a binary classification classifier.
- The loss $L_D$
- of the discriminator depends on these two outputs. If the output 
- value is large which means that the data are clean; otherwise, the data 
- are noisy.\newline
- For the generator, the loss $L_G$
- depends on the feedback from the discriminator. The purpose of the generator
-  is to generate more clean data to make the output value D(G(S))
- from the discriminator become very large. At the same time, the mean 
- square error between the clean data y and the generated data G(S)
- should also be considered as another updating factor because the generator should also ensure that the generated data G(S)
- cannot lose too much original data information. Therefore, the mean 
- square error and the output of the discriminator are jointly used to 
- calculate the loss $L_G$ of the generator.
-\subsection{Transformer-FCNN}\label{sec:model_transformer_fcnn}
-The proposed Transformer model is tajen from\cite{EEGdenoiseNet} and it is
+\subsection{EEGDNet}\label{sec:EEGDNet}
+The proposed  model is taken from\cite{EEGDNet} and it is
 composed of four parts including:
 \begin{itemize}
 \item reshape layer
@@ -919,11 +915,11 @@ composed of four parts including:
    final output. 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\linewidth]{images/model_architecture_transformer_fully_connected.PNG}
-\caption{Transformer-FCNN architecture}
+\includegraphics[width=1\linewidth]{images/model_architecture_transformer_fully_connected.PNG}
+\caption{EEGDNet architecture}
 \end{figure}
-\subsection{Transformer-GRU}\label{sec:model_transformer_gru}
-The proposed Transformer-GRU model is taken from\cite{transformer GRU} and it 
+\subsection{BG-Attention}\label{sec:model_transformer_gru}
+The proposed model is taken from\cite{transformer GRU} and it 
 primarily consists of:
 \begin{itemize}
   \item the bidirectional GRU layer
@@ -940,7 +936,7 @@ self-attention mechanism layer.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.6\linewidth]{images/model_architecture_transformer_gru.PNG}
-\caption{Transformer-GRU architecture}
+\caption{BG-Attention architecture}
 \end{figure}
 \section{Proposed model architecture}\label{sec:model_proposed}
 \chapter{Experimental results}
@@ -957,7 +953,11 @@ denoising model. It measures the difference between the original signal
  and the denoised signal, normalized by the amplitude of the original 
  signal and it is defined as follows:
 \begin{equation}
-\text{RRMSE} = \frac{\sqrt{\sum_{i=1}^{N} (x_i - \hat{x_i})^2}}{\max(x) - \min(x)}
+\text{RRMSE} = \frac{\text{RMS}(f(x)-x)}{\text{RMS}(x)}
+\end{equation}
+where RMS is:
+\begin{equation}
+\text{RMS}(x) = \sqrt{\frac{\sum_{i=1}^{N}{x_i^2}} {N}}
 \end{equation}
 where $x$ is the original signal of length $n$, $\hat{x}$ is the denoised 
 signal of the same length, and $\text{max}(x)$ and $\text{min}(x)$ are the 
@@ -1036,11 +1036,9 @@ other types of signals.
 \hline
 \textbf{\hyperref[sec:model_lstm]{LSTM}} & 0.5 & 0.86 & & & 0.38 &0.92 &  & \\
 \hline
-\textbf{\hyperref[sec:model_gan]{GAN}} & 0.0757 &  0.7771 & & & 0.0757 & 0.7771  & & \\
+\textbf{\hyperref[sec:EEGDNet]{EEGDNet}} &0.677 & 0.732 & &  & 0.497 & 0.868 &  & \\
 \hline
-\textbf{\hyperref[sec:model_transformer_fcnn]{Transformer FCNN}} &0.677 & 0.732 & &  & 0.497 & 0.868 &  & \\
-\hline
-\textbf{\hyperref[sec:model_transformer_gru]{Transformer GRU}} & 0.0215 & 0.9325 & 24.615 &  & 0.006125 & 0.965 & 32.245 &  \\
+\textbf{\hyperref[sec:model_transformer_gru]{BG-Attention}} & 0.0215 & 0.9325 & 24.615 &  & 0.006125 & 0.965 & 32.245 &  \\
 \hline
 \textbf{\hyperref[sec:model_proposed]{Proposed Model}} & 0.0000 & 1.0000 & 100.0000 & 1.0000 & 0.0000 & 1.0000 & 100.0000 & 1.0000 \\
 \hline
@@ -1137,7 +1135,7 @@ The vanishing gradient problem is a common problem in deep neural networks
     \bibitem{adaptive}{He, P., Wilson, G. Russell, C. Removal of ocular artifacts from electro-encephalogram by adaptive filtering. Med. Biol. Eng. Comput. 42, 407–412 (2004). https://doi.org/10.1007/BF02344717}
     \bibitem{wiener}{Somers, B., Francart, T., Bertrand, A. (2018). A generic EEG artifact removal algorithm based on the multi-channel Wiener filter. Journal of neural engineering, 15(3), 036007.}
     \bibitem{attention}{Vaswani, A., Shazeer, N.M., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.N., Kaiser, L., Polosukhin, I. (2017). Attention is All you Need. ArXiv, abs/1706.03762.}
-    \bibitem{EEGdenoiseNet}{EEGdenoiseNet: A Comprehensive Benchmark Dataset for EEG Denoising, https://arxiv.org/abs/2103.03894}
+    \bibitem{EEGdenoiseNet}{EEGdenoiseNet: A Comprehensive Benchmark Dataset for EEG Denoising}
     \bibitem{EEGDNet}{Xiaorong Pu, Peng Yi, Kecheng Chen, Zhaoqi Ma, Di Zhao, Yazhou Ren, EEGDnet: Fusing non-local and local self-similarity for EEG signal denoising with transformer,  Computers in Biology and Medicine, ISSN 0010-4825,https://doi.org/10.1016/j.compbiomed.2022.106248.}
     \bibitem{GAN model}{An, Y.; Lam, H.K.; Ling, S.H. Auto-Denoising for EEG Signals Using Generative Adversarial Network. Sensors 2022, 22, 1750. https://doi.org/10.3390/s22051750}    
     \bibitem{transformer GRU}{	Wenlong Wang, Baojiang Li, Haiyan Wang, A Novel End-to-end Network Based on a bidirectional GRU and a Self-Attention Mechanism for Denoising of Electroencephalography Signals, Neuroscience, https://doi.org/10.1016/j.neuroscience.2022.10.006.}

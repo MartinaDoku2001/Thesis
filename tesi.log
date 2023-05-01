@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  27 APR 2023 17:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  29 APR 2023 14:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -692,7 +692,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 524--530
 File: ./images//convolution_nn.png Graphic file (type png)
 <use ./images//convolution_nn.png>
 Package pdftex.def Info: ./images//convolution_nn.png  used on input line 545.
-(pdftex.def)             Requested size: 373.01767pt x 152.82056pt.
+(pdftex.def)             Requested size: 410.32172pt x 168.10353pt.
+
+Overfull \hbox (14.32172pt too wide) in paragraph at lines 545--547
+ [][] 
+ []
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 532--551
 
@@ -704,81 +709,71 @@ Underfull \hbox (badness 10000) in paragraph at lines 532--551
  []
 
 [21] [22 <./images//convolution_nn.png>]
-<./images//lstm.png, id=454, 718.18312pt x 437.38406pt>
+<./images//lstm.png, id=454, 598.48593pt x 381.67593pt>
 File: ./images//lstm.png Graphic file (type png)
 <use ./images//lstm.png>
 Package pdftex.def Info: ./images//lstm.png  used on input line 586.
-(pdftex.def)             Requested size: 359.09068pt x 218.69148pt.
+(pdftex.def)             Requested size: 329.16827pt x 209.92241pt.
  [23 <./images//lstm.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 637--643
 
  []
 
-<./images//transformer.png, id=465, 914.66719pt x 442.65375pt>
+<./images//gru.png, id=464, 466.74374pt x 316.18124pt>
+File: ./images//gru.png Graphic file (type png)
+<use ./images//gru.png>
+Package pdftex.def Info: ./images//gru.png  used on input line 650.
+(pdftex.def)             Requested size: 280.0484pt x 189.7102pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[24] [25 <./images//gru.png>]
+<./images//transformer.png, id=488, 914.66719pt x 442.65375pt>
 File: ./images//transformer.png Graphic file (type png)
 <use ./images//transformer.png>
-Package pdftex.def Info: ./images//transformer.png  used on input line 657.
+Package pdftex.def Info: ./images//transformer.png  used on input line 711.
 (pdftex.def)             Requested size: 384.15761pt x 185.9133pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 645--663
+Underfull \hbox (badness 10000) in paragraph at lines 699--717
 
- []
-
-[24]
-Underfull \vbox (badness 1052) has occurred while \output is active []
-
- [25 <./images//transformer.png>] [26] [27] [28
-
-]
-Chapter 3.
-
-Underfull \hbox (badness 10000) in paragraph at lines 769--781
-
- []
-
-[29]
-<images/models_architecture_basic.png, id=525, 144.54pt x 157.08687pt>
-File: images/models_architecture_basic.png Graphic file (type png)
-<use images/models_architecture_basic.png>
-Package pdftex.def Info: images/models_architecture_basic.png  used on input line 844.
-(pdftex.def)             Requested size: 198.0pt x 215.1981pt.
- [30]
-<images/generator_structure.png, id=535, 399.4925pt x 349.80687pt>
-File: images/generator_structure.png Graphic file (type png)
-<use images/generator_structure.png>
-Package pdftex.def Info: images/generator_structure.png  used on input line 878.
-(pdftex.def)             Requested size: 178.19879pt x 156.03453pt.
-<images/discriminator_structure.png, id=536, 414.04688pt x 295.60437pt>
-File: images/discriminator_structure.png Graphic file (type png)
-<use images/discriminator_structure.png>
-Package pdftex.def Info: images/discriminator_structure.png  used on input line 885.
-(pdftex.def)             Requested size: 198.0pt x 141.36075pt.
-
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 876--890
-[]$[]$ $[]$
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[31 <./images/models_architecture_basic.png>]
-<images/model_architecture_transformer_fully_connected.PNG, id=547, 417.56pt x 82.80937pt>
-File: images/model_architecture_transformer_fully_connected.PNG Graphic file (type png)
-<use images/model_architecture_transformer_fully_connected.PNG>
-Package pdftex.def Info: images/model_architecture_transformer_fully_connected.PNG  used on input line 922.
-(pdftex.def)             Requested size: 316.80121pt x 62.83089pt.
- [32 <./images/generator_structure.png> <./images/discriminator_structure.png> <./images/model_architecture_transformer_fully_connected.PNG>]
-<images/model_architecture_transformer_gru.PNG, id=557, 233.4321pt x 266.6763pt>
-File: images/model_architecture_transformer_gru.PNG Graphic file (type png)
-<use images/model_architecture_transformer_gru.PNG>
-Package pdftex.def Info: images/model_architecture_transformer_gru.PNG  used on input line 942.
-(pdftex.def)             Requested size: 237.60242pt x 271.44875pt.
- [33 <./images/model_architecture_transformer_GRU.png>] [34
+[26] [27 <./images//transformer.png>] [28] [29] [30
 
 ]
+Chapter 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 823--835
+
+ []
+
+[31]
+<images/models_architecture_basic.png, id=544, 144.54pt x 157.08687pt>
+File: images/models_architecture_basic.png Graphic file (type png)
+<use images/models_architecture_basic.png>
+Package pdftex.def Info: images/models_architecture_basic.png  used on input line 898.
+(pdftex.def)             Requested size: 237.60242pt x 258.24252pt.
+ [32]
+<images/model_architecture_transformer_fully_connected.PNG, id=550, 417.56pt x 82.80937pt>
+File: images/model_architecture_transformer_fully_connected.PNG Graphic file (type png)
+<use images/model_architecture_transformer_fully_connected.PNG>
+Package pdftex.def Info: images/model_architecture_transformer_fully_connected.PNG  used on input line 918.
+(pdftex.def)             Requested size: 396.0pt x 78.5383pt.
+ [33 <./images/models_architecture_basic.png> <./images/model_architecture_transformer_fully_connected.PNG>]
+<images/model_architecture_transformer_gru.PNG, id=561, 233.4321pt x 266.6763pt>
+File: images/model_architecture_transformer_gru.PNG Graphic file (type png)
+<use images/model_architecture_transformer_gru.PNG>
+Package pdftex.def Info: images/model_architecture_transformer_gru.PNG  used on input line 938.
+(pdftex.def)             Requested size: 237.60242pt x 271.44875pt.
+ [34 <./images/model_architecture_transformer_GRU.png>]
 Chapter 4.
-[35]
-Overfull \hbox (117.57071pt too wide) in paragraph at lines 1027--1048
+[35
+
+]
+Overfull \hbox (99.76294pt too wide) in paragraph at lines 1027--1046
  [][] 
  []
 
@@ -794,64 +789,64 @@ Chapter 5.
 ]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1056--1072
+Underfull \hbox (badness 10000) in paragraph at lines 1054--1070
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1056--1072
+Underfull \hbox (badness 10000) in paragraph at lines 1054--1070
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1056--1072
+Underfull \hbox (badness 10000) in paragraph at lines 1054--1070
 
  []
 
 [41] [42] [43
 
 ]
-Underfull \hbox (badness 8075) in paragraph at lines 1142--1143
+Underfull \hbox (badness 8075) in paragraph at lines 1140--1141
 []\T1/lmr/m/n/10.95 An, Y.; Lam, H.K.; Ling, S.H. Auto-Denoising for EEG Sig-
  []
 
 
-Underfull \hbox (badness 4479) in paragraph at lines 1142--1143
+Underfull \hbox (badness 4479) in paragraph at lines 1140--1141
 \T1/lmr/m/n/10.95 nals Us-ing Gen-er-a-tive Ad-ver-sar-ial Net-work. Sen-sors 2022, 22, 1750.
  []
 
 
-Underfull \hbox (badness 6526) in paragraph at lines 1143--1144
+Underfull \hbox (badness 6526) in paragraph at lines 1141--1142
 []\T1/lmr/m/n/10.95 Wenlong Wang, Bao-jiang Li, Haiyan Wang, A Novel End-to-end
  []
 
 
-Underfull \hbox (badness 4168) in paragraph at lines 1143--1144
+Underfull \hbox (badness 4168) in paragraph at lines 1141--1142
 \T1/lmr/m/n/10.95 Net-work Based on a bidi-rec-tional GRU and a Self-Attention Mech-
  []
 
 
-Underfull \hbox (badness 5985) in paragraph at lines 1143--1144
+Underfull \hbox (badness 5985) in paragraph at lines 1141--1142
 \T1/lmr/m/n/10.95 a-nism for De-nois-ing of Elec-troen-cephalog-ra-phy Sig-nals, Neu-ro-science,
  []
 
 [44] [45] (./tesi.aux)
 Package rerunfilecheck Info: File `tesi.out' has not changed.
-(rerunfilecheck)             Checksum: 96750A0C641425AA24EC3324A40AC3F9;6636.
+(rerunfilecheck)             Checksum: 7692168CE08870D7710793C728BA08DA;6667.
  ) 
 Here is how much of TeX's memory you used:
- 12806 strings out of 476093
- 205705 string characters out of 5795583
- 1865787 words of memory out of 5000000
- 32776 multiletter control sequences out of 15000+600000
+ 12809 strings out of 476093
+ 205433 string characters out of 5795583
+ 1866787 words of memory out of 5000000
+ 32772 multiletter control sequences out of 15000+600000
  602456 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,131p,381b,553s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tesi.pdf (45 pages, 1391870 bytes).
+Output written on tesi.pdf (45 pages, 1150268 bytes).
 PDF statistics:
- 767 PDF objects out of 1000 (max. 8388607)
- 653 compressed objects within 7 object streams
- 204 named destinations out of 1000 (max. 500000)
- 455 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 769 PDF objects out of 1000 (max. 8388607)
+ 658 compressed objects within 7 object streams
+ 213 named destinations out of 1000 (max. 500000)
+ 450 words of extra memory for PDF output out of 10000 (max. 10000000)
 
