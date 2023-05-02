@@ -898,6 +898,23 @@ It was trained on 100 epochs with a batch size of 40 for EOG and
 \includegraphics[width=0.6\linewidth]{images/models_architecture_basic.png}
 \caption{a) FCNN architecture b) CNN architecture c) LSTM architecture}
 \end{figure}
+\subsection{1D-ResCNN}\label{sec:1D-ResCNN}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1\linewidth]{model_architecture_Res_CNN.png}
+  \caption{1D-ResCNN architecture}
+  \end{figure}
+The proposed model is a 1D residual CNN taken from\cite{1DResCNN}
+ and it is composed of:
+\begin{itemize}
+\item 3 residual blocks each composed of:
+\begin{itemize}
+\item 6 convolutional layers with relu activation function
+\item 6 batch normalization layers
+\end{itemize}
+\item a final convolutional layer with relu activation function
+\item a flattening and dense layer 
+\end{itemize}
 \subsection{EEGDNet}\label{sec:EEGDNet}
 The proposed  model is taken from\cite{EEGDNet} and it is
 composed of four parts including:
@@ -1036,6 +1053,8 @@ other types of signals.
 \hline
 \textbf{\hyperref[sec:model_lstm]{LSTM}} & 0.5 & 0.86 & & & 0.38 &0.92 &  & \\
 \hline
+\textbf{\hyperref[sec:1D-ResCNN]{1D-ResCNN}} & 0.746 & 0.692 & & & 0.630 & 0.776 & & \\
+\hline
 \textbf{\hyperref[sec:EEGDNet]{EEGDNet}} &0.677 & 0.732 & &  & 0.497 & 0.868 &  & \\
 \hline
 \textbf{\hyperref[sec:model_transformer_gru]{BG-Attention}} & 0.0215 & 0.9325 & 24.615 &  & 0.006125 & 0.965 & 32.245 &  \\
@@ -1136,8 +1155,8 @@ The vanishing gradient problem is a common problem in deep neural networks
     \bibitem{wiener}{Somers, B., Francart, T., Bertrand, A. (2018). A generic EEG artifact removal algorithm based on the multi-channel Wiener filter. Journal of neural engineering, 15(3), 036007.}
     \bibitem{attention}{Vaswani, A., Shazeer, N.M., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.N., Kaiser, L., Polosukhin, I. (2017). Attention is All you Need. ArXiv, abs/1706.03762.}
     \bibitem{EEGdenoiseNet}{EEGdenoiseNet: A Comprehensive Benchmark Dataset for EEG Denoising}
+    \bibitem{1DResCNN}{Yang, B., Duan, K., Fan, C., Hu, C., Wang, J. (2018). Automatic ocular artifacts removal in EEG using deep learning. Biomedical Signal Processing and Control, 43, 148-158.}
     \bibitem{EEGDNet}{Xiaorong Pu, Peng Yi, Kecheng Chen, Zhaoqi Ma, Di Zhao, Yazhou Ren, EEGDnet: Fusing non-local and local self-similarity for EEG signal denoising with transformer,  Computers in Biology and Medicine, ISSN 0010-4825,https://doi.org/10.1016/j.compbiomed.2022.106248.}
-    \bibitem{GAN model}{An, Y.; Lam, H.K.; Ling, S.H. Auto-Denoising for EEG Signals Using Generative Adversarial Network. Sensors 2022, 22, 1750. https://doi.org/10.3390/s22051750}    
     \bibitem{transformer GRU}{	Wenlong Wang, Baojiang Li, Haiyan Wang, A Novel End-to-end Network Based on a bidirectional GRU and a Self-Attention Mechanism for Denoising of Electroencephalography Signals, Neuroscience, https://doi.org/10.1016/j.neuroscience.2022.10.006.}
     \end{thebibliography}
 
