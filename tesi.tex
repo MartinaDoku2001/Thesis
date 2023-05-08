@@ -970,20 +970,28 @@ denoising model. It measures the difference between the original signal
  and the denoised signal, normalized by the amplitude of the original 
  signal and it is defined as follows:
 \begin{equation}
-\text{RRMSE} = \frac{\text{RMS}(f(x)-x)}{\text{RMS}(x)}
+\text{RRMSE} = \frac{\text{RMS}(x-\hat{x})}{\text{RMS}(x)}
 \end{equation}
 where RMS is:
 \begin{equation}
-\text{RMS}(x) = \sqrt{\frac{\sum_{i=1}^{N}{x_i^2}} {N}}
+\text{RMS}(x) = \sqrt{\frac{\sum_{i=1}^{N}{x_i^2}}{N}}
 \end{equation}
-where $x$ is the original signal of length $n$, $\hat{x}$ is the denoised 
-signal of the same length, and $\text{max}(x)$ and $\text{min}(x)$ are the 
-maximum and minimum values of the original signal, respectively. The 
-numerator of the equation is the root mean square error (RMSE) between 
-the original and denoised signals, and the denominator scales the error 
-by the amplitude of the original signal.\newline
-The RRMSE ranges from 0 to 1, 
-with 0 indicating perfect denoising and 1 indicating no denoising at all.
+where $x$ is the original signal, $\hat{x}$ is the denoised signal,
+  and $N$ is the number of samples in the signal.\newline
+  An RRMSE value of 0 indicates that the estimated signal perfectly 
+  matches the reference signal, while a higher RRMSE value indicates 
+  a greater deviation between the two signals. As the RRMSE value 
+  approaches infinity, it indicates that the estimated signal has a 
+  much higher RMS value than the reference signal, which could mean 
+  that the estimated signal is overestimating the true signal power 
+  or energy.\newline
+  In practice, RRMSE values are typically reported as a percentage, 
+  which allows for a more intuitive interpretation of the error. 
+  Lower RRMSE values indicate a better match between the estimated 
+  and reference signals, while higher RRMSE values indicate a larger 
+  relative error. A commonly used threshold for RRMSE values is 10\%, 
+  which means that an RRMSE value of less than 10\% is considered 
+  a good match between the estimated and reference signals. 
 \subsubsection{CC}
 The cross-correlation (CC) is a commonly used metric for evaluating the
  similarity between two signals. It measures the degree to which the two
