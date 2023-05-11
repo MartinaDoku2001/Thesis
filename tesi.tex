@@ -2,6 +2,7 @@
 \usepackage{hyperref}
 \usepackage{color}
 \usepackage{graphicx}
+\usepackage{adjustbox}
 \usepackage{subfigure}
 \graphicspath{{./images/}}
 \hypersetup{
@@ -1109,6 +1110,7 @@ The results of the simple transformer model are shown in Table.
 \centering
 \caption{Comparison of the results of the proposed model and the baseline models}
 \label{tab:results}
+\begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 \hline
 \multicolumn{1}{|c|}{} & \multicolumn{4}{c|}{\textbf{EMG}} & \multicolumn{4}{c|}{\textbf{EOG}} \\ \cline{2-7}
@@ -1125,13 +1127,15 @@ The results of the simple transformer model are shown in Table.
 \hline
 \textbf{\hyperref[sec:EEGDNet]{EEGDNet}} &0.677 & 0.732 & &  & 0.497 & 0.868 &  & \\
 \hline
-\textbf{\hyperref[sec:model_transformer_gru]{BG-Attention}} & 0.0215 & 0.9325 & 24.615 &  & 0.006125 & 0.965 & 32.245 &  \\
+\textbf{\hyperref[sec:model_transformer_gru]{BG-Attention}} & & 0.9325 & 24.615 &  &  & 0.965 & 32.245 &  \\
 \hline
 \textbf{\hyperref[sec:model_proposed]{Proposed Model}} & 0.5242&0.8235&	16.1973&0.4411
-& 0.7038	&0.6618	&13.2408	&0.2643
+& 0.6059 &	0.7671 &	14.4484 &	0.3421
+
 \\
 \hline
 \end{tabular}
+\end{adjustbox}
 \end{table}
 
 \chapter{Conclusions and future work}

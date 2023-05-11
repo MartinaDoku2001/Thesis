@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  10 MAY 2023 18:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  11 MAY 2023 08:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -346,18 +346,53 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip63
-) (c:/texlive/2022/texmf-dist/tex/latex/subfigure/subfigure.sty
+) (c:/texlive/2022/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2022/10/17 v1.3a Adjusting TeX boxes (trim, clip, ...)
+ (c:/texlive/2022/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
+) (c:/texlive/2022/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+ (c:/texlive/2022/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box53
+)
+\tc@llx=\dimen185
+\tc@lly=\dimen186
+\tc@urx=\dimen187
+\tc@ury=\dimen188
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+ (c:/texlive/2022/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen189
+\adjbox@Height=\dimen190
+\adjbox@Depth=\dimen191
+\adjbox@Totalheight=\dimen192
+\adjbox@pwidth=\dimen193
+\adjbox@pheight=\dimen194
+\adjbox@pdepth=\dimen195
+\adjbox@ptotalheight=\dimen196
+ (c:/texlive/2022/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count299
+) (c:/texlive/2022/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box54
+\sift@deathcycles=\count300
+\@vwid@loff=\dimen197
+\@vwid@roff=\dimen198
+)) (c:/texlive/2022/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip64
 \subfigcapskip=\skip65
-\subfigcaptopadj=\dimen185
+\subfigcaptopadj=\dimen199
 \subfigbottomskip=\skip66
-\subfigcapmargin=\dimen186
+\subfigcapmargin=\dimen256
 \subfiglabelskip=\skip67
-\c@subfigure=\count299
-\c@lofdepth=\count300
-\c@subtable=\count301
-\c@lotdepth=\count302
+\c@subfigure=\count301
+\c@lofdepth=\count302
+\c@subtable=\count303
+\c@lotdepth=\count304
 
 ****************************************
 * Local config file subfigure.cfg used *
@@ -366,35 +401,35 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@top=\skip68
 \subfig@bottom=\skip69
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 13.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 24.
+Package hyperref Info: Option `colorlinks' set `true' on input line 14.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 25.
  (c:/texlive/2022/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count303
-\l__pdf_internal_box=\box53
+\l__color_backend_stack_int=\count305
+\l__pdf_internal_box=\box55
 ) (./tesi.aux)
 \openout1 = `tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -438,16 +473,16 @@ Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
 (c:/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count304
-\scratchdimen=\dimen187
-\scratchbox=\box54
-\nofMPsegments=\count305
-\nofMParguments=\count306
+\scratchcounter=\count306
+\scratchdimen=\dimen257
+\scratchbox=\box56
+\nofMPsegments=\count307
+\nofMParguments=\count308
 \everyMPshowfont=\toks29
-\MPscratchCnt=\count307
-\MPscratchDim=\dimen188
-\MPnumerator=\count308
-\makeMPintoPDFobject=\count309
+\MPscratchCnt=\count309
+\MPscratchDim=\dimen258
+\MPnumerator=\count310
+\makeMPintoPDFobject=\count311
 \everyMPtoPDFconversion=\toks30
 ) (c:/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -455,59 +490,59 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Info: Redefining \textsubscript on input line 24.
-Package hyperref Info: Link coloring ON on input line 24.
+LaTeX Info: Redefining \textsubscript on input line 25.
+Package hyperref Info: Link coloring ON on input line 25.
  (./tesi.out) (./tesi.out)
 \@outlinefile=\write3
 \openout3 = `tesi.out'.
 
 \SAP@parboxindent=\skip70
 \SAP@parboxwidth=\skip71
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 26.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 27.
  (c:/texlive/2022/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 <sapienzalogo.pdf, id=209, 288.07625pt x 89.33376pt>
 File: sapienzalogo.pdf Graphic file (type pdf)
 <use sapienzalogo.pdf>
-Package pdftex.def Info: sapienzalogo.pdf  used on input line 26.
+Package pdftex.def Info: sapienzalogo.pdf  used on input line 27.
 (pdftex.def)             Requested size: 142.26378pt x 44.11742pt.
  [1
 
 
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./sapienzalogo.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 26.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 27.
  (c:/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 26--26
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
 
  []
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 26.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 27.
 (c:/texlive/2022/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 26.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 27.
  (c:/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 26.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 27.
  (c:/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 26.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 27.
  (c:/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 26.
+(Font)              <10> on input line 27.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 26.
+(Font)              <7> on input line 27.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 26.
+(Font)              <5> on input line 27.
 
-Underfull \hbox (badness 10000) in paragraph at lines 26--26
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
 
  []
 
@@ -534,12 +569,12 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [8]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--69
+Underfull \hbox (badness 10000) in paragraph at lines 49--70
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--69
+Underfull \hbox (badness 10000) in paragraph at lines 49--70
 
  []
 
@@ -549,25 +584,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--69
 <./images//waves.png, id=315, 576.65437pt x 363.60844pt>
 File: ./images//waves.png Graphic file (type png)
 <use ./images//waves.png>
-Package pdftex.def Info: ./images//waves.png  used on input line 91.
+Package pdftex.def Info: ./images//waves.png  used on input line 92.
 (pdftex.def)             Requested size: 345.99529pt x 218.16673pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--113
+Underfull \hbox (badness 10000) in paragraph at lines 84--114
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--113
+Underfull \hbox (badness 10000) in paragraph at lines 84--114
 
  []
 
 [10 <./images//waves.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 126--142
+Underfull \hbox (badness 10000) in paragraph at lines 127--143
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--142
+Underfull \hbox (badness 10000) in paragraph at lines 127--143
 
  []
 
@@ -578,10 +613,10 @@ Chapter 2.
 <./images//fft_waves_result.png, id=337, 913.4125pt x 498.86375pt>
 File: ./images//fft_waves_result.png Graphic file (type png)
 <use ./images//fft_waves_result.png>
-Package pdftex.def Info: ./images//fft_waves_result.png  used on input line 174.
+Package pdftex.def Info: ./images//fft_waves_result.png  used on input line 175.
 (pdftex.def)             Requested size: 411.03183pt x 224.4866pt.
 
-Overfull \hbox (15.03183pt too wide) in paragraph at lines 174--177
+Overfull \hbox (15.03183pt too wide) in paragraph at lines 175--178
  [][] 
  []
 
@@ -592,25 +627,25 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <./images//stft_waves_result.png, id=356, 913.4125pt x 390.45876pt>
 File: ./images//stft_waves_result.png Graphic file (type png)
 <use ./images//stft_waves_result.png>
-Package pdftex.def Info: ./images//stft_waves_result.png  used on input line 201.
+Package pdftex.def Info: ./images//stft_waves_result.png  used on input line 202.
 (pdftex.def)             Requested size: 411.03183pt x 175.7048pt.
 
-Overfull \hbox (15.03183pt too wide) in paragraph at lines 201--204
+Overfull \hbox (15.03183pt too wide) in paragraph at lines 202--205
  [][] 
  []
 
 [14 <./images//fft_waves_result.png> <./images//stft_waves_result.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 222--231
+Underfull \hbox (badness 10000) in paragraph at lines 223--232
 
  []
 
 <./images//wavelet_result.png, id=369, 913.4125pt x 390.45876pt>
 File: ./images//wavelet_result.png Graphic file (type png)
 <use ./images//wavelet_result.png>
-Package pdftex.def Info: ./images//wavelet_result.png  used on input line 245.
+Package pdftex.def Info: ./images//wavelet_result.png  used on input line 246.
 (pdftex.def)             Requested size: 411.03183pt x 175.7048pt.
 
-Overfull \hbox (15.03183pt too wide) in paragraph at lines 245--248
+Overfull \hbox (15.03183pt too wide) in paragraph at lines 246--249
  [][] 
  []
 
@@ -618,52 +653,52 @@ Overfull \hbox (15.03183pt too wide) in paragraph at lines 245--248
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--257
+Underfull \hbox (badness 10000) in paragraph at lines 255--258
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 281--286
+Underfull \hbox (badness 10000) in paragraph at lines 282--287
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--308
+Underfull \hbox (badness 10000) in paragraph at lines 298--309
 
  []
 
 [16 <./images//wavelet_result.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 309--316
+Underfull \hbox (badness 10000) in paragraph at lines 310--317
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 336--342
+Underfull \hbox (badness 10000) in paragraph at lines 337--343
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 354--362
+Underfull \hbox (badness 10000) in paragraph at lines 355--363
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 364--374
+Underfull \hbox (badness 10000) in paragraph at lines 365--375
 
  []
 
 
-Overfull \hbox (4.21254pt too wide) in paragraph at lines 386--390
+Overfull \hbox (4.21254pt too wide) in paragraph at lines 387--391
 \T1/lmr/m/n/10.95 lower en-ve-lope for the sig-nal. This step ef-fec-tively elim-i-nates the high-frequency
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 426--428
+Underfull \hbox (badness 10000) in paragraph at lines 427--429
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--454
+Underfull \hbox (badness 10000) in paragraph at lines 452--455
 
  []
 
@@ -671,40 +706,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 451--454
 <./images//fully_connected_nn.png, id=439, 732.48656pt x 423.83344pt>
 File: ./images//fully_connected_nn.png Graphic file (type png)
 <use ./images//fully_connected_nn.png>
-Package pdftex.def Info: ./images//fully_connected_nn.png  used on input line 484.
+Package pdftex.def Info: ./images//fully_connected_nn.png  used on input line 485.
 (pdftex.def)             Requested size: 366.24237pt x 211.91618pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 465--491
+Underfull \hbox (badness 10000) in paragraph at lines 466--492
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 465--491
+Underfull \hbox (badness 10000) in paragraph at lines 466--492
 
  []
 
 [20 <./images//fully_connected_nn.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 524--530
+Underfull \hbox (badness 10000) in paragraph at lines 525--531
 
  []
 
 <./images//convolution_nn.png, id=447, 746.03719pt x 305.64188pt>
 File: ./images//convolution_nn.png Graphic file (type png)
 <use ./images//convolution_nn.png>
-Package pdftex.def Info: ./images//convolution_nn.png  used on input line 545.
+Package pdftex.def Info: ./images//convolution_nn.png  used on input line 546.
 (pdftex.def)             Requested size: 410.32172pt x 168.10353pt.
 
-Overfull \hbox (14.32172pt too wide) in paragraph at lines 545--547
+Overfull \hbox (14.32172pt too wide) in paragraph at lines 546--548
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--551
+Underfull \hbox (badness 10000) in paragraph at lines 533--552
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 532--551
+Underfull \hbox (badness 10000) in paragraph at lines 533--552
 
  []
 
@@ -712,17 +747,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 532--551
 <./images//lstm.png, id=470, 598.48593pt x 381.67593pt>
 File: ./images//lstm.png Graphic file (type png)
 <use ./images//lstm.png>
-Package pdftex.def Info: ./images//lstm.png  used on input line 586.
+Package pdftex.def Info: ./images//lstm.png  used on input line 587.
 (pdftex.def)             Requested size: 329.16827pt x 209.92241pt.
  [23 <./images//lstm.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 637--643
+Underfull \hbox (badness 10000) in paragraph at lines 638--644
 
  []
 
 <./images//gru.png, id=479, 466.74374pt x 316.18124pt>
 File: ./images//gru.png Graphic file (type png)
 <use ./images//gru.png>
-Package pdftex.def Info: ./images//gru.png  used on input line 650.
+Package pdftex.def Info: ./images//gru.png  used on input line 651.
 (pdftex.def)             Requested size: 280.0484pt x 189.7102pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -731,10 +766,10 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <./images//transformer.png, id=503, 914.66719pt x 442.65375pt>
 File: ./images//transformer.png Graphic file (type png)
 <use ./images//transformer.png>
-Package pdftex.def Info: ./images//transformer.png  used on input line 711.
+Package pdftex.def Info: ./images//transformer.png  used on input line 712.
 (pdftex.def)             Requested size: 384.15761pt x 185.9133pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 699--717
+Underfull \hbox (badness 10000) in paragraph at lines 700--718
 
  []
 
@@ -746,7 +781,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 823--835
+Underfull \hbox (badness 10000) in paragraph at lines 824--836
 
  []
 
@@ -754,23 +789,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 823--835
 <images/models_architecture_basic.png, id=559, 144.54pt x 157.08687pt>
 File: images/models_architecture_basic.png Graphic file (type png)
 <use images/models_architecture_basic.png>
-Package pdftex.def Info: images/models_architecture_basic.png  used on input line 898.
+Package pdftex.def Info: images/models_architecture_basic.png  used on input line 899.
 (pdftex.def)             Requested size: 237.60242pt x 258.24252pt.
 <./images//model_architecture_Res_CNN.png, id=560, 520.94624pt x 251.43938pt>
 File: ./images//model_architecture_Res_CNN.png Graphic file (type png)
 <use ./images//model_architecture_Res_CNN.png>
-Package pdftex.def Info: ./images//model_architecture_Res_CNN.png  used on input line 904.
+Package pdftex.def Info: ./images//model_architecture_Res_CNN.png  used on input line 905.
 (pdftex.def)             Requested size: 396.0pt x 191.13426pt.
  [32] [33 <./images/models_architecture_basic.png> <./images//model_architecture_Res_CNN.png>]
 <images/model_architecture_transformer_fully_connected.PNG, id=577, 417.56pt x 82.80937pt>
 File: images/model_architecture_transformer_fully_connected.PNG Graphic file (type png)
 <use images/model_architecture_transformer_fully_connected.PNG>
-Package pdftex.def Info: images/model_architecture_transformer_fully_connected.PNG  used on input line 935.
+Package pdftex.def Info: images/model_architecture_transformer_fully_connected.PNG  used on input line 936.
 (pdftex.def)             Requested size: 396.0pt x 78.5383pt.
 <images/model_architecture_transformer_gru.PNG, id=579, 233.4321pt x 266.6763pt>
 File: images/model_architecture_transformer_gru.PNG Graphic file (type png)
 <use images/model_architecture_transformer_gru.PNG>
-Package pdftex.def Info: images/model_architecture_transformer_gru.PNG  used on input line 955.
+Package pdftex.def Info: images/model_architecture_transformer_gru.PNG  used on input line 956.
 (pdftex.def)             Requested size: 237.60242pt x 271.44875pt.
 
 
@@ -780,7 +815,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <images/simple_transformer_model.png, id=593, 966.61125pt x 442.65375pt>
 File: images/simple_transformer_model.png Graphic file (type png)
 <use images/simple_transformer_model.png>
-Package pdftex.def Info: images/simple_transformer_model.png  used on input line 998.
+Package pdftex.def Info: images/simple_transformer_model.png  used on input line 999.
 (pdftex.def)             Requested size: 396.0pt x 181.34735pt.
  [36 <./images/simple_transformer_model.png>]
 Chapter 4.
@@ -790,18 +825,14 @@ Chapter 4.
 <./images//ts_EMG_loss.png, id=607, 462.528pt x 346.896pt>
 File: ./images//ts_EMG_loss.png Graphic file (type png)
 <use ./images//ts_EMG_loss.png>
-Package pdftex.def Info: ./images//ts_EMG_loss.png  used on input line 1100.
+Package pdftex.def Info: ./images//ts_EMG_loss.png  used on input line 1101.
 (pdftex.def)             Requested size: 198.0pt x 148.50072pt.
 <./images//ts_EOG_loss.png, id=608, 462.528pt x 346.896pt>
 File: ./images//ts_EOG_loss.png Graphic file (type png)
 <use ./images//ts_EOG_loss.png>
-Package pdftex.def Info: ./images//ts_EOG_loss.png  used on input line 1102.
+Package pdftex.def Info: ./images//ts_EOG_loss.png  used on input line 1103.
 (pdftex.def)             Requested size: 198.0pt x 148.50072pt.
  [38]
-Overfull \hbox (88.81296pt too wide) in paragraph at lines 1112--1135
- [][] 
- []
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -814,34 +845,34 @@ Chapter 5.
 ]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1143--1159
+Underfull \hbox (badness 10000) in paragraph at lines 1147--1163
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1143--1159
+Underfull \hbox (badness 10000) in paragraph at lines 1147--1163
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1143--1159
+Underfull \hbox (badness 10000) in paragraph at lines 1147--1163
 
  []
 
 [43] [44] [45
 
 ]
-Underfull \hbox (badness 6526) in paragraph at lines 1230--1231
+Underfull \hbox (badness 6526) in paragraph at lines 1234--1235
 []\T1/lmr/m/n/10.95 Wenlong Wang, Bao-jiang Li, Haiyan Wang, A Novel End-to-end
  []
 
 
-Underfull \hbox (badness 4168) in paragraph at lines 1230--1231
+Underfull \hbox (badness 4168) in paragraph at lines 1234--1235
 \T1/lmr/m/n/10.95 Net-work Based on a bidi-rec-tional GRU and a Self-Attention Mech-
  []
 
 
-Underfull \hbox (badness 5985) in paragraph at lines 1230--1231
+Underfull \hbox (badness 5985) in paragraph at lines 1234--1235
 \T1/lmr/m/n/10.95 a-nism for De-nois-ing of Elec-troen-cephalog-ra-phy Sig-nals, Neu-ro-science,
  []
 
@@ -850,15 +881,15 @@ Package rerunfilecheck Info: File `tesi.out' has not changed.
 (rerunfilecheck)             Checksum: 9B25F8971DCCD818085FA801924EC333;7155.
  ) 
 Here is how much of TeX's memory you used:
- 12858 strings out of 476093
- 206789 string characters out of 5795583
- 1863787 words of memory out of 5000000
- 32808 multiletter control sequences out of 15000+600000
+ 13771 strings out of 476093
+ 224067 string characters out of 5795583
+ 1869787 words of memory out of 5000000
+ 33697 multiletter control sequences out of 15000+600000
  602456 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,131p,381b,553s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tesi.pdf (47 pages, 1434340 bytes).
+Output written on tesi.pdf (47 pages, 1436166 bytes).
 PDF statistics:
  809 PDF objects out of 1000 (max. 8388607)
  689 compressed objects within 7 object streams
