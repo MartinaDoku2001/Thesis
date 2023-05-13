@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  13 MAY 2023 13:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  13 MAY 2023 15:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -816,12 +816,12 @@ Package pdftex.def Info: images/model_architecture_transformer_gru.PNG  used on 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [34 <./images/model_architecture_transformer_fully_connected.PNG>] [35 <./images/model_architecture_transformer_GRU.png>]
-<images/simple_transformer_model.png, id=593, 966.61125pt x 442.65375pt>
-File: images/simple_transformer_model.png Graphic file (type png)
-<use images/simple_transformer_model.png>
-Package pdftex.def Info: images/simple_transformer_model.png  used on input line 999.
-(pdftex.def)             Requested size: 396.0pt x 181.34735pt.
- [36 <./images/simple_transformer_model.png>]
+<images/positional_transformer_model.png, id=593, 920.68968pt x 442.65375pt>
+File: images/positional_transformer_model.png Graphic file (type png)
+<use images/positional_transformer_model.png>
+Package pdftex.def Info: images/positional_transformer_model.png  used on input line 999.
+(pdftex.def)             Requested size: 396.0pt x 190.39142pt.
+ [36 <./images/positional_transformer_model.png>]
 Chapter 4.
 [37
 
@@ -889,14 +889,14 @@ Package rerunfilecheck Info: File `tesi.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  13771 strings out of 476093
- 224071 string characters out of 5795583
+ 224099 string characters out of 5795583
  1869787 words of memory out of 5000000
  33697 multiletter control sequences out of 15000+600000
  602456 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,131p,381b,553s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tesi.pdf (47 pages, 1434470 bytes).
+Output written on tesi.pdf (47 pages, 1436865 bytes).
 PDF statistics:
  809 PDF objects out of 1000 (max. 8388607)
  689 compressed objects within 7 object streams
