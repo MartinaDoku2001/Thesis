@@ -957,49 +957,49 @@ self-attention mechanism layer.
 \caption{BG-Attention architecture}
 \end{figure}
 \section{Proposed model architecture}\label{sec:model_proposed}
-\subsection{simple transformer}\label{sec:simple_transformer}
-The proposed model is a simple transformer model, it is composed of three
-parts:
+\subsection{positional transformer}\label{sec:positional_transformer}
+The proposed model is a positional transformer model, it is composed of:
 \begin{itemize}
-\item the encoder
-\item the decoder
-\item the final dense layer
-\end{itemize}
+  \item the encoder
+  \item the decoder
+  \item the final dense layer
+  \end{itemize}
+  
+  The encoder is composed of blocks made of:
+  \begin{itemize}
+  \item an embedding layer (positional encoding)
+  \item a multi-head attention layer (self attention)
+  \item a dropout layer
+  \item a normalization layer
+  \item a feed forward layer
+  \item a dropout layer
+  \item a normalization layer
+  \end{itemize}
+  
+  The decoder is composed of blocks made of:
+  \begin{itemize}
+  \item a multi-head attention layer (self attention)
+  \item a dropout layer
+  \item a normalization layer
+  \item a multi-head attention layer (encoder-decoder attention)
+  \item a dropout layer
+  \item a normalization layer
+  \item a feed forward layer
+  \item a dropout layer
+  \item a normalization layer
+  \end{itemize}
+  
+  The final dense layer is composed of:
+  \begin{itemize}
+  \item a dense layer with relu activation function
+  \end{itemize}
 
-The encoder is composed of blocks made of:
-\begin{itemize}
-\item a multi-head attention layer (self attention)
-\item a dropout layer
-\item a normalization layer
-\item a feed forward layer
-\item a dropout layer
-\item a normalization layer
-\end{itemize}
-
-The decoder is composed of blocks made of:
-\begin{itemize}
-\item a multi-head attention layer (self attention)
-\item a dropout layer
-\item a normalization layer
-\item a multi-head attention layer (encoder-decoder attention)
-\item a dropout layer
-\item a normalization layer
-\item a feed forward layer
-\item a dropout layer
-\item a normalization layer
-\end{itemize}
-
-The final dense layer is composed of:
-\begin{itemize}
-\item a dense layer with relu activation function
-\end{itemize}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=1\linewidth]{images/simple_transformer_model.png}
-\caption{Proposed model architecture}
-\end{figure}
-
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{images/simple_transformer_model.png}
+    \caption{Proposed model architecture}
+    \end{figure}
+  
 \chapter{Experimental results}
 This chapter presents the experimental results of the proposed model and
 the baseline models. The results are presented in the form of comparison tables
@@ -1089,8 +1089,8 @@ is designed for image denoising and may not always be appropriate for
 other types of signals.
 \section{Results and discussion}
 \subsection{Results}
-\subsubsection{simple transformer}
-The simple transformer  model was trained on 50 
+\subsubsection{positional transformer}\label{sec:positional_transformer}
+The proposed transformer  model was trained on 60 
 epochs for the EMG contamined signal and on 80 epochs 
 for the EOG contamined. The loss function was the mean squared error (MSE). The 
 learning rate
@@ -1098,10 +1098,10 @@ was set to 0.001. The batch size was set to 32. The optimizer was Adam.
 The results of the simple transformer model are shown in Table.
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.5\textwidth]{ts_EMG_loss.png}
-\caption{The loss of simpletransformer model on EMG}
-\includegraphics[width=0.5\textwidth]{ts_EOG_loss.png}
-\caption{The loss of simpletransformer model on EOG}
+\includegraphics[width=0.6\textwidth]{pt_EMG_loss.png}
+\caption{The loss of proposed model on EMG}
+\includegraphics[width=0.6\textwidth]{pt_EOG_loss.png}
+\caption{The loss of proposed model on EOG}
 \label{fig:simple_transformer}
 \end{figure}
 
@@ -1129,8 +1129,10 @@ The results of the simple transformer model are shown in Table.
 \hline
 \textbf{\hyperref[sec:model_transformer_gru]{BG-Attention}} & & 0.9325 & 24.615 &  &  & 0.965 & 32.245 &  \\
 \hline
-\textbf{\hyperref[sec:model_proposed]{Proposed Model}} & 0.5242&0.8235&	16.1973&0.4411
-& 0.6059 &	0.7671 &	14.4484 &	0.3421
+\textbf{\hyperref[sec:model_proposed]{Proposed Model}} & 0.5348&	0.8239&	16.1380&	0.4498
+
+& 0.3719	&0.9184	&19.1013	&0.6097
+
 
 \\
 \hline
