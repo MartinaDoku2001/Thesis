@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  11 JUN 2023 13:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  18 JUN 2023 11:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -409,11 +409,7 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count305
 \l__pdf_internal_box=\box55
-) (./tesi.aux
-
-LaTeX Warning: Label `sec:positional_transformer' multiply defined.
-
-)
+) (./tesi.aux)
 \openout1 = `tesi.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -506,7 +502,7 @@ LaTeX Font Info:    Trying to load font information for T1+lmss on input line 27
  (c:/texlive/2022/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<sapienzalogo.pdf, id=209, 288.07625pt x 89.33376pt>
+<sapienzalogo.pdf, id=205, 288.07625pt x 89.33376pt>
 File: sapienzalogo.pdf Graphic file (type pdf)
 <use sapienzalogo.pdf>
 Package pdftex.def Info: sapienzalogo.pdf  used on input line 27.
@@ -607,7 +603,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--125
 [11
 
 ]
-<./images//waves.png, id=323, 576.65437pt x 363.60844pt>
+<./images//waves.png, id=318, 576.65437pt x 363.60844pt>
 File: ./images//waves.png Graphic file (type png)
 <use ./images//waves.png>
 Package pdftex.def Info: ./images//waves.png  used on input line 147.
@@ -636,7 +632,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 182--198
 
 ]
 Chapter 2.
-<./images//fft_waves_result.png, id=346, 913.4125pt x 498.86375pt>
+<./images//fft_waves_result.png, id=341, 913.4125pt x 498.86375pt>
 File: ./images//fft_waves_result.png Graphic file (type png)
 <use ./images//fft_waves_result.png>
 Package pdftex.def Info: ./images//fft_waves_result.png  used on input line 230.
@@ -650,7 +646,7 @@ Overfull \hbox (15.03183pt too wide) in paragraph at lines 230--233
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [15]
-<./images//stft_waves_result.png, id=364, 913.4125pt x 390.45876pt>
+<./images//stft_waves_result.png, id=359, 913.4125pt x 390.45876pt>
 File: ./images//stft_waves_result.png Graphic file (type png)
 <use ./images//stft_waves_result.png>
 Package pdftex.def Info: ./images//stft_waves_result.png  used on input line 257.
@@ -665,7 +661,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 278--287
 
  []
 
-<./images//wavelet_result.png, id=377, 913.4125pt x 390.45876pt>
+<./images//wavelet_result.png, id=372, 913.4125pt x 390.45876pt>
 File: ./images//wavelet_result.png Graphic file (type png)
 <use ./images//wavelet_result.png>
 Package pdftex.def Info: ./images//wavelet_result.png  used on input line 301.
@@ -729,7 +725,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 507--510
  []
 
 [21]
-<./images//fully_connected_nn.png, id=447, 732.48656pt x 423.83344pt>
+<./images//fully_connected_nn.png, id=442, 732.48656pt x 423.83344pt>
 File: ./images//fully_connected_nn.png Graphic file (type png)
 <use ./images//fully_connected_nn.png>
 Package pdftex.def Info: ./images//fully_connected_nn.png  used on input line 540.
@@ -749,7 +745,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 580--586
 
  []
 
-<./images//convolution_nn.png, id=455, 746.03719pt x 305.64188pt>
+<./images//convolution_nn.png, id=450, 746.03719pt x 305.64188pt>
 File: ./images//convolution_nn.png Graphic file (type png)
 <use ./images//convolution_nn.png>
 Package pdftex.def Info: ./images//convolution_nn.png  used on input line 601.
@@ -770,7 +766,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 588--607
  []
 
 [23] [24 <./images//convolution_nn.png>]
-<./images//lstm.png, id=478, 598.48593pt x 381.67593pt>
+<./images//lstm.png, id=473, 598.48593pt x 381.67593pt>
 File: ./images//lstm.png Graphic file (type png)
 <use ./images//lstm.png>
 Package pdftex.def Info: ./images//lstm.png  used on input line 642.
@@ -780,7 +776,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 693--699
 
  []
 
-<./images//gru.png, id=488, 466.74374pt x 316.18124pt>
+<./images//gru.png, id=483, 466.74374pt x 316.18124pt>
 File: ./images//gru.png Graphic file (type png)
 <use ./images//gru.png>
 Package pdftex.def Info: ./images//gru.png  used on input line 706.
@@ -789,7 +785,7 @@ Package pdftex.def Info: ./images//gru.png  used on input line 706.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [26] [27 <./images//gru.png>]
-<./images//transformer.png, id=511, 914.66719pt x 442.65375pt>
+<./images//transformer.png, id=506, 914.66719pt x 442.65375pt>
 File: ./images//transformer.png Graphic file (type png)
 <use ./images//transformer.png>
 Package pdftex.def Info: ./images//transformer.png  used on input line 767.
@@ -812,23 +808,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 879--891
  []
 
 [33]
-<images/models_architecture_basic.png, id=567, 144.54pt x 157.08687pt>
+<images/models_architecture_basic.png, id=562, 144.54pt x 157.08687pt>
 File: images/models_architecture_basic.png Graphic file (type png)
 <use images/models_architecture_basic.png>
 Package pdftex.def Info: images/models_architecture_basic.png  used on input line 954.
 (pdftex.def)             Requested size: 237.60242pt x 258.24252pt.
-<./images//model_architecture_Res_CNN.png, id=568, 520.94624pt x 251.43938pt>
+<./images//model_architecture_Res_CNN.png, id=563, 520.94624pt x 251.43938pt>
 File: ./images//model_architecture_Res_CNN.png Graphic file (type png)
 <use ./images//model_architecture_Res_CNN.png>
 Package pdftex.def Info: ./images//model_architecture_Res_CNN.png  used on input line 960.
 (pdftex.def)             Requested size: 396.0pt x 191.13426pt.
  [34] [35 <./images/models_architecture_basic.png> <./images//model_architecture_Res_CNN.png>]
-<images/model_architecture_transformer_fully_connected.PNG, id=585, 417.56pt x 82.80937pt>
+<images/model_architecture_transformer_fully_connected.PNG, id=580, 417.56pt x 82.80937pt>
 File: images/model_architecture_transformer_fully_connected.PNG Graphic file (type png)
 <use images/model_architecture_transformer_fully_connected.PNG>
 Package pdftex.def Info: images/model_architecture_transformer_fully_connected.PNG  used on input line 991.
 (pdftex.def)             Requested size: 396.0pt x 78.5383pt.
-<images/model_architecture_transformer_gru.PNG, id=587, 233.4321pt x 266.6763pt>
+<images/model_architecture_transformer_gru.PNG, id=582, 233.4321pt x 266.6763pt>
 File: images/model_architecture_transformer_gru.PNG Graphic file (type png)
 <use images/model_architecture_transformer_gru.PNG>
 Package pdftex.def Info: images/model_architecture_transformer_gru.PNG  used on input line 1011.
@@ -837,91 +833,108 @@ Package pdftex.def Info: images/model_architecture_transformer_gru.PNG  used on 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[36 <./images/model_architecture_transformer_fully_connected.PNG>] [37 <./images/model_architecture_transformer_GRU.png>]
-<images/positional_transformer_model.png, id=602, 920.68968pt x 442.65375pt>
+[36 <./images/model_architecture_transformer_fully_connected.PNG>] [37 <./images/model_architecture_transformer_GRU.png>] [38]
+<images/positional_transformer_model.png, id=603, 920.68968pt x 442.65375pt>
 File: images/positional_transformer_model.png Graphic file (type png)
 <use images/positional_transformer_model.png>
-Package pdftex.def Info: images/positional_transformer_model.png  used on input line 1054.
+Package pdftex.def Info: images/positional_transformer_model.png  used on input line 1089.
 (pdftex.def)             Requested size: 396.0pt x 190.39142pt.
- [38 <./images/positional_transformer_model.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 1093--1127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1093--1127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1093--1127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1093--1127
+
+ []
+
+[39 <./images/positional_transformer_model.png>] [40]
 Chapter 4.
-[39
+[41
 
 ]
-<./images//pt_EMG_loss.png, id=615, 462.528pt x 346.896pt>
+<./images//pt_EMG_loss.png, id=621, 462.528pt x 346.896pt>
 File: ./images//pt_EMG_loss.png Graphic file (type png)
 <use ./images//pt_EMG_loss.png>
-Package pdftex.def Info: ./images//pt_EMG_loss.png  used on input line 1156.
+Package pdftex.def Info: ./images//pt_EMG_loss.png  used on input line 1225.
 (pdftex.def)             Requested size: 237.60242pt x 178.20085pt.
-<./images//pt_EOG_loss.png, id=616, 462.528pt x 346.896pt>
+<./images//pt_EOG_loss.png, id=622, 462.528pt x 346.896pt>
 File: ./images//pt_EOG_loss.png Graphic file (type png)
 <use ./images//pt_EOG_loss.png>
-Package pdftex.def Info: ./images//pt_EOG_loss.png  used on input line 1158.
+Package pdftex.def Info: ./images//pt_EOG_loss.png  used on input line 1227.
 (pdftex.def)             Requested size: 237.60242pt x 178.20085pt.
- [40]
+ [42]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[41 <./images//pt_EMG_loss.png> <./images//pt_EOG_loss.png>] [42]
+[43 <./images//pt_EMG_loss.png> <./images//pt_EOG_loss.png>] [44]
 Chapter 5.
-[43
+[45
 
-] [44
+] [46
 
 ]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1204--1220
+Underfull \hbox (badness 10000) in paragraph at lines 1273--1289
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1204--1220
+Underfull \hbox (badness 10000) in paragraph at lines 1273--1289
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1204--1220
+Underfull \hbox (badness 10000) in paragraph at lines 1273--1289
 
  []
 
-[45] [46] [47
+[47] [48] [49
 
 ]
-Underfull \hbox (badness 6526) in paragraph at lines 1291--1292
+Underfull \hbox (badness 6526) in paragraph at lines 1360--1361
 []\T1/lmr/m/n/10.95 Wenlong Wang, Bao-jiang Li, Haiyan Wang, A Novel End-to-end
  []
 
 
-Underfull \hbox (badness 4168) in paragraph at lines 1291--1292
+Underfull \hbox (badness 4168) in paragraph at lines 1360--1361
 \T1/lmr/m/n/10.95 Net-work Based on a bidi-rec-tional GRU and a Self-Attention Mech-
  []
 
 
-Underfull \hbox (badness 5985) in paragraph at lines 1291--1292
+Underfull \hbox (badness 5985) in paragraph at lines 1360--1361
 \T1/lmr/m/n/10.95 a-nism for De-nois-ing of Elec-troen-cephalog-ra-phy Sig-nals, Neu-ro-science,
  []
 
-[48] [49] (./tesi.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
+[50] [51] (./tesi.aux)
 Package rerunfilecheck Info: File `tesi.out' has not changed.
-(rerunfilecheck)             Checksum: C88E7270FAD368A1CB2246995110BC41;7175.
+(rerunfilecheck)             Checksum: 09D28AB45FC6618F47F6905B577EBE3B;7000.
  ) 
 Here is how much of TeX's memory you used:
- 13773 strings out of 476093
- 224113 string characters out of 5795583
+ 13776 strings out of 476093
+ 224126 string characters out of 5795583
  1869787 words of memory out of 5000000
- 33697 multiletter control sequences out of 15000+600000
+ 33696 multiletter control sequences out of 15000+600000
  602456 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,13n,131p,381b,553s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,13n,131p,542b,553s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tesi.pdf (49 pages, 1448112 bytes).
+Output written on tesi.pdf (51 pages, 1453334 bytes).
 PDF statistics:
- 819 PDF objects out of 1000 (max. 8388607)
- 697 compressed objects within 7 object streams
- 224 named destinations out of 1000 (max. 500000)
- 494 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 826 PDF objects out of 1000 (max. 8388607)
+ 701 compressed objects within 8 object streams
+ 228 named destinations out of 1000 (max. 500000)
+ 486 words of extra memory for PDF output out of 10000 (max. 10000000)
 

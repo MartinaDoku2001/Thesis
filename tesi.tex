@@ -1012,49 +1012,118 @@ self-attention mechanism layer.
 \caption{BG-Attention architecture}
 \end{figure}
 \section{Proposed model architecture}\label{sec:model_proposed}
-\subsection{positional transformer}\label{sec:positional_transformer}
-The proposed model is a positional transformer model, it is composed of:
+In this section I'll provide a detailed explanation of the Encoder, 
+Decoder, and Transformer, along with their components and functionalities.
+
+The transformer has been built using two main entieties the encoder
+and the dceoder. Th einput is fed to the encoder while the decoder takes 
+both the input and the encoder output to perform its calculation. The
+output of the decoder is then processed through a final fully connected layer.
+
+\subsubsection{Encoder}
+The Encoder class is responsible for encoding the input sequence. It 
+performs various operations to capture positional information, 
+dependencies between words, and long-range dependencies. Firstly, 
+it embeds the positions of the input elements to capture their positional 
+information. Then, it applies self-attention to the input sequence, 
+capturing the dependencies between different words. The output of the 
+attention and feed-forward network layers is normalized using layer 
+normalization. Additionally, dropout regularization is applied to the 
+output of the attention and feed-forward network layers. The Encoder 
+also utilizes a sequence of bidirectional GRU layers with residual 
+connections and batch normalization, known as BasicBlockBiGru, to capture 
+long-range dependencies in the input sequence. Lastly, a feed-forward 
+network processes the output of the attention mechanism. The final 
+encoded representation of the input sequence is obtained through 
+these operations.
+Here it's provided a deeper explanation of the components of the encoder:
 \begin{itemize}
-  \item the encoder
-  \item the decoder
-  \item the final dense layer
-  \end{itemize}
-  
-  The encoder is composed of blocks made of:
-  \begin{itemize}
-  \item an embedding layer (positional encoding)
-  \item a multi-head attention layer (self attention)
-  \item a dropout layer
-  \item a normalization layer
-  \item a feed forward layer
-  \item a dropout layer
-  \item a normalization layer
-  \end{itemize}
-  
-  The decoder is composed of blocks made of:
-  \begin{itemize}
-  \item a multi-head attention layer (self attention)
-  \item a dropout layer
-  \item a normalization layer
-  \item a multi-head attention layer (encoder-decoder attention)
-  \item a dropout layer
-  \item a normalization layer
-  \item a feed forward layer
-  \item a dropout layer
-  \item a normalization layer
-  \end{itemize}
-  
-  The final dense layer is composed of:
-  \begin{itemize}
-  \item a dense layer with relu activation function
-  \end{itemize}
+\item Positional Embedding: Embeds the positions of the input elements to 
+capture their positional information.
+\item MultiHeadAttention: Performs self-attention on the input sequence 
+to capture the dependencies between different words.
+\item Layer Normalization: Applies normalization to the output of the 
+attention and FFN layers.
+\item Dropout: Applies dropout regularization to the output of the 
+attention and FFN layers.
+\item BasicBlockBiGru: A sequence of bidirectional GRU layers with 
+residual connections and batch normalization, which helps capture long-range dependencies in the input sequence.
+\item Feed-Forward Network (FFN): A two-layer fully connected neural 
+network that processes the output of the attention mechanism.
+\end{itemize}
+
+
+
+\subsubsection{Decoder}
+The Decoder class is responsible for generating the output sequence 
+based on the encoded input. It shares similar components with the Encoder 
+class but includes additional functionality for attention between the 
+encoder and decoder. Similar to the Encoder, positional embedding 
+is applied to the decoder input elements to capture positional information.
+ The Decoder class performs self-attention on the 
+decoder input to capture dependencies between different words in the 
+output sequence. It also computes attention between the decoder input 
+and the output of the encoder, incorporating the encoded information. 
+The output of the attention mechanisms is further processed by a 
+feed-forward network. Layer normalization is performed on the outputs of the attention and feed-forward network layers, and dropout regularization is applied. BasicBlockBiGru, consisting of bidirectional GRU layers with residual connections and batch normalization, is utilized to enhance the model's performance. The Decoder takes the inputs and encoder outputs, performing the aforementioned operations, and returns the final output of the decoder. The Decoder class consists of the following components:
+Here it's provided a deeper explanation of the components of the decoder:
+\begin{itemize}
+  \item MultiHeadAttention (self-attention): Performs self-attention on 
+  the decoder input to capture dependencies between different words in the output sequence.
+  \item MultiHeadAttention (encoder-decoder attention): Computes attention 
+  between the decoder input and the output of the encoder to incorporate the encoded information.
+  \item Feed-Forward Network (FFN): Processes the output of the attention 
+  mechanisms.
+  \item Positional Embedding: Embeds the positions of the decoder input 
+  elements to capture positional information.
+  \item Layer Normalization: Normalizes the outputs of the attention and 
+  FFN layers.
+  \item Dropout: Applies dropout regularization to the output of the 
+  attention and FFN layers.
+  \item BasicBlockBiGru: A sequence of bidirectional GRU layers with 
+  residual connections and batch normalization.
+\end{itemize}
 
   \begin{figure}[h!]
     \centering
     \includegraphics[width=1\linewidth]{images/positional_transformer_model.png}
     \caption{Proposed model architecture}
     \end{figure}
-  
+\subsubsection{ResBiGRU}
+The Residual Bidirectional Gated Recurrent Unit (ResBiGRU) serves as a 
+fundamental building block in the proposed model, enabling effective 
+processing of input sequences while capturing long-range dependencies. 
+Comprising multiple resBiGru layers, the ResBiGRU architecture 
+exhibits several key characteristics crucial to its performance.\newline \\
+Each resBiGru layer consists of three bidirectional Gated Recurrent 
+Unit (GRU) layers. The bidirectional nature of these GRU layers 
+facilitates comprehensive analysis of the input sequence by 
+considering both the forward and backward temporal contexts 
+of each word. This bi-directionality empowers the model to 
+capture information from both past and future contexts, enhancing 
+its ability to understand the intricate relationships between words. \newline \\
+A vital aspect of the resBiGru layer is the incorporation of residual 
+connections and batch normalization. Specifically, the output of each 
+bidirectional GRU layer is combined with the input of that layer, 
+forming a residual connection. This strategic design choice mitigates 
+the vanishing gradient problem, allowing the network to retain essential 
+information during training. Furthermore, batch normalization is applied 
+after the bidirectional GRU layers to normalize the output, facilitating 
+stable training and improving the model's generalization capabilities.\newline \\
+To introduce non-linearity and capture complex feature relationships, 
+a rectified linear unit (ReLU) activation function is applied 
+subsequent to the batch normalization step. This activation function 
+enhances the expressive power of the ResBiGRU architecture, enabling 
+it to capture intricate patterns and nonlinear dependencies within the 
+input sequence.\newline \\
+To further enhance representation learning and extract increasingly 
+complex patterns, the resBiGru layer is repeated three times. This 
+repetition enables the ResBiGRU model to iteratively learn and refine 
+representations of the input sequence, capturing hierarchical and 
+context-specific information. Importantly, the same set of operations, 
+namely bidirectional GRU layers, batch normalization, and ReLU 
+activation, are consistently applied in each repetition, 
+ensuring consistency and coherence in the model's behavior.
 \chapter{Experimental results}
 This chapter presents the experimental results of the proposed model and
 the baseline models. The results are presented in the form of comparison tables
