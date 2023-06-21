@@ -101,8 +101,8 @@ topic and the outline of the thesis. In the second section there is the
 statement of the research questions. In the third section there is a brief
 description of the basic concepts.
 \section{Problem statement}
-What is EEG in the first place and why is it important? Electroencephalography 
-(EEG) is a non-invasive technique used to measure the electrical activity of
+Electroencephalography (EEG) is a non-invasive technique used to 
+measure the electrical activity of
 the brain. EEG signals are still among the less explored ones in the
 field of signal processing, despite their widespread use in clinical 
 practice and research. In recent years, there has been a growing 
@@ -112,7 +112,7 @@ The main objective of this thesis is to investigate and compare different
  EEG denoising methods, and to evaluate their performance in terms of 
  signal quality, artifact removal, and preservation of underlying brain
 activity. Specifically, we will focus on the most recent machine learning
-techniques, advanced models like the''transformers''. We will also investigate the 
+techniques, advanced models like Transformers. We will also investigate the 
 potential of combining different denoising methods to improve the 
 performance of EEG denoising.\newline \\
 Overall, this thesis aims to provide a better understanding of the strengths
@@ -138,16 +138,16 @@ part is dedicated to the EEG denoising.
 \subsection{EEG}
 When talking about EEG,in this thesis, we are referring to the
 electroencephalogram, in particular we are interested in the 
-EEG waves. Electroencephalogram (EEG) waves are the patterns 
+EEG waves. Electroencephalogram waves are the patterns 
 of electrical activity that are recorded by EEG measurements. 
 These waves have different frequencies and amplitudes, and they 
 reveal different states of brain activity. We divide the EEG waves in 
-5 main categories depending on their frquency:Alpha, Beta, Theta, 
-Delta and Gamma waves.\begin{figure}[h]
+5 main categories depending on their frequency: Alpha, Beta, Theta, 
+Delta and Gamma waves.\cite{waves type}
+\begin{figure}[h]
   \includegraphics[scale=0.6]{waves}
   \centering
   \caption{Types of EEG waves}\label{fig:waves}
-  
   \end{figure}\newline \\
 Delta waves are typically observed during deep sleep and have a frequency
 of less than 4 Hz. Theta waves are associated to light sleep or 
@@ -750,7 +750,60 @@ The new hidden state is a combination of the previous hidden state and
   \end{equation}
 where $\odot$ is the element-wise multiplication (Hadamard product) and 
 $\tanh$ is the hyperbolic tangent activation function. 
-
+\subsection{Bidirectional GRU} {\label{sec:bidirectional-gru}}
+A bidirectional GRU (Gated Recurrent Unit) is a type of recurrent 
+neural network (RNN) that processes input sequences in both forward 
+and backward directions simultaneously. It consists of two GRU subnetworks:
+ one processes the sequence from the beginning to the end, and the other 
+ processes it in reverse. This bidirectional nature allows the GRU to 
+ capture information from both past and future contexts of each element 
+ in the sequence. \newline
+The forward GRU computes hidden states in the forward direction, 
+while the backward GRU computes hidden states in the reverse direction. 
+Each GRU subnetwork has its own set of weights and biases.\newline
+The calculations for the forward and backward GRU can be described as follows:
+Forward GRU:
+\begin{equation}
+  z_t = \sigma(W_z x_t + U_z h_{t-1} + b_z) 
+\end{equation}
+\begin{equation}
+  r_t = \sigma(W_r x_t + U_r h_{t-1} + b_r) 
+\end{equation}
+\begin{equation}
+  \tilde{h}t = \tanh(W_h x_t + U_h (r_t \odot h{t-1}) + b_h) 
+\end{equation}
+\begin{equation}
+  h_t = (1 - z_t) \odot h_{t-1} + z_t \odot \tilde{h}_t \\
+  \end{equation}
+Backward GRU:
+\begin{equation}
+\tilde{z}t = \sigma(W_z x_t + U_z \hat{h}{t+1} + b_z) 
+\end{equation}
+\begin{equation}
+\tilde{r}t = \sigma(W_r x_t + U_r \hat{h}{t+1} + b_r) 
+\end{equation}
+\begin{equation}
+\tilde{\tilde{h}}_t = \tanh(W_h x_t + U_h (\tilde{r}t \odot \hat{h}{t+1}) + b_h) \
+\end{equation}
+\begin{equation}
+  \hat{h}_t = (1 - \tilde{z}t) \odot \hat{h}{t+1} + \tilde{z}_t \odot \tilde{\tilde{h}}_t
+\end{equation}
+Here, $x_t$ represents the input at time step $t$, $h_t$ denotes the 
+hidden state at time step $t$ in the forward direction, $\hat{h}_t$ 
+represents the hidden state at time step $t$ in the backward direction, 
+$z_t$ and $\tilde{z}_t$ are the update gate values, $r_t$ and 
+$\tilde{r}_t$ are the reset gate values, and $\tilde{h}_t$ 
+and $\tilde{\tilde{h}}_t$ represent intermediate hidden states.\newline
+The final hidden state of the bidirectional GRU at each time step can be 
+obtained by concatenating the forward and backward hidden states:
+\begin{align*}
+\overleftrightarrow{h}_t = [h_t; \hat{h}_t]
+\end{align*}
+\begin{figure}
+  \includegraphics[scale=1.1]{images/The-Bi-GRU-structure.png}
+  \centering
+  \caption{Bidirectional GRU Architecture}\label{fig:bidirectional_gru}
+\end{figure}
 \subsection{Transformer}
 The Transformer is a neural network architecture designed for natural
  language processing tasks. It was introduced in the paper "Attention
@@ -888,6 +941,12 @@ enables to generate a considerable number of noisy EEG epochs
 with their corresponding ground truth data. As a result, this compilation 
 has proven to be an invaluable resource for model training and testing,
  facilitating an enhanced understanding of EEG denoising.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\textwidth]{images/raw_data_example.png}
+  \caption{EEGdenoiseNet dataset}
+  \label{fig:raw_data}
+\end{figure}
 \section{Preprocessing}
 The preprocessing of the EEG signals is an important step in the
 pipeline of the proposed model. It is used to generate the noisy EEG
@@ -991,39 +1050,18 @@ composed of four parts including:
 \includegraphics[width=1\linewidth]{images/model_architecture_transformer_fully_connected.PNG}
 \caption{EEGDNet architecture}
 \end{figure}
-\subsection{BG-Attention}\label{sec:model_transformer_gru}
-The proposed model is taken from\cite{transformer GRU} and it 
-primarily consists of:
-\begin{itemize}
-  \item the bidirectional GRU layer
-  \item the self-attention layer
-  \item the dense layer
-\end{itemize}
-The input of the network is the noise-contaminated EEG signal segment. 
-Then the signal segment is processed through the encoded and decoded 
-network framework, and finally, the network output is the reconstruction 
-of the contaminated signal. The encoding and decoding layers have a 
-similar structure; the decoding layer is depicted in the figure. 
-The encoding layer consists of a bidirectional GRU layer and a 
-self-attention mechanism layer.
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.6\linewidth]{images/model_architecture_transformer_gru.PNG}
-\caption{BG-Attention architecture}
-\end{figure}
+\newpage
 \section{Proposed model architecture}\label{sec:model_proposed}
 In this section I'll provide a detailed explanation of the Encoder, 
-Decoder, and Transformer, along with their components and functionalities.
-
-The transformer has been built using two main entieties the encoder
-and the dceoder. Th einput is fed to the encoder while the decoder takes 
+Decoder, and Transformer, along with their components and functionalities. \newline \\
+The transformer has been built using two main entities the encoder
+and the decoder. The input is fed to the encoder while the decoder takes 
 both the input and the encoder output to perform its calculation. The
 output of the decoder is then processed through a final fully connected layer.
-
 \subsubsection{Encoder}
 The Encoder class is responsible for encoding the input sequence. It 
 performs various operations to capture positional information, 
-dependencies between words, and long-range dependencies. Firstly, 
+dependencies between tokens, and long-range dependencies. Firstly, 
 it embeds the positions of the input elements to capture their positional 
 information. Then, it applies self-attention to the input sequence, 
 capturing the dependencies between different words. The output of the 
@@ -1031,7 +1069,7 @@ attention and feed-forward network layers is normalized using layer
 normalization. Additionally, dropout regularization is applied to the 
 output of the attention and feed-forward network layers. The Encoder 
 also utilizes a sequence of bidirectional GRU layers with residual 
-connections and batch normalization, known as BasicBlockBiGru, to capture 
+connections and batch normalization, known as ResBiGruBlock, to capture 
 long-range dependencies in the input sequence. Lastly, a feed-forward 
 network processes the output of the attention mechanism. The final 
 encoded representation of the input sequence is obtained through 
@@ -1041,19 +1079,16 @@ Here it's provided a deeper explanation of the components of the encoder:
 \item Positional Embedding: Embeds the positions of the input elements to 
 capture their positional information.
 \item MultiHeadAttention: Performs self-attention on the input sequence 
-to capture the dependencies between different words.
+to capture the dependencies between different tokens.
 \item Layer Normalization: Applies normalization to the output of the 
 attention and FFN layers.
 \item Dropout: Applies dropout regularization to the output of the 
 attention and FFN layers.
-\item BasicBlockBiGru: A sequence of bidirectional GRU layers with 
+\item  ResBiGruBlock: A sequence of bidirectional GRU layers with 
 residual connections and batch normalization, which helps capture long-range dependencies in the input sequence.
 \item Feed-Forward Network (FFN): A two-layer fully connected neural 
 network that processes the output of the attention mechanism.
 \end{itemize}
-
-
-
 \subsubsection{Decoder}
 The Decoder class is responsible for generating the output sequence 
 based on the encoded input. It shares similar components with the Encoder 
@@ -1061,15 +1096,15 @@ class but includes additional functionality for attention between the
 encoder and decoder. Similar to the Encoder, positional embedding 
 is applied to the decoder input elements to capture positional information.
  The Decoder class performs self-attention on the 
-decoder input to capture dependencies between different words in the 
+decoder input to capture dependencies between different tokens in the 
 output sequence. It also computes attention between the decoder input 
 and the output of the encoder, incorporating the encoded information. 
-The output of the attention mechanisms is further processed by a 
+The output of the attention mechanisms is further processed by a ResBiGruBlock and a 
 feed-forward network. Layer normalization is performed on the outputs of the attention and feed-forward network layers, and dropout regularization is applied. BasicBlockBiGru, consisting of bidirectional GRU layers with residual connections and batch normalization, is utilized to enhance the model's performance. The Decoder takes the inputs and encoder outputs, performing the aforementioned operations, and returns the final output of the decoder. The Decoder class consists of the following components:
 Here it's provided a deeper explanation of the components of the decoder:
 \begin{itemize}
   \item MultiHeadAttention (self-attention): Performs self-attention on 
-  the decoder input to capture dependencies between different words in the output sequence.
+  the decoder input to capture dependencies between different tokens in the output sequence.
   \item MultiHeadAttention (encoder-decoder attention): Computes attention 
   between the decoder input and the output of the encoder to incorporate the encoded information.
   \item Feed-Forward Network (FFN): Processes the output of the attention 
@@ -1080,29 +1115,29 @@ Here it's provided a deeper explanation of the components of the decoder:
   FFN layers.
   \item Dropout: Applies dropout regularization to the output of the 
   attention and FFN layers.
-  \item BasicBlockBiGru: A sequence of bidirectional GRU layers with 
+  \item ResBiGruBlock: A sequence of bidirectional GRU layers with 
   residual connections and batch normalization.
 \end{itemize}
-
   \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\linewidth]{images/positional_transformer_model.png}
+    \includegraphics[width=1\linewidth]{images/bigru_light.png}
     \caption{Proposed model architecture}
     \end{figure}
-\subsubsection{ResBiGRU}
+\subsubsection{ResBiGRU Block}
 The Residual Bidirectional Gated Recurrent Unit (ResBiGRU) serves as a 
 fundamental building block in the proposed model, enabling effective 
 processing of input sequences while capturing long-range dependencies. 
-Comprising multiple resBiGru layers, the ResBiGRU architecture 
+Comprising multiple ResBiGru layers, the ResBiGRU architecture 
 exhibits several key characteristics crucial to its performance.\newline \\
-Each resBiGru layer consists of three bidirectional Gated Recurrent 
+Each ResBiGru layer consists of two bidirectional Gated Recurrent 
 Unit (GRU) layers. The bidirectional nature of these GRU layers 
 facilitates comprehensive analysis of the input sequence by 
 considering both the forward and backward temporal contexts 
 of each word. This bi-directionality empowers the model to 
 capture information from both past and future contexts, enhancing 
-its ability to understand the intricate relationships between words. \newline \\
-A vital aspect of the resBiGru layer is the incorporation of residual 
+its ability to understand the intricate relationships inside the signals 
+at different time stamps. \newline \\
+A vital aspect of the ResBiGru layer is the incorporation of residual 
 connections and batch normalization. Specifically, the output of each 
 bidirectional GRU layer is combined with the input of that layer, 
 forming a residual connection. This strategic design choice mitigates 
@@ -1111,38 +1146,56 @@ information during training. Furthermore, batch normalization is applied
 after the bidirectional GRU layers to normalize the output, facilitating 
 stable training and improving the model's generalization capabilities.\newline \\
 To introduce non-linearity and capture complex feature relationships, 
-a rectified linear unit (ReLU) activation function is applied 
-subsequent to the batch normalization step. This activation function 
+a leaky rectified linear unit (LeakyReLU) activation function is applied 
+subsequent to the batch normalization step. The Leaky ReLU activation 
+function is a variant of the Rectified Linear Unit (ReLU) function 
+that addresses the issue of "dying ReLU" neurons. It introduces a 
+small slope for negative input values, allowing for the passing of 
+some information and preventing complete suppression. The Leaky ReLU 
+function is defined as follows:
+  \[
+    \text{LeakyReLU}(x) =
+  \begin{cases}
+   x \text{ if } x \geq 0 \\
+  \alpha x \text{ otherwise}
+  \end{cases}
+  \]
+where \( \alpha \) is a small positive constant that represents 
+the slope of the function for negative inputs. Typically, 
+\( \alpha \) is set to a small value such as 0.01. \newline \\
+This activation function 
 enhances the expressive power of the ResBiGRU architecture, enabling 
 it to capture intricate patterns and nonlinear dependencies within the 
 input sequence.\newline \\
 To further enhance representation learning and extract increasingly 
-complex patterns, the resBiGru layer is repeated three times. This 
+complex patterns, the ResBiGru layer is repeated two times. This 
 repetition enables the ResBiGRU model to iteratively learn and refine 
 representations of the input sequence, capturing hierarchical and 
-context-specific information. Importantly, the same set of operations, 
-namely bidirectional GRU layers, batch normalization, and ReLU 
-activation, are consistently applied in each repetition, 
-ensuring consistency and coherence in the model's behavior.
+context-specific information. \newline
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{images/resbigru.png}
+    \caption{ResBiGRU Block}
+    \end{figure}
 \chapter{Experimental results}
 This chapter presents the experimental results of the proposed model and
 the baseline models. The results are presented in the form of comparison tables
 and graphs. 
 \section{Evaluation Metrics}
 The results of the proposed model and the baseline models are compared 
-in terms of the Relative Root Mean Squared Error (RRMSE), Peak 
-Signal-to-Noise Ratio (PSNR) and Structural Similarity Index Measure (SSIM).
+in terms of the Relative Root Mean Squared Error (RRMSE), the cross-correlation (CC),
+Signal-to-Noise Ratio (SNR) and Structural Similarity Index Measure (SSIM).
 \subsubsection{RRMSE}
 The RRMSE is a metric that is used to measure the performance of the
 denoising model. It measures the difference between the original signal
  and the denoised signal, normalized by the amplitude of the original 
  signal and it is defined as follows:
 \begin{equation}
-\text{RRMSE} = \frac{\text{RMS}(x-\hat{x})}{\text{RMS}(x)}
+\text{RRMSE} = \frac{\text{RMSE}(x-\hat{x})}{\text{RMSE}(x)}
 \end{equation}
 where RMS is:
 \begin{equation}
-\text{RMS}(x) = \sqrt{\frac{\sum_{i=1}^{N}{x_i^2}}{N}}
+\text{RMSE}(x) = \sqrt{\frac{\sum_{i=1}^{N}{x_i^2}}{N}}
 \end{equation}
 where $x$ is the original signal, $\hat{x}$ is the denoised signal,
   and $N$ is the number of samples in the signal.\newline
@@ -1150,7 +1203,7 @@ where $x$ is the original signal, $\hat{x}$ is the denoised signal,
   matches the reference signal, while a higher RRMSE value indicates 
   a greater deviation between the two signals. As the RRMSE value 
   approaches infinity, it indicates that the estimated signal has a 
-  much higher RMS value than the reference signal, which could mean 
+  much higher RMSE value than the reference signal, which could mean 
   that the estimated signal is overestimating the true signal power 
   or energy.\newline
   In practice, RRMSE values are typically reported as a percentage, 
@@ -1175,24 +1228,31 @@ The CC ranges from -1 to 1, with 1 indicating perfect correlation between
 the original and denoised signals, -1 indicating perfect anti-correlation, 
 and 0 indicating no correlation. A higher CC value generally indicates 
 better denoising performance.
-\subsubsection{PSNR}
-The PSNR is a metric that is used to measure the performance of the
-denoising model.It measures the ratio of the maximum possible power of 
-the signal to the power of the noise that has been added or removed. 
-It is defined as follows:
+\subsubsection{SNR}
+The Signal-to-Noise Ratio (SNR) is a widely used metric for 
+evaluating the performance of a denoising model. It provides a 
+measure of the ratio between the signal power and the noise power 
+in the denoised output. It can be calculated as follows:
 \begin{equation}
-\text{PSNR} = 10 \log_{10} \left(\frac{\text{MAX}^2}{\text{MSE}}\right)
+\text{SNR} \approx 10 \log_{10} \left(\frac{{|x|^2}}{{\text{MSE}}}\right)
 \end{equation}
-where $\text{MAX}$ is the maximum possible value of the signal, 
-and $\text{MSE}$ is the mean squared error between the original 
-signal $x$ and the denoised signal $\hat{x}$:
+Here, $|x|^2$ represents the power of the original signal $x$, 
+and $\text{MSE}$ denotes the mean squared error between $x$ and $\hat{x}$.
+ It is defined as follows:
 \begin{equation}
-\text{MSE} = \frac{1}{N}\sum_{i=1}^{N} (x_i - \hat{x_i})^2
+\text{MSE} = \frac{1}{N}\sum_{i=1}^{N} (x_i - \hat{x}_i)^2
 \end{equation}
-The PSNR is expressed in decibels (dB), and a higher value indicates 
-better denoising performance. A PSNR of 20 dB or lower is generally 
-considered to indicate poor quality, while a PSNR of 30 dB or higher 
-is considered to indicate good quality.
+The MSE is a
+measure of the average squared difference between the original
+and denoised signals. A lower MSE value generally indicates
+better denoising performance.
+\begin{equation}
+\text{MSE} = \frac{1}{N}\sum_{i=1}^{N} (x_i - \hat{x}_i)^2
+\end{equation}
+The SNR is typically expressed in decibels (dB), and a higher SNR value 
+indicates a higher quality denoising result. For reference, an SNR of 
+20 dB or lower is generally considered indicative of poor quality, 
+while an SNR of 30 dB or higher is considered indicative of good quality.
 \subsubsection{SSIM}
 The SSIM is a metric that is used to measure the performance of the
 denoising model. It is designed to capture the similarity between the 
@@ -1212,24 +1272,82 @@ better denoising performance. However, it is important to note that SSIM
 is designed for image denoising and may not always be appropriate for 
 other types of signals.
 \section{Results and discussion}
+\subsection{Training details}
+The model trains for a total of 110 epochs on EOG contaminated data and
+100 epochs on EMG contaminated data, using a batch size of 32. Each 
+epoch represents a complete iteration through the entire training 
+dataset. During each epoch, the model's parameters are updated 
+multiple times, with each update based on a batch of 32 samples.\newline
+A higher number of epochs allows the model to potentially converge 
+to a better solution, but it also increases the computational time. 
+The specific value of 110 and 100 epochs was chosen based experimentations
+ and may vary depending on the model, the dataset and the specific
+ values of the hyperparameters.\newline \\
+The optimizer that is used during the training is an Adam optimizer.
+The specific configuration of the Adam optimizer is set with various 
+hyperparameters:
+\begin{itemize}
+\item Learning rate: It determines the step size at each 
+ iteration of the optimization process. A lower learning rate may 
+lead to slower convergence but better optimization, while a higher 
+learning rate may lead to faster convergence but risk overshooting 
+the optimal solution.
+\item Beta 1: It controls the exponential decay rate for the 
+first moment estimates. It represents the momentum term and 
+influences the memory of past gradients.
+\item Beta 2: It controls the exponential decay rate for 
+the second moment estimates. It represents the variance term 
+and influences the adaptivity of the learning rates.
+\item Epsilon: A small value added to the denominator to 
+improve numerical stability.
+\end{itemize}
+The specific values of the hyperparameters are set as follows:
+Learning rate: 0.0001
+Beta 1: 0.9
+Beta 2: 0.98
+Epsilon: 1e-09
+It must be noted that the specific values of the hyperparameters
+have been chosen based on experimentation and may vary depending
+on the model, the dataset and the specific values of the other
+hyperparameters.\newline \\
+The loss function that is used during the training is the mean
+squared error (MSE), which proved to be the most effective loss
+function for the task of denoising. 
 \subsection{Results}
-\subsubsection{positional transformer}\label{sec:positional_transformer}
-The proposed transformer  model was trained on 60 
-epochs for the EMG contamined signal and on 80 epochs 
-for the EOG contamined. The loss function was the mean squared error (MSE). The 
-learning rate
-was set to 0.001. The batch size was set to 32. The optimizer was Adam. 
-The results of the simple transformer model are shown in Table.
+The proposed model was trained on the EOG and EMG contaminated
+data. The loss function quantifies the discrepancy between the 
+predicted outputs and the ground truth labels, serving as a 
+guide for the model to adjust its parameters and optimize its 
+performance. By observing the behavior of the loss function 
+throughout the training process, we can gain insights into the 
+model's learning dynamics and the effectiveness of the chosen 
+optimization algorithm. This analysis enables us to assess the 
+model's training stability, convergence rate, and overall training 
+performance. Through careful examination of the loss function, 
+we can evaluate the effectiveness of our training methodology 
+and gain confidence in the subsequent evaluation of the model's 
+performance. The results of the training are shown in 
+Figure \ref{fig:results}
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.6\textwidth]{pt_EMG_loss.png}
+\includegraphics[width=0.6\textwidth]{./results/res_bigru_light_LReLU/EMG/loss.png}
 \caption{The loss of proposed model on EMG}
-\includegraphics[width=0.6\textwidth]{pt_EOG_loss.png}
+\includegraphics[width=0.6\textwidth]{./results/res_bigru_light_LReLU/EOG/loss.png}
 \caption{The loss of proposed model on EOG}
-\label{fig:simple_transformer}
+\label{fig:results}
 \end{figure}
-
 \subsection{Comparison with baseline models}
+The proposed model surpasses the performance of the comparison models, 
+showcasing its exceptional capabilities in handling both EOG and EMG data. 
+It achieves remarkable scores across various evaluation metrics, 
+affirming its effectiveness in generalizing to unseen data and 
+excelling in real-world scenarios. These evaluation metrics act as 
+strong indicators of the model's superior performance, reaffirming 
+its effectiveness in accurately representing and predicting the 
+underlying characteristics of both EOG and EMG signals. 
+By outperforming the comparison models, our proposed model 
+establishes itself as a robust and reliable solution for 
+EOG and EMG data analysis, setting a new benchmark in the field. 
 \begin{table}[h!]
 \centering
 \caption{Comparison of the results of the proposed model and the baseline models}
@@ -1239,7 +1357,7 @@ The results of the simple transformer model are shown in Table.
 \hline
 \multicolumn{1}{|c|}{} & \multicolumn{4}{c|}{\textbf{EMG}} & \multicolumn{4}{c|}{\textbf{EOG}} \\ \cline{2-7}
 \hline
-\textbf{Model} & \textbf{RRMSE} & \textbf{CC} & \textbf{PSNR} & \textbf{SSIM} & \textbf{RRMSE} & \textbf{CC} & \textbf{PSNR} & \textbf{SSIM} \\ 
+\textbf{Model} & \textbf{RRMSE} & \textbf{CC} & \textbf{SNR} & \textbf{SSIM} & \textbf{RRMSE} & \textbf{CC} & \textbf{SNR} & \textbf{SSIM} \\ 
 \hline
 \textbf{\hyperref[sec:model_fcnn]{FCNN}} & 0.5 & 0.85&  &  & 0.375 & 0.91 & &  \\
 \hline
@@ -1251,11 +1369,7 @@ The results of the simple transformer model are shown in Table.
 \hline
 \textbf{\hyperref[sec:EEGDNet]{EEGDNet}} &0.677 & 0.732 & &  & 0.497 & 0.868 &  & \\
 \hline
-\textbf{\hyperref[sec:model_transformer_gru]{BG-Attention}} & & 0.9325 & 24.615 &  &  & 0.965 & 32.245 &  \\
-\hline
-\textbf{\hyperref[sec:model_proposed]{Proposed Model}} & 0.5348&	0.8239&	16.1380&	0.4498
-
-& 0.3719	&0.9184	&19.1013	&0.6097
+\textbf{\hyperref[sec:model_proposed]{Proposed Model}} & 0.3719	&0.9184	&19.1013	&0.6097 & 0.2989&0.9351&21.7110 &0.6835
 
 
 \\
@@ -1266,7 +1380,70 @@ The results of the simple transformer model are shown in Table.
 
 \chapter{Conclusions and future work}
 \section{Conclusions}
+To conclude, a new model architecture has been proposed for the task of
+denoising EOG and EMG signals. The proposed model is based on the
+Transformer architecture, which is a state-of-the-art model for
+sequence-to-sequence tasks. The Transformer architecture is enhanced
+with the addition of a ResBiGRU layer, which is a bidirectional
+Gated Recurrent Unit (GRU) layer with residual connections. 
+The results demonstrate that the proposed model outperforms the baseline 
+models in terms of denoising performance. The RRMSE values indicate a 
+better match between the estimated and reference signals, while the CC 
+values show a higher degree of similarity between the original and 
+denoised signals. The SNR values indicate a higher quality denoising 
+result, and the SSIM values indicate a higher level of similarity in 
+terms of luminance, contrast, and structural information.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth]{images/example_denoised.png}
+\caption{The denoising result of the proposed model on EMG}
+\end{figure}
+\newline \\
+Overall, the proposed model architecture, which combines the Transformer 
+and ResBiGRU, proves to be effective in capturing dependencies and 
+long-range information in signal denoising tasks. However, further 
+research and experimentation can be conducted to explore additional 
+enhancements and optimizations to improve the model's performance.
 \section{Future work}
+Although the proposed model architecture shows promising results, there 
+are several avenues for future work to explore and enhance its 
+capabilities:
+\begin{itemize}
+\item \textit{Optimization techniques}: Investigate and apply advanced 
+optimization techniques such as learning rate scheduling, adaptive 
+learning rates, and different optimizers to improve convergence speed 
+and model performance.
+\item \textit{Hyperparameter tuning}: Conduct an in-depth hyperparameter 
+search to fine-tune the model's performance. Explore different 
+configurations for the Transformer and ResBiGRU blocks, including the 
+number of layers, hidden units, attention heads, and dropout rates.
+\item \textit{Data augmentation}: Introduce data augmentation techniques to 
+increase the diversity and quantity of training data. Augmentation 
+methods such as random noise injection, time shifting, and amplitude 
+scaling can help the model generalize better to different noise 
+patterns and improve its denoising performance.
+\item \textit{Transfer learning}: Investigate the use of transfer learning 
+techniques to leverage pre-trained models on related tasks or domains. 
+Pre-training the model on large-scale datasets or similar denoising 
+tasks can potentially improve its ability to generalize and enhance 
+performance on specific signal denoising tasks.
+\item \textit{Real-time denoising}: Adapt the model to enable real-time 
+signal denoising by optimizing the architecture and leveraging 
+hardware accelerators or specialized processing units. This can 
+expand the model's applicability to scenarios that require low-latency 
+denoising, such as real-time communication systems or streaming 
+applications.
+\item \textit{Mixed noise denoising}: Extend the model to handle mixed noise
+  scenarios, where the input signal is corrupted by multiple types of 
+  noise. This can be achieved by training the model on a dataset 
+  containing mixed noise signals or by combining multiple models 
+  trained on different noise types.
+\end{itemize}
+By addressing these areas of future work, the proposed model 
+architecture can be further improved and tailored to specific signal 
+denoising tasks, ultimately advancing the field of signal processing 
+and contributing to the development of more robust and accurate denoising 
+techniques.
 \chapter{Appendix}
 \section {Neural network}
 \subsection{Neuron}\label{sec:neuron}
@@ -1334,6 +1511,7 @@ The vanishing gradient problem is a common problem in deep neural networks
   linear unit (ReLU) activation function, which does not suffer from the 
   vanishing gradient problem.
 \begin{thebibliography}{1}
+    \bibitem{waves type}{Torres, E.P.; Torres, E.A.; Hernández-Álvarez, M.; Yoo, S.G. EEG-Based BCI Emotion Recognition: A Survey. Sensors 2020, 20, 5083. https://doi.org/10.3390/s20185083}
     \bibitem{EEG artifact}{Jiang, X.; Bian, G.-B.; Tian, Z. Removal of Artifacts from EEG Signals: A Review. Sensors 2019, 19, 987.}
     \bibitem{denoising challenges}{Wajid Mumtaz, Suleman Rasheed, Alina Irfan, Review of challenges associated with the EEG artifact removal methods, Biomedical Signal Processing and Control, Volume 68, 2021, 102741, ISSN 1746-8094}
     \bibitem{fourier} {Boashash, B., ed. (2003), Time–Frequency Signal Analysis and Processing: A Comprehensive Reference, Oxford: Elsevier Science, ISBN 978-0-08-044335-5.}

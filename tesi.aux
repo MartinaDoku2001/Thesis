@@ -19,6 +19,7 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Problem statement}{11}{section.1.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {1.2}Research questions}{11}{section.1.2}\protected@file@percent }
+\citation{waves type}
 \@writefile{toc}{\contentsline {section}{\numberline {1.3}Basic concepts}{12}{section.1.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}EEG}{12}{subsection.1.3.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Types of EEG waves\relax }}{12}{figure.caption.2}\protected@file@percent }
@@ -127,18 +128,22 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.4}Gated recurrent unit}{27}{subsection.2.3.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Reset gate}{27}{section*.27}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Update gate}{27}{section*.28}\protected@file@percent }
-\citation{attention}
 \@writefile{toc}{\contentsline {subsubsection}{Candidate activation}{28}{section*.29}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Hidden state update}{28}{section*.30}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.5}Transformer}{28}{subsection.2.3.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Embedding}{28}{section*.32}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Transformer Architecture\relax }}{29}{figure.caption.31}\protected@file@percent }
-\newlabel{fig:transformer}{{2.8}{29}{Transformer Architecture\relax }{figure.caption.31}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Self-attention}{29}{section*.33}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Multi-head attention}{29}{section*.34}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Add and normalize}{30}{section*.35}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Position-wise feed-forward network}{30}{section*.36}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Linear and softmax}{30}{section*.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.5}Bidirectional GRU}{28}{subsection.2.3.5}\protected@file@percent }
+\newlabel{sec:bidirectional-gru}{{2.3.5}{28}{Bidirectional GRU}{subsection.2.3.5}{}}
+\citation{attention}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Bidirectional GRU Architecture\relax }}{29}{figure.caption.31}\protected@file@percent }
+\newlabel{fig:bidirectional_gru}{{2.8}{29}{Bidirectional GRU Architecture\relax }{figure.caption.31}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.6}Transformer}{29}{subsection.2.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Embedding}{29}{section*.33}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Transformer Architecture\relax }}{30}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:transformer}{{2.9}{30}{Transformer Architecture\relax }{figure.caption.32}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Self-attention}{30}{section*.34}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Multi-head attention}{30}{section*.35}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Add and normalize}{31}{section*.36}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Position-wise feed-forward network}{31}{section*.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Linear and softmax}{32}{section*.38}\protected@file@percent }
 \citation{EEGdenoiseNet}
 \citation{EEGdenoiseNet}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Methodology}{33}{chapter.3}\protected@file@percent }
@@ -146,93 +151,93 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Data}{33}{section.3.1}\protected@file@percent }
 \newlabel{sec:data}{{3.1}{33}{Data}{section.3.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Preprocessing}{33}{section.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces EEGdenoiseNet dataset\relax }}{33}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:raw_data}{{3.1}{33}{EEGdenoiseNet dataset\relax }{figure.caption.39}{}}
 \citation{EEGdenoiseNet}
 \citation{EEGdenoiseNet}
-\citation{EEGdenoiseNet}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Preprocessing}{34}{section.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Comparison models}{34}{section.3.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}FCNN}{34}{subsection.3.3.1}\protected@file@percent }
 \newlabel{sec:model_fcnn}{{3.3.1}{34}{FCNN}{subsection.3.3.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}CNN}{34}{subsection.3.3.2}\protected@file@percent }
-\newlabel{sec:model_cnn}{{3.3.2}{34}{CNN}{subsection.3.3.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}LSTM}{34}{subsection.3.3.3}\protected@file@percent }
-\newlabel{sec:model_lstm}{{3.3.3}{34}{LSTM}{subsection.3.3.3}{}}
+\citation{EEGdenoiseNet}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces a) FCNN architecture b) CNN architecture c) LSTM architecture\relax }}{35}{figure.caption.40}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}CNN}{35}{subsection.3.3.2}\protected@file@percent }
+\newlabel{sec:model_cnn}{{3.3.2}{35}{CNN}{subsection.3.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}LSTM}{35}{subsection.3.3.3}\protected@file@percent }
+\newlabel{sec:model_lstm}{{3.3.3}{35}{LSTM}{subsection.3.3.3}{}}
 \citation{1DResCNN}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces a) FCNN architecture b) CNN architecture c) LSTM architecture\relax }}{35}{figure.caption.38}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}1D-ResCNN}{35}{subsection.3.3.4}\protected@file@percent }
-\newlabel{sec:1D-ResCNN}{{3.3.4}{35}{1D-ResCNN}{subsection.3.3.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces 1D-ResCNN architecture\relax }}{35}{figure.caption.39}\protected@file@percent }
 \citation{EEGDNet}
-\citation{transformer GRU}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}1D-ResCNN}{36}{subsection.3.3.4}\protected@file@percent }
+\newlabel{sec:1D-ResCNN}{{3.3.4}{36}{1D-ResCNN}{subsection.3.3.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces 1D-ResCNN architecture\relax }}{36}{figure.caption.41}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.5}EEGDNet}{36}{subsection.3.3.5}\protected@file@percent }
 \newlabel{sec:EEGDNet}{{3.3.5}{36}{EEGDNet}{subsection.3.3.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces EEGDNet architecture\relax }}{36}{figure.caption.40}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.6}BG-Attention}{36}{subsection.3.3.6}\protected@file@percent }
-\newlabel{sec:model_transformer_gru}{{3.3.6}{36}{BG-Attention}{subsection.3.3.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces BG-Attention architecture\relax }}{37}{figure.caption.41}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces EEGDNet architecture\relax }}{37}{figure.caption.42}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}Proposed model architecture}{37}{section.3.4}\protected@file@percent }
 \newlabel{sec:model_proposed}{{3.4}{37}{Proposed model architecture}{section.3.4}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Encoder}{37}{section*.42}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Decoder}{38}{section*.43}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Proposed model architecture\relax }}{39}{figure.caption.44}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{ResBiGRU}{39}{section*.45}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Encoder}{37}{section*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Decoder}{38}{section*.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{ResBiGRU Block}{38}{section*.46}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Proposed model architecture\relax }}{39}{figure.caption.45}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces ResBiGRU Block\relax }}{40}{figure.caption.47}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Experimental results}{41}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}Evaluation Metrics}{41}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{RRMSE}{41}{section*.46}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{CC}{42}{section*.47}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{PSNR}{42}{section*.48}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{SSIM}{42}{section*.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{RRMSE}{41}{section*.48}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{CC}{42}{section*.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{SNR}{42}{section*.50}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{SSIM}{42}{section*.51}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4.2}Results and discussion}{43}{section.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Results}{43}{subsection.4.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{positional transformer}{43}{section*.50}\protected@file@percent }
-\newlabel{sec:positional_transformer}{{4.2.1}{43}{positional transformer}{section*.50}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces The loss of proposed model on EMG\relax }}{43}{figure.caption.51}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces The loss of proposed model on EOG\relax }}{43}{figure.caption.51}\protected@file@percent }
-\newlabel{fig:simple_transformer}{{4.2}{43}{The loss of proposed model on EOG\relax }{figure.caption.51}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Comparison with baseline models}{43}{subsection.4.2.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Comparison of the results of the proposed model and the baseline models\relax }}{44}{table.caption.52}\protected@file@percent }
-\newlabel{tab:results}{{4.1}{44}{Comparison of the results of the proposed model and the baseline models\relax }{table.caption.52}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusions and future work}{45}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Training details}{43}{subsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Results}{44}{subsection.4.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces The loss of proposed model on EMG\relax }}{44}{figure.caption.52}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces The loss of proposed model on EOG\relax }}{44}{figure.caption.52}\protected@file@percent }
+\newlabel{fig:results}{{4.2}{44}{The loss of proposed model on EOG\relax }{figure.caption.52}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Comparison with baseline models}{45}{subsection.4.2.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Comparison of the results of the proposed model and the baseline models\relax }}{45}{table.caption.53}\protected@file@percent }
+\newlabel{tab:results}{{4.1}{45}{Comparison of the results of the proposed model and the baseline models\relax }{table.caption.53}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusions and future work}{47}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Conclusions}{45}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Future work}{45}{section.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Appendix}{47}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Conclusions}{47}{section.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces The denoising result of the proposed model on EMG\relax }}{47}{figure.caption.54}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Future work}{48}{section.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Appendix}{49}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Neural network}{47}{section.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Neuron}{47}{subsection.6.1.1}\protected@file@percent }
-\newlabel{sec:neuron}{{6.1.1}{47}{Neuron}{subsection.6.1.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Loss function}{47}{subsection.6.1.2}\protected@file@percent }
-\newlabel{sec:loss}{{6.1.2}{47}{Loss function}{subsection.6.1.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Backpropagation}{48}{subsection.6.1.3}\protected@file@percent }
-\newlabel{sec:backpropagation}{{6.1.3}{48}{Backpropagation}{subsection.6.1.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.4}Vanishing gradient problem}{48}{subsection.6.1.4}\protected@file@percent }
-\newlabel{sec:vanishing_gradient}{{6.1.4}{48}{Vanishing gradient problem}{subsection.6.1.4}{}}
-\bibcite{EEG artifact}{1}
-\bibcite{denoising challenges}{2}
-\bibcite{fourier}{3}
-\bibcite{fft}{4}
-\bibcite{stft}{5}
-\bibcite{stft2}{6}
-\bibcite{wvd}{7}
-\bibcite{wavelet}{8}
-\bibcite{wavelet2}{9}
-\bibcite{mp}{10}
-\bibcite{regression}{11}
-\bibcite{bss}{12}
-\bibcite{pca}{13}
-\bibcite{ica}{14}
-\bibcite{ica2}{15}
-\bibcite{cca}{16}
-\bibcite{emd}{17}
-\bibcite{adaptive}{18}
-\bibcite{wiener}{19}
-\bibcite{attention}{20}
-\bibcite{EEGdenoiseNet}{21}
-\bibcite{1DResCNN}{22}
-\bibcite{EEGDNet}{23}
-\bibcite{transformer GRU}{24}
-\gdef \@abspage@last{51}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Neural network}{49}{section.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Neuron}{49}{subsection.6.1.1}\protected@file@percent }
+\newlabel{sec:neuron}{{6.1.1}{49}{Neuron}{subsection.6.1.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Loss function}{49}{subsection.6.1.2}\protected@file@percent }
+\newlabel{sec:loss}{{6.1.2}{49}{Loss function}{subsection.6.1.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Backpropagation}{50}{subsection.6.1.3}\protected@file@percent }
+\newlabel{sec:backpropagation}{{6.1.3}{50}{Backpropagation}{subsection.6.1.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.4}Vanishing gradient problem}{50}{subsection.6.1.4}\protected@file@percent }
+\newlabel{sec:vanishing_gradient}{{6.1.4}{50}{Vanishing gradient problem}{subsection.6.1.4}{}}
+\bibcite{waves type}{1}
+\bibcite{EEG artifact}{2}
+\bibcite{denoising challenges}{3}
+\bibcite{fourier}{4}
+\bibcite{fft}{5}
+\bibcite{stft}{6}
+\bibcite{stft2}{7}
+\bibcite{wvd}{8}
+\bibcite{wavelet}{9}
+\bibcite{wavelet2}{10}
+\bibcite{mp}{11}
+\bibcite{regression}{12}
+\bibcite{bss}{13}
+\bibcite{pca}{14}
+\bibcite{ica}{15}
+\bibcite{ica2}{16}
+\bibcite{cca}{17}
+\bibcite{emd}{18}
+\bibcite{adaptive}{19}
+\bibcite{wiener}{20}
+\bibcite{attention}{21}
+\bibcite{EEGdenoiseNet}{22}
+\bibcite{1DResCNN}{23}
+\bibcite{EEGDNet}{24}
+\bibcite{transformer GRU}{25}
+\gdef \@abspage@last{53}

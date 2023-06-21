@@ -43,43 +43,43 @@
 \contentsline {subsubsection}{Update gate}{27}{section*.28}%
 \contentsline {subsubsection}{Candidate activation}{28}{section*.29}%
 \contentsline {subsubsection}{Hidden state update}{28}{section*.30}%
-\contentsline {subsection}{\numberline {2.3.5}Transformer}{28}{subsection.2.3.5}%
-\contentsline {subsubsection}{Embedding}{28}{section*.32}%
-\contentsline {subsubsection}{Self-attention}{29}{section*.33}%
-\contentsline {subsubsection}{Multi-head attention}{29}{section*.34}%
-\contentsline {subsubsection}{Add and normalize}{30}{section*.35}%
-\contentsline {subsubsection}{Position-wise feed-forward network}{30}{section*.36}%
-\contentsline {subsubsection}{Linear and softmax}{30}{section*.37}%
+\contentsline {subsection}{\numberline {2.3.5}Bidirectional GRU}{28}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.3.6}Transformer}{29}{subsection.2.3.6}%
+\contentsline {subsubsection}{Embedding}{29}{section*.33}%
+\contentsline {subsubsection}{Self-attention}{30}{section*.34}%
+\contentsline {subsubsection}{Multi-head attention}{30}{section*.35}%
+\contentsline {subsubsection}{Add and normalize}{31}{section*.36}%
+\contentsline {subsubsection}{Position-wise feed-forward network}{31}{section*.37}%
+\contentsline {subsubsection}{Linear and softmax}{32}{section*.38}%
 \contentsline {chapter}{\numberline {3}Methodology}{33}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Data}{33}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Preprocessing}{33}{section.3.2}%
+\contentsline {section}{\numberline {3.2}Preprocessing}{34}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Comparison models}{34}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}FCNN}{34}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}CNN}{34}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}LSTM}{34}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}1D-ResCNN}{35}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.2}CNN}{35}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}LSTM}{35}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}1D-ResCNN}{36}{subsection.3.3.4}%
 \contentsline {subsection}{\numberline {3.3.5}EEGDNet}{36}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}BG-Attention}{36}{subsection.3.3.6}%
 \contentsline {section}{\numberline {3.4}Proposed model architecture}{37}{section.3.4}%
-\contentsline {subsubsection}{Encoder}{37}{section*.42}%
-\contentsline {subsubsection}{Decoder}{38}{section*.43}%
-\contentsline {subsubsection}{ResBiGRU}{39}{section*.45}%
+\contentsline {subsubsection}{Encoder}{37}{section*.43}%
+\contentsline {subsubsection}{Decoder}{38}{section*.44}%
+\contentsline {subsubsection}{ResBiGRU Block}{38}{section*.46}%
 \contentsline {chapter}{\numberline {4}Experimental results}{41}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Evaluation Metrics}{41}{section.4.1}%
-\contentsline {subsubsection}{RRMSE}{41}{section*.46}%
-\contentsline {subsubsection}{CC}{42}{section*.47}%
-\contentsline {subsubsection}{PSNR}{42}{section*.48}%
-\contentsline {subsubsection}{SSIM}{42}{section*.49}%
+\contentsline {subsubsection}{RRMSE}{41}{section*.48}%
+\contentsline {subsubsection}{CC}{42}{section*.49}%
+\contentsline {subsubsection}{SNR}{42}{section*.50}%
+\contentsline {subsubsection}{SSIM}{42}{section*.51}%
 \contentsline {section}{\numberline {4.2}Results and discussion}{43}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Results}{43}{subsection.4.2.1}%
-\contentsline {subsubsection}{positional transformer}{43}{section*.50}%
-\contentsline {subsection}{\numberline {4.2.2}Comparison with baseline models}{43}{subsection.4.2.2}%
-\contentsline {chapter}{\numberline {5}Conclusions and future work}{45}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusions}{45}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Future work}{45}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Appendix}{47}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Neural network}{47}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Neuron}{47}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Loss function}{47}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Backpropagation}{48}{subsection.6.1.3}%
-\contentsline {subsection}{\numberline {6.1.4}Vanishing gradient problem}{48}{subsection.6.1.4}%
+\contentsline {subsection}{\numberline {4.2.1}Training details}{43}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Results}{44}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Comparison with baseline models}{45}{subsection.4.2.3}%
+\contentsline {chapter}{\numberline {5}Conclusions and future work}{47}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusions}{47}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Future work}{48}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Appendix}{49}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Neural network}{49}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Neuron}{49}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Loss function}{49}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Backpropagation}{50}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}Vanishing gradient problem}{50}{subsection.6.1.4}%
