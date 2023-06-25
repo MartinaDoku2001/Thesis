@@ -5,7 +5,7 @@
 %% author: Francesco Biccari                                       %%
 %% contact: biccari@gmail.com                                      %%
 %%                                                                 %%
-%% This file is the LaTeX class for the thesis style               %%
+%% This file is the LaTeX class for the internship report style               %%
 %% of the "Sapienza University of Rome"                            %%
 %%                                                                 %%
 %% see README for license information and installation             %%
@@ -20,7 +20,7 @@
 
 \NeedsTeXFormat{LaTeX2e}[2009/01/01]
 \ProvidesClass{sapthesis}%
-[2022/07/04 Sapienza University of Rome thesis class]
+[2022/07/04 Sapienza University of Rome internship report class]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -844,7 +844,7 @@ manually. See the documentation or just the frontispiece.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Choosing the right \maketitle according to the thesis type %%%%%%%
+%% Choosing the right \maketitle according to the internship report type %%%%%%%
 
 \renewcommand{\maketitle}{%
 % Errors:
@@ -853,7 +853,7 @@ manually. See the documentation or just the frontispiece.}
 \if|\SAP@courseLabel|\ClassError{sapthesis}{You must specify the %
   course}{Example: \protect\course{Corso di Laurea Magistrale in Fisica}}\fi
 \if|\SAP@AcademicYear|\ClassError{sapthesis}{You must specify the %
-  thesis submission date}{Example: \protect\submitdate{August 2012} The date must be in the form Month(name) Year(number)}\fi
+  internship report submission date}{Example: \protect\submitdate{August 2012} The date must be in the form Month(name) Year(number)}\fi
 \if|\SAP@copyyear|\ClassError{sapthesis}{You must specify the %
   copyright year}{Example: \protect\copyyear{2012}}\fi
 \if|\SAP@IDnumber|\ClassError{sapthesis}{You must specify your %
@@ -919,8 +919,8 @@ manually. See the documentation or just the frontispiece.}
   \providecommand{\SAP@ThesisDirectorsLabel}{Directors}
   \newcommand{\SAP@cycleLabel}{cycle}
   \newcommand{\SAP@AcademicYearLabel}{Academic Year}
-  \newcommand{\SAP@ThesisNotDefensedLabel}{Thesis not yet defended}
-  \newcommand{\SAP@ThesisDefensedLabelA}{Thesis defended on}
+  \newcommand{\SAP@ThesisNotDefensedLabel}{internship report not yet defended}
+  \newcommand{\SAP@ThesisDefensedLabelA}{internship report defended on}
   \newcommand{\SAP@ThesisDefensedLabelB}{in front of a Board of Examiners composed by}
   \newcommand{\SAP@chairman}{chairman}
   \newcommand{\SAP@sapienzaname}{Sapienza University of Rome}
@@ -929,7 +929,7 @@ manually. See the documentation or just the frontispiece.}
   \newcommand{\SAP@AcknowledgmentsLabel}{Acknowledgments}
   \newcommand{\SAP@AbstractLabel}{Abstract}
   \newcommand{\SAP@allRightsReservedLabel}{All rights reserved}
-  \newcommand{\SAP@sapthesisInformationLabel}{This thesis has been typeset by \LaTeX\ and the Sapthesis class}
+  \newcommand{\SAP@sapthesisInformationLabel}{This internship report has been typeset by \LaTeX\ and the Sapthesis class}
   \newcommand{\SAP@emailLabel}{Author's email}}
 
 \newcommand{\SAP@italian}{%

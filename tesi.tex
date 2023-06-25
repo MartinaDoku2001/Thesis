@@ -1,9 +1,12 @@
-\documentclass[a4paper]{sapthesis}
+\documentclass[a4paper, noexaminfo]{sapthesis}
 \usepackage{hyperref}
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{adjustbox}
 \usepackage{subfigure}
+\customadvisorlabel{Supervisor}
+\customcoadvisorlabel{Co-Supervisor}
+\thesistype{Bachelor's degree internship report}
 \graphicspath{{./images/}}
 \hypersetup{
     colorlinks,
@@ -18,7 +21,8 @@
 \course{Applied Computer Science and Artificial Intelligence}
 \courseorganizer{Facoltà di Ingegneria dell’Informazione, Informatica e Statistica}
 \AcademicYear{2022/23}
-\advisor{Prof Danilo Avola}
+\advisor{Prof. Danilo Avola}
+\coadvisor{Prof. Daniele Pannone}
 \copyyear{2023}
 \authoremail{doku.1938629@studenti.uniroma1.it}
 
@@ -103,7 +107,7 @@ description of the basic concepts.
 \section{Problem statement}
 Electroencephalography (EEG) is a non-invasive technique used to 
 measure the electrical activity of
-the brain. EEG signals are still among the less explored ones in the
+the brain. EEG signals are still among the less explored types in the
 field of signal processing, despite their widespread use in clinical 
 practice and research. In recent years, there has been a growing 
 interest in developing denoising methods for EEG data to improve their 
@@ -152,7 +156,7 @@ Delta and Gamma waves.\cite{waves type}
 Delta waves are typically observed during deep sleep and have a frequency
 of less than 4 Hz. Theta waves are associated to light sleep or 
 drowsiness and have a frequency of 4$-$7 Hz. Alpha waves correspond to the 
-relaxed and awake state, witha frequency of 8$-$13 Hz. Beta waves, on the other 
+relaxed and awake state, with a frequency of 8$-$13 Hz. Beta waves, on the other 
 hand, are associated with active cognitive processing and have a higher 
 frequency of 14$-$30 Hz. Gamma waves have a frequency of 30$-$100 Hz and are associated with higher 
 cognitive functions such as attention and memory.\newline \\
@@ -171,11 +175,11 @@ EEG signals can be influenced by various factor that alter the real waves
 originated from neural activities, those factors are defined as artifacts. 
 The artifacts can be classified as\cite{EEG artifact}: 
 \begin{itemize}
-    \item intrinsic artifacts:
+    \item \textbf{intrinsic artifacts:}
     artifacts that depend on physiological sources, such as ocular artifacts (EOG)
     that come from eye movement and blinking, muscle artifacts (EMG) and
      cardiac artifacts (ECG)
-    \item extrinsic artifacts: artifacts generated from external electromagnetic 
+    \item \textbf{extrinsic artifacts:} artifacts generated from external electromagnetic 
     such as power line noise
     sources.
 \end{itemize}
@@ -185,12 +189,12 @@ it does lead to different level of quality of the data depending on the
 method used, the quality of the data and the type of artifact.\\ \\
 There are several challenges\cite{denoising challenges} related both 
 to single methods characteristic and general artifact removal.
-For example, some methods are computationally expensive and require a lot
-of time to be applied, some methods are not able to remove all kind of
-artifacts, some methods require a lot of data to be applied. On a general
+Some methods are computationally expensive and require a lot
+of time to be applied, some other methods are not able to remove all kind of
+artifacts and some require a lot of data to be applied. On a general
 level, there is the problem of the lack of a standard method to evaluate
 the quality of the denoised data and the EEG applications are not 
-yet fuly commercial, so there hasn't been a sufficient investment in
+yet fully commercial, so there hasn't been a sufficient investment in
 hardware and software to make the denoising process easier.\\ \\
 However the main goal of latest studies is to find a method that can
 denoise from all kind of artifacts and that can be used in a flexible
@@ -367,7 +371,8 @@ mixture of signals into their individual components.
 There are several BSS algorithms, all based on an unsupervised component 
 separation. 
 The most common BSS algorithms are the Principal Component Analysis (PCA),
-the Principal Component Analysis (ICA) and the Canonical Correlation Analysis.
+the Independent Component Analysis (ICA) and the Canonical Correlation 
+Analysis (CCA).
 \newline
 
 \subsubsection{Principal Component Analysis}
@@ -519,12 +524,12 @@ different architectures of neural networks that have been used in
 previous works and that will be exploited in the proposed approach.
 \subsection{Fully connected neural network}
 Fully Connected Neural Networks, also known as Feedforward Neural Networks
-or Multilayer Perceptrons, are the the most common type of neural networks.
+or Multilayer Perceptrons, are the the most basic type of neural networks.
 They consist of neurons[\ref{sec:neuron}], organized in layers and each of
  the neurons in a layer
  is connected to all the ones in the previous and subsequent layers. 
 These connections are weighted, and each neuron computes a weighted sum of its inputs, passes
-  this sum through an activation function, and then forwards the result to
+  this sum through an activation function[\ref{sec:activation}], and then forwards the result to
  the next layer.\newline \\
 The architecture of a Fully Connected Neural Network consists of one or
  more layers of neurons, including an input layer, one or more hidden 
@@ -702,14 +707,13 @@ address the problem of vanishing gradients in traditional RNNs. It uses
 gating mechanisms to control the flow of information between the hidden 
 states of the network, allowing it to selectively retain or discard 
 information over time.\newline
+The GRU has two gates: the reset gate and the update gate. The operations 
+performed by these gates are described below.
 \begin{figure}[h!]
-  \includegraphics[scale=0.6]{gru}
+  \includegraphics[scale=0.4]{images/gru.png}
   \centering
   \caption{Gated Recurrent Unit}\label{fig:gru}
   \end{figure}
-The GRU has two gates: the reset gate and the update gate. These gates 
-are composed of sigmoid activation functions that take the current 
-input and previous hidden state as inputs. 
 \subsubsection{Reset gate}
 The reset gate controls how much of the previous hidden state should be 
 forgotten. The equation for the reset gate is:
@@ -908,14 +912,14 @@ independently. It is applied to each output vector of the self-attention
 The equations for the position-wise feed-forward network can be written
  as follows:
  \begin{equation}
-   \text{FFN}(x) = \text{ReLU}(xW_1+b_1)W_2+b_2
+   \text{FFN}(x) = \sigma(xW_1+b_1)W_2+b_2
    \end{equation}
  In this equation, $x$ is the input vector of size $d_{model}$,
   $W_1$ and $W_2$ are learned weight matrices of sizes 
   $d_{model}\times d_{ff}$ and $d_{ff}\times d_{model}$,
 respectively, $b_1$ and $b_2$ are learned bias vectors of
-size $d_{ff}$ and $d_{model}$, respectively, and ReLU is the
-rectified linear unit activation function. The output of the
+size $d_{ff}$ and $d_{model}$, respectively, and $\sigma$ is the
+ activation function. The output of the
 position-wise feed-forward network is also a vector of size $d_{model}$.
 \subsubsection{Linear and softmax}
 The linear and softmax layer is used to convert the output of the decoder
@@ -930,7 +934,7 @@ where $x$ is the input vector, $W$ is the learned weight matrix, and $b$
 \chapter{Methodology}
 \section{Data}\label{sec:data}
 The data used in this thesis are the EEG signals of the EEGdenoiseNet 
-dataset\cite{EEGdenoiseNet}. It is comprehensive benchmark dataset
+dataset\cite{EEGdenoiseNet}. It is a comprehensive benchmark dataset
  that proves to be an exemplary resource for training and evaluating
   deep learning-based EEG denoising models. It is composed of 4514 clean 
   EEG epochs, 3400 EOG epochs, and 5598 EMG epochs, making it an inclusive 
@@ -949,11 +953,12 @@ has proven to be an invaluable resource for model training and testing,
 \end{figure}
 \section{Preprocessing}
 The preprocessing of the EEG signals is an important step in the
-pipeline of the proposed model. It is used to generate the noisy EEG
+pipeline of the proposed model. It generates the noisy EEG
 signals that are used as input to the model.
-The processing step used is proposed by the authors of the EEGdenoiseNet
+The processing step code used in the proposed model has been
+written by the authors of the EEGdenoiseNet
 dataset\cite{EEGdenoiseNet}. It is a simple yet effective method that
-is used to generate noisy EEG signals from the clean EEG signals and clean 
+generates noisy EEG signals from the clean EEG signals and clean 
 EMG and EOG signals present in the dataset.
 The preprocessing step is performed as follows:
 \begin{enumerate}
@@ -976,7 +981,8 @@ At the end of the preprocessing step, the dataset is composed of:
 \item 3400 test EOG contaminated EEG samples
 \end{itemize}
 \section{Comparison models}
-The proposed model is compared with models proposed in previous works.
+In this section, each of the models used for comparison with the
+proposed model is described in detail.
 \subsection{FCNN}\label{sec:model_fcnn}
 The proposed FCNN model is taken from\cite{EEGdenoiseNet} and it is 
 composed of:
@@ -1087,7 +1093,7 @@ attention and FFN layers.
 \item  ResBiGruBlock: A sequence of bidirectional GRU layers with 
 residual connections and batch normalization, which helps capture long-range dependencies in the input sequence.
 \item Feed-Forward Network (FFN): A two-layer fully connected neural 
-network that processes the output of the attention mechanism.
+network that processes the output of the ResBiGru block.
 \end{itemize}
 \subsubsection{Decoder}
 The Decoder class is responsible for generating the output sequence 
@@ -1099,24 +1105,30 @@ is applied to the decoder input elements to capture positional information.
 decoder input to capture dependencies between different tokens in the 
 output sequence. It also computes attention between the decoder input 
 and the output of the encoder, incorporating the encoded information. 
-The output of the attention mechanisms is further processed by a ResBiGruBlock and a 
-feed-forward network. Layer normalization is performed on the outputs of the attention and feed-forward network layers, and dropout regularization is applied. BasicBlockBiGru, consisting of bidirectional GRU layers with residual connections and batch normalization, is utilized to enhance the model's performance. The Decoder takes the inputs and encoder outputs, performing the aforementioned operations, and returns the final output of the decoder. The Decoder class consists of the following components:
-Here it's provided a deeper explanation of the components of the decoder:
+The output of the attention mechanisms is further processed by a 
+ResBiGruBlock and a 
+feed-forward network. ResBiGruBlock, 
+consisting of bidirectional GRU layers with residual connections 
+and batch normalization, is utilized to enhance the model's performance. 
+The Decoder takes the inputs and encoder outputs, performing the 
+aforementioned operations, and returns the final output of the decoder. 
+The Decoder class consists of the following components:
 \begin{itemize}
+  \item Positional Embedding: Embeds the positions of the decoder input 
+  elements to capture positional information.
   \item MultiHeadAttention (self-attention): Performs self-attention on 
   the decoder input to capture dependencies between different tokens in the output sequence.
   \item MultiHeadAttention (encoder-decoder attention): Computes attention 
-  between the decoder input and the output of the encoder to incorporate the encoded information.
-  \item Feed-Forward Network (FFN): Processes the output of the attention 
-  mechanisms.
-  \item Positional Embedding: Embeds the positions of the decoder input 
-  elements to capture positional information.
-  \item Layer Normalization: Normalizes the outputs of the attention and 
-  FFN layers.
+  between the decoder input and the output of the encoder to incorporate 
+  the encoded information.
+  \item Layer Normalization: Normalizes the outputs of the attention
+   layers.
   \item Dropout: Applies dropout regularization to the output of the 
-  attention and FFN layers.
+  attention layers.
   \item ResBiGruBlock: A sequence of bidirectional GRU layers with 
-  residual connections and batch normalization.
+  residual connections and batch normalization, which helps capture
+    long-range dependencies in the input sequence.
+  \item Feed-Forward Network (FFN): Processes the output of the ResBiGruBlock.
 \end{itemize}
   \begin{figure}[h!]
     \centering
@@ -1149,7 +1161,7 @@ To introduce non-linearity and capture complex feature relationships,
 a leaky rectified linear unit (LeakyReLU) activation function is applied 
 subsequent to the batch normalization step. The Leaky ReLU activation 
 function is a variant of the Rectified Linear Unit (ReLU) function 
-that addresses the issue of "dying ReLU" neurons. It introduces a 
+that addresses the issue of "dying ReLU" neurons[\ref{sec:dying-neuron}]. It introduces a 
 small slope for negative input values, allowing for the passing of 
 some information and preventing complete suppression. The Leaky ReLU 
 function is defined as follows:
@@ -1168,7 +1180,7 @@ enhances the expressive power of the ResBiGRU architecture, enabling
 it to capture intricate patterns and nonlinear dependencies within the 
 input sequence.\newline \\
 To further enhance representation learning and extract increasingly 
-complex patterns, the ResBiGru layer is repeated two times. This 
+complex patterns, the ResBiGru layer is repeated two times in each block. This 
 repetition enables the ResBiGRU model to iteratively learn and refine 
 representations of the input sequence, capturing hierarchical and 
 context-specific information. \newline
@@ -1268,22 +1280,21 @@ $\sigma_{x\hat{x}}$ is their covariance. The constants $c_1$ and $c_2$
 are small values added to avoid division by zero.\newline
 The SSIM ranges from 0 to 1, with 1 indicating perfect similarity between 
 the original and denoised signals. A higher SSIM value generally indicates 
-better denoising performance. However, it is important to note that SSIM 
-is designed for image denoising and may not always be appropriate for 
-other types of signals.
+better denoising performance.
 \section{Results and discussion}
 \subsection{Training details}
-The model trains for a total of 110 epochs on EOG contaminated data and
+The model has been trained for a total of 110 epochs on EOG contaminated 
+data and
 100 epochs on EMG contaminated data, using a batch size of 32. Each 
 epoch represents a complete iteration through the entire training 
 dataset. During each epoch, the model's parameters are updated 
 multiple times, with each update based on a batch of 32 samples.\newline
 A higher number of epochs allows the model to potentially converge 
 to a better solution, but it also increases the computational time. 
-The specific value of 110 and 100 epochs was chosen based experimentations
+The specific value of 110 and 100 epochs was chosen based on experimentations
  and may vary depending on the model, the dataset and the specific
  values of the hyperparameters.\newline \\
-The optimizer that is used during the training is an Adam optimizer.
+The optimizer that has been used used during the training is an Adam optimizer.
 The specific configuration of the Adam optimizer is set with various 
 hyperparameters:
 \begin{itemize}
@@ -1301,7 +1312,8 @@ and influences the adaptivity of the learning rates.
 \item Epsilon: A small value added to the denominator to 
 improve numerical stability.
 \end{itemize}
-The specific values of the hyperparameters are set as follows:
+The specific values of the hyperparameters for the training were 
+set as follows:
 Learning rate: 0.0001
 Beta 1: 0.9
 Beta 2: 0.98
@@ -1310,7 +1322,7 @@ It must be noted that the specific values of the hyperparameters
 have been chosen based on experimentation and may vary depending
 on the model, the dataset and the specific values of the other
 hyperparameters.\newline \\
-The loss function that is used during the training is the mean
+The loss function that was used during the training is the mean
 squared error (MSE), which proved to be the most effective loss
 function for the task of denoising. 
 \subsection{Results}
@@ -1359,11 +1371,15 @@ EOG and EMG data analysis, setting a new benchmark in the field.
 \hline
 \textbf{Model} & \textbf{RRMSE} & \textbf{CC} & \textbf{SNR} & \textbf{SSIM} & \textbf{RRMSE} & \textbf{CC} & \textbf{SNR} & \textbf{SSIM} \\ 
 \hline
-\textbf{\hyperref[sec:model_fcnn]{FCNN}} & 0.5 & 0.85&  &  & 0.375 & 0.91 & &  \\
+\textbf{\hyperref[sec:model_fcnn]{FCNN}} & 0.917 & 0.609 &  & 
+ & 0.699 & 0.720 & &  \\
 \hline
-\textbf{\hyperref[sec:model_cnn]{CNN}} & 0.6 & 0.81 & & & 0.31 & 0.92 & & \\
+\textbf{\hyperref[sec:model_cnn]{CNN}} & 0.750 & 0.706 & & 
+& 0.620 & 0.791  & & \\
 \hline
-\textbf{\hyperref[sec:model_lstm]{LSTM}} & 0.5 & 0.86 & & & 0.38 &0.92 &  & \\
+\textbf{\hyperref[sec:model_lstm]{LSTM}} & 0.785 & 0.636
+& & &
+0.740 & 0.677  &  & \\
 \hline
 \textbf{\hyperref[sec:1D-ResCNN]{1D-ResCNN}} & 0.746 & 0.692 & & & 0.630 & 0.776 & & \\
 \hline
@@ -1449,7 +1465,7 @@ techniques.
 \subsection{Neuron}\label{sec:neuron}
 A neuron, also known as a node or a perceptron, is a fundamental building
  block of a neural network. It is a mathematical function that receives one
-or more inputs and produces an output based on those inputs. \newline 
+or more inputs and produces an output based on them. \newline 
 A typical neuron in a neural network consists of three main components:\newline \\
 Inputs: These are the signals or information that the neuron receives from 
 other neurons or from the outside world.
@@ -1496,13 +1512,125 @@ can adjust its parameters to improve its predictions on the training
 data. However, it's important to also evaluate the performance of the 
 network on a separate set of validation or test data to ensure that 
 it is not overfitting to the training data.
+\subsection{Activation functions} \label{sec:activation}
+Activation functions play a crucial role in neural networks by 
+introducing non-linearity to the network's output. They are applied 
+to the weighted sum of inputs at each neuron, known as the activation, 
+and determine the neuron's output or its contribution to the next layer. 
+Activation functions enable neural networks to model complex relationships 
+and make non-linear transformations.\newline
+Here are some commonly used activation functions:
+\begin{itemize}
+\item \textbf{Sigmoid}: The sigmoid function is a smooth, S-shaped curve 
+that maps the input to a range between 0 and 1. It is given by the formula:
+\begin{equation}
+f(x)=\frac{1}{1+e^{-x}}
+\end{equation}
+Sigmoid functions are useful in binary classification tasks as 
+they can squash the output to a probability-like value, interpreting 
+it as the likelihood of belonging to a certain class. However, they 
+suffer from vanishing gradients, making them less suitable for deep 
+neural networks.
+\item \textbf{Hyperbolic tangent (Tanh)}: The hyperbolic tangent function 
+is similar to the sigmoid function but maps the input to a range between 
+-1 and 1. It is given by the formula:
+\begin{equation}
+f(x)=\frac{e^x-e^{-x}}{e^x+e^{-x}}
+\end{equation}
+Tanh functions also exhibit saturation and vanishing gradients 
+similar to sigmoid functions. They are commonly used in hidden layers 
+of neural networks.
+\item \textbf{Rectified Linear Unit (ReLU)}: The ReLU function applies a 
+threshold at zero, setting negative values to zero and leaving positive 
+values unchanged. Mathematically, it is defined as:
+\begin{equation}
+f(x)=max(0,x)
+\end{equation}
+ReLU has become the most popular activation function for deep neural 
+networks due to its simplicity and effectiveness. It helps alleviate 
+the vanishing gradient problem and promotes sparse activations, which 
+can accelerate training. However, ReLU can also suffer from the 
+"dying ReLU" problem, where neurons become permanently inactive, 
+producing zero outputs.
+\item \textbf{Leaky ReLU}: Leaky ReLU is an extension of the ReLU function 
+that solves the dying ReLU problem by introducing a small slope for 
+negative values. It is defined as:
+\begin{equation}
+f(x)=max(\alpha x,x)
+\end{equation}
+Here, $\alpha$ is a small constant that determines the slope for 
+negative inputs. Leaky ReLU allows a small gradient for negative 
+inputs, preventing the neurons from becoming completely inactive.
+\item \textbf{Softmax}: The softmax function is commonly used in the 
+output layer of a neural network for multi-class classification tasks. 
+It takes a vector of real numbers as input and normalizes them into a 
+probability distribution over multiple classes. The softmax function is 
+defined as:
+\begin{equation}
+f(x_i)=\frac{e^{x_i}}{\sum_{k=1}^{K}e^{x_k}}
+\end{equation}
+Here, $x_i$ represents the $i$-th element of the input vector, 
+and $K$ is the total number of classes. Softmax ensures that the 
+outputs sum up to 1, allowing them to be interpreted as class 
+probabilities.
+\end{itemize}
+These are just a few examples of activation functions used in neural 
+networks. Choosing an appropriate activation function depends on the 
+task at hand, network architecture, and other factors. Experimentation 
+and empirical evaluation are often necessary to determine the most 
+effective activation function for a given scenario.
 \subsection{Backpropagation}\label{sec:backpropagation}
- The weights and biases of the network are updated during 
-training using an algorithm called backpropagation, which computes the 
-gradient of the loss function with respect to the network parameters.
- The gradient is then used to update the weights and biases of the network
-  using an optimization algorithm such as stochastic gradient descent.
-
+Backpropagation is a key algorithm used for training neural networks. 
+It enables the network to learn from labeled data and adjust its weights 
+and biases to minimize the prediction error. An explanation of 
+how the forward and backward passes work is given below.
+\subsubsection{Forward Pass}
+The forward pass is the first step in the backpropagation algorithm. 
+It involves propagating the input data through the neural network to 
+obtain the predicted output. Each neuron in the network performs a 
+weighted sum of its inputs, applies an activation function to the sum, 
+and passes the result to the next layer.\newline
+Let $x$ be the input to the network, and $y$ be the corresponding target 
+output. The forward pass can be described as follows:
+\begin{enumerate}
+  \item Compute the activations of the input layer neurons: $a^{(0)} = x$.
+  \item For each layer $l$ from $1$ to the output layer:
+  \begin{enumerate}
+    \item Compute the weighted sum of inputs: $z^{(l)} = W^{(l)}a^{(l-1)} + b^{(l)}$, where $W^{(l)}$ is the weight matrix and $b^{(l)}$ is the bias vector for layer $l$.
+    \item Apply the activation function $\sigma$ to the sum: $a^{(l)} = \sigma(z^{(l)})$.
+  \end{enumerate}
+  \item Compute the predicted output: $\hat{y} = a^{(L)}$, where $L$ is the index of the output layer.
+\end{enumerate}
+\subsubsection{Backward Pass}
+The backward pass, also known as backpropagation, is the process of 
+computing the gradients of the loss function with respect to the weights
+ and biases of the network. It allows the network to update its parameters 
+ in the opposite direction of the gradient to minimize the loss.
+The backpropagation algorithm can be summarized as follows:
+\begin{enumerate}
+  \item Compute the gradient of the loss with respect to the predicted output: $\delta^{(L)} = \frac{\partial L}{\partial \hat{y}}$.
+  \item For each layer $l$ from the output layer to the input layer:
+  \begin{enumerate}
+    \item Compute the gradient of the weighted sum: $\delta^{(l)} = \frac{\partial L}{\partial z^{(l)}} = \frac{\partial L}{\partial a^{(l)}} \odot \sigma'(z^{(l)})$, where $\odot$ denotes element-wise multiplication and $\sigma'$ is the derivative of the activation function.
+    \item Compute the gradients of the weights and biases: $\frac{\partial L}{\partial W^{(l)}} = \delta^{(l)} (a^{(l-1)})^T$ and $\frac{\partial L}{\partial b^{(l)}} = \delta^{(l)}$.
+    \item Compute the gradient of the previous layer's activations: $\delta^{(l-1)} = (W^{(l)})^T \delta^{(l)}$.
+  \end{enumerate}
+\end{enumerate}
+\subsubsection{Parameter Update}
+Once the gradients of the loss function with respect to the weights 
+and biases have been computed, the network's parameters can be updated 
+using an optimization algorithm such as gradient descent. The update 
+rule typically involves subtracting a fraction of the gradients from 
+the current parameter values.\newline
+Let $\eta$ be the learning rate, a hyperparameter that controls the step size in the parameter update. The update equations are as follows:
+\begin{align*}
+  W^{(l)} &\leftarrow W^{(l)} - \eta \frac{\partial L}{\partial W^{(l)}}, \\
+  b^{(l)} &\leftarrow b^{(l)} - \eta \frac{\partial L}{\partial b^{(l)}}.
+\end{align*}
+These equations are applied for each layer $l$ in the network.\newline
+The forward pass, backward pass, and parameter update steps are iterated 
+over multiple training examples until the network converges to a 
+satisfactory level of performance.
 \subsection{Vanishing gradient problem}\label{sec:vanishing_gradient}
 The vanishing gradient problem is a common problem in deep neural networks
  that occurs when the gradient of the loss function with respect to the
@@ -1510,32 +1638,44 @@ The vanishing gradient problem is a common problem in deep neural networks
   solved by using a different activation function, such as the rectified 
   linear unit (ReLU) activation function, which does not suffer from the 
   vanishing gradient problem.
+  \subsection{Dying Neuron Problem in ReLU} \label{sec:dying-neuron}
+  The "dying neuron" problem is a phenomenon that can occur when using 
+  the Rectified Linear Unit (ReLU) activation function in neural networks. 
+  It refers to the situation where a neuron becomes permanently inactive 
+  and outputs zero for all inputs, effectively "dying" and contributing 
+  no further information to the network.\newline
+  The dying neuron problem typically arises when a ReLU neuron's weights 
+  are updated in such a way that the neuron consistently outputs 
+  negative values for all inputs during training. When this happens, 
+  the gradients flowing through the neuron during backpropagation 
+  are also negative, causing the weights to continue adjusting in a way 
+  that keeps the neuron inactive.
 \begin{thebibliography}{1}
-    \bibitem{waves type}{Torres, E.P.; Torres, E.A.; Hernández-Álvarez, M.; Yoo, S.G. EEG-Based BCI Emotion Recognition: A Survey. Sensors 2020, 20, 5083. https://doi.org/10.3390/s20185083}
-    \bibitem{EEG artifact}{Jiang, X.; Bian, G.-B.; Tian, Z. Removal of Artifacts from EEG Signals: A Review. Sensors 2019, 19, 987.}
-    \bibitem{denoising challenges}{Wajid Mumtaz, Suleman Rasheed, Alina Irfan, Review of challenges associated with the EEG artifact removal methods, Biomedical Signal Processing and Control, Volume 68, 2021, 102741, ISSN 1746-8094}
-    \bibitem{fourier} {Boashash, B., ed. (2003), Time–Frequency Signal Analysis and Processing: A Comprehensive Reference, Oxford: Elsevier Science, ISBN 978-0-08-044335-5.}
-    \bibitem{fft} {Cooley, James W. (1987). The Re-Discovery of the Fast Fourier Transform Algorithm (PDF). Microchimica Acta. Vol. III. Vienna, Austria. pp. 33–45. Archived (PDF) from the original on 2016-08-20.}
+    \bibitem{waves type}{Torres, E.P.; Torres, E.A.; Hernández-Álvarez, M.; Yoo, S.G. EEG-Based BCI Emotion Recognition: A Survey. Sensors 2020, 20, 5083. doi: 10.3390/s20185083}
+    \bibitem{EEG artifact}{Jiang, X.; Bian, G.-B.; Tian, Z. Removal of Artifacts from EEG Signals: A Review. Sensors 2019, 19, 987. doi: 10.3390/s19050987}
+    \bibitem{denoising challenges}{Wajid Mumtaz, Suleman Rasheed, Alina Irfan, Review of challenges associated with the EEG artifact removal methods, Biomedical Signal Processing and Control, Volume 68, 2021, 102741, ISSN 1746-8094, doi: 10.1016/j.bspc.2021.102741.}
+    \bibitem{fourier}{Boashash, B., ed. (2003), Time–Frequency Signal Analysis and Processing: A Comprehensive Reference, Oxford: Elsevier Science, ISBN 978-0-08-044335-5.}
+    \bibitem{fft} {Cooley, James W. (1987). The Re-Discovery of the Fast Fourier Transform Algorithm (PDF). Microchimica Acta. Vol. III. Vienna, Austria. pp. 33–45. Archived (PDF) from the original on 2016-08-20.  doi:10.1007/BF01201681}
     \bibitem{stft} {R. Álvarez, E. Borbor and F. Grijalva, ''Comparison of methods for signal analysis in the time-frequency domain,'' 2019 IEEE Fourth Ecuador Technical Chapters Meeting (ETCM), 2019, pp. 1-6, doi: 10.1109/ETCM48019.2019.9014860.}
     \bibitem{stft2} {W. -k. Lu and Q. Zhang, "Deconvolutive Short-Time Fourier Transform Spectrogram," in IEEE Signal Processing Letters, vol. 16, no. 7, pp. 576-579, July 2009, doi: 10.1109/LSP.2009.2020887.}
     \bibitem{wvd} {E. Chassande-Mottin and A. Pai, "Discrete time and frequency Wigner-Ville distribution: Moyal's formula and aliasing," in IEEE Signal Processing Letters, vol. 12, no. 7, pp. 508-511, July 2005, doi: 10.1109/LSP.2005.849493}
     \bibitem{wavelet}{ S. Zhou, B. Tang and R. Chen, "Comparison between Non-stationary Signals Fast Fourier Transform and Wavelet Analysis," 2009 International Asia Symposium on Intelligent Interaction and Affective Computing, Wuhan, China, 2009, pp. 128-129, doi: 10.1109/ASIA.2009.31.}
     \bibitem{wavelet2}{ V. M. Pukhova and M. S. Stepanova, "Up-Chirplet and Down-Chirplet Transforms of Non-Stationary Signals," 2019 IEEE Conference of Russian Young Researchers in Electrical and Electronic Engineering (EIConRus), Saint Petersburg and Moscow, Russia, 2019, pp. 1221-1225, doi: 10.1109/EIConRus.2019.8657179.}
     \bibitem{mp} {S. G. Mallat and Zhifeng Zhang, "Matching pursuits with time-frequency dictionaries," in IEEE Transactions on Signal Processing, vol. 41, no. 12, pp. 3397-3415, Dec. 1993, doi: 10.1109/78.258082.}
-    \bibitem{regression}{Klados, M.A.; Papadelis, C.; Braun, C.; Bamidis, P.D. REG-ICA: A hybrid methodology combining blind source separation and regression techniques for the rejection of ocular artifacts.Biomed. Signal Process Control  }
+    \bibitem{regression}{Klados, M.A.; Papadelis, C.; Braun, C.; Bamidis, P.D. REG-ICA: A hybrid methodology combining blind source separation and regression techniques for the rejection of ocular artifacts.Biomed. Signal Process Control doi:10.1016/j.bspc.2011.02.001 }
     \bibitem{bss}{J. A. Nascimento, J. M. S. Nascimento, and J. M. C. Nascimento, "Blind source separation: A review," in IEEE Signal Processing Magazine, vol. 26, no. 6, pp. 22-38, Nov. 2009, doi: 10.1109/MSP.2009.937000.}
-    \bibitem{pca}{Casarotto, S.; Bianchi, A.M.; Cerutti, S.; Chiarenza, G.A. Principal component analysis for reduction of ocular artefacts in event-related potentials of normal and dyslexic children. Clin. Neurophysiol. 2004, 115, 609–619.}
+    \bibitem{pca}{Casarotto, S.; Bianchi, A.M.; Cerutti, S.; Chiarenza, G.A. Principal component analysis for reduction of ocular artefacts in event-related potentials of normal and dyslexic children. Clin. Neurophysiol. 2004, 115, 609–619. doi: 10.1016/j.clinph.2003.10.018. }
     \bibitem{ica}{Jung, T.P.; Makieg, S.; Bell, A.J.; Sejnowski, T.J. Independent component analysis of electroencephalographic and event-related potential data. Cent. Audit. Process. Neural Model. 1996, 2, 1548–1551.}
-    \bibitem{ica2}{Vigário, R. Extraction of ocular artifacts from EEG using independent component analysis. Electroencephalogr. Clin. Neurophysiol. 1997, 103, 395–404}
+    \bibitem{ica2}{Vigário, R. Extraction of ocular artifacts from EEG using independent component analysis. Electroencephalogr. Clin. Neurophysiol. 1997, 103, 395–404, doi: 10.1016/S0013-4694(97)00042-8.}
     \bibitem{cca}{N. Robinson, K. P. Thomas and A. P. Vinod, "Canonical correlation analysis of EEG for classification of motor imagery," 2017 IEEE International Conference on Systems, Man, and Cybernetics (SMC), Banff, AB, Canada, 2017, pp. 2317-2321, doi: 10.1109/SMC.2017.8122967.}
     \bibitem{emd}{V. Bajaj and R. B. Pachori, "Classification of Seizure and Nonseizure EEG Signals Using Empirical Mode Decomposition," in IEEE Transactions on Information Technology in Biomedicine, vol. 16, no. 6, pp. 1135-1142, Nov. 2012, doi: 10.1109/TITB.2011.2181403.}
-    \bibitem{adaptive}{He, P., Wilson, G. Russell, C. Removal of ocular artifacts from electro-encephalogram by adaptive filtering. Med. Biol. Eng. Comput. 42, 407–412 (2004). https://doi.org/10.1007/BF02344717}
-    \bibitem{wiener}{Somers, B., Francart, T., Bertrand, A. (2018). A generic EEG artifact removal algorithm based on the multi-channel Wiener filter. Journal of neural engineering, 15(3), 036007.}
-    \bibitem{attention}{Vaswani, A., Shazeer, N.M., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.N., Kaiser, L., Polosukhin, I. (2017). Attention is All you Need. ArXiv, abs/1706.03762.}
-    \bibitem{EEGdenoiseNet}{EEGdenoiseNet: A Comprehensive Benchmark Dataset for EEG Denoising}
-    \bibitem{1DResCNN}{Yang, B., Duan, K., Fan, C., Hu, C., Wang, J. (2018). Automatic ocular artifacts removal in EEG using deep learning. Biomedical Signal Processing and Control, 43, 148-158.}
-    \bibitem{EEGDNet}{Xiaorong Pu, Peng Yi, Kecheng Chen, Zhaoqi Ma, Di Zhao, Yazhou Ren, EEGDnet: Fusing non-local and local self-similarity for EEG signal denoising with transformer,  Computers in Biology and Medicine, ISSN 0010-4825,https://doi.org/10.1016/j.compbiomed.2022.106248.}
-    \bibitem{transformer GRU}{	Wenlong Wang, Baojiang Li, Haiyan Wang, A Novel End-to-end Network Based on a bidirectional GRU and a Self-Attention Mechanism for Denoising of Electroencephalography Signals, Neuroscience, https://doi.org/10.1016/j.neuroscience.2022.10.006.}
+    \bibitem{adaptive}{He, P., Wilson, G. Russell, C. Removal of ocular artifacts from electro-encephalogram by adaptive filtering. Med. Biol. Eng. Comput. 42, 407–412 (2004). doi: 10.1007/BF02344717}
+    \bibitem{wiener}{Somers, B., Francart, T., Bertrand, A. (2018). A generic EEG artifact removal algorithm based on the multi-channel Wiener filter. Journal of neural engineering, 15(3), 036007. doi:10.1088/1741-2552/aaac92}
+    \bibitem{attention}{Vaswani, A., Shazeer, N.M., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.N., Kaiser, L., Polosukhin, I. (2017). Attention is All you Need. ArXiv, abs/1706.03762. doi: 10.48550/arXiv.1706.03762}
+    \bibitem{EEGdenoiseNet}{Zhang, Haoming Zhao, Mingqi  Wei, Chen  Mantini, Dante Li, Zherui Liu, Quanying. (2021). EEGdenoiseNet: A benchmark dataset for end-to-end deep learning solutions of EEG denoising. Journal of Neural Engineering. 18.doi: 10.1088/1741-2552/ac2bf8. }
+    \bibitem{1DResCNN}{Yang, Banghua Duan, Kaiwen Fan, Chengcheng Hu, Chenxiao Wang, Jinlong. (2018). Automatic ocular artifacts removal in EEG using deep learning. Biomedical Signal Processing and Control. 43. 148-158. doi: 10.1016/j.bspc.2018.02.021. }
+    \bibitem{EEGDNet}{Xiaorong Pu, Peng Yi, Kecheng Chen, Zhaoqi Ma, Di Zhao, Yazhou Ren, EEGDnet: Fusing non-local and local self-similarity for EEG signal denoising with transformer,  Computers in Biology and Medicine, ISSN 0010-4825, doi: 10.1016/j.compbiomed.2022.106248.}
+    \bibitem{transformer GRU}{	Wenlong Wang, Baojiang Li, Haiyan Wang, A Novel End-to-end Network Based on a bidirectional GRU and a Self-Attention Mechanism for Denoising of Electroencephalography Signals, Neuroscience, doi: 10.1016/j.neuroscience.2022.10.006.}
     \end{thebibliography}
 
 
