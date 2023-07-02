@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  23 JUN 2023 18:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.13)  28 JUN 2023 11:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -802,108 +802,117 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [29 <./images/The-Bi-GRU-structure.png>] [30 <./images//transformer.png>] [31] [32]
 Chapter 3.
-<images/raw_data_example.png, id=577, 907.7112pt x 604.1772pt>
+<images/raw_data_example.png, id=577, 1185.228pt x 883.8621pt>
 File: images/raw_data_example.png Graphic file (type png)
 <use images/raw_data_example.png>
-Package pdftex.def Info: images/raw_data_example.png  used on input line 950.
-(pdftex.def)             Requested size: 356.39758pt x 237.22304pt.
+Package pdftex.def Info: images/raw_data_example.png  used on input line 945.
+(pdftex.def)             Requested size: 396.0pt x 295.3033pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 936--954
+Underfull \hbox (badness 10000) in paragraph at lines 936--955
 
  []
 
-[33
+
+Underfull \vbox (badness 2707) has occurred while \output is active []
+
+ [33
 
  <./images/raw_data_example.png>] [34]
-<images/models_architecture_basic.png, id=599, 144.54pt x 157.08687pt>
+<images/models_architecture_basic.png, id=599, 1317.42188pt x 215.30438pt>
 File: images/models_architecture_basic.png Graphic file (type png)
 <use images/models_architecture_basic.png>
-Package pdftex.def Info: images/models_architecture_basic.png  used on input line 1019.
-(pdftex.def)             Requested size: 237.60242pt x 258.24252pt.
-<./images//model_architecture_Res_CNN.png, id=600, 520.94624pt x 251.43938pt>
+Package pdftex.def Info: images/models_architecture_basic.png  used on input line 1020.
+(pdftex.def)             Requested size: 396.0pt x 64.71664pt.
+<./images//model_architecture_Res_CNN.png, id=601, 520.94624pt x 251.43938pt>
 File: ./images//model_architecture_Res_CNN.png Graphic file (type png)
 <use ./images//model_architecture_Res_CNN.png>
-Package pdftex.def Info: ./images//model_architecture_Res_CNN.png  used on input line 1025.
+Package pdftex.def Info: ./images//model_architecture_Res_CNN.png  used on input line 1037.
 (pdftex.def)             Requested size: 396.0pt x 191.13426pt.
- [35 <./images/models_architecture_basic.png>]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[35 <./images/models_architecture_basic.png>]
 <images/model_architecture_transformer_fully_connected.PNG, id=609, 417.56pt x 82.80937pt>
 File: images/model_architecture_transformer_fully_connected.PNG Graphic file (type png)
 <use images/model_architecture_transformer_fully_connected.PNG>
-Package pdftex.def Info: images/model_architecture_transformer_fully_connected.PNG  used on input line 1056.
+Package pdftex.def Info: images/model_architecture_transformer_fully_connected.PNG  used on input line 1057.
 (pdftex.def)             Requested size: 396.0pt x 78.5383pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[36 <./images//model_architecture_Res_CNN.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1061--1067
+ [36 <./images//model_architecture_Res_CNN.png> <./images/model_architecture_transformer_fully_connected.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 1062--1068
 
  []
 
-[37 <./images/model_architecture_transformer_fully_connected.PNG>]
-<images/bigru_light.png, id=626, 870.25125pt x 467.49657pt>
+<images/bigru_light.png, id=619, 870.25125pt x 467.49657pt>
 File: images/bigru_light.png Graphic file (type png)
 <use images/bigru_light.png>
-Package pdftex.def Info: images/bigru_light.png  used on input line 1135.
+Package pdftex.def Info: images/bigru_light.png  used on input line 1101.
 (pdftex.def)             Requested size: 396.0pt x 212.73267pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1139--1168
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1139--1168
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1139--1168
-
- []
-
-[38]
-<images/resbigru.png, id=634, 931.22906pt x 353.82187pt>
+[37] [38 <./images/bigru_light.png>]
+<images/resbigru.png, id=632, 931.22906pt x 353.82187pt>
 File: images/resbigru.png Graphic file (type png)
 <use images/resbigru.png>
-Package pdftex.def Info: images/resbigru.png  used on input line 1189.
+Package pdftex.def Info: images/resbigru.png  used on input line 1164.
 (pdftex.def)             Requested size: 396.0pt x 150.46138pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1174--1192
+Underfull \hbox (badness 10000) in paragraph at lines 1141--1176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1174--1192
+Underfull \hbox (badness 10000) in paragraph at lines 1141--1176
 
  []
 
-[39 <./images/bigru_light.png>] [40 <./images/resbigru.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 1141--1176
+
+ []
+
+
+Underfull \vbox (badness 1102) has occurred while \output is active []
+
+ [39 <./images/resbigru.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1182--1195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1182--1195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1182--1195
+
+ []
+
+[40]
 Chapter 4.
 [41
 
 ] [42]
-Underfull \hbox (badness 10000) in paragraph at lines 1286--1300
+Underfull \hbox (badness 10000) in paragraph at lines 1290--1304
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1315--1328
+Underfull \hbox (badness 10000) in paragraph at lines 1319--1332
 
  []
 
 <./results/res_bigru_light_LReLU/EMG/loss.png, id=665, 462.528pt x 346.896pt>
 File: ./results/res_bigru_light_LReLU/EMG/loss.png Graphic file (type png)
 <use ./results/res_bigru_light_LReLU/EMG/loss.png>
-Package pdftex.def Info: ./results/res_bigru_light_LReLU/EMG/loss.png  used on input line 1345.
+Package pdftex.def Info: ./results/res_bigru_light_LReLU/EMG/loss.png  used on input line 1349.
 (pdftex.def)             Requested size: 237.60242pt x 178.20085pt.
 <./results/res_bigru_light_LReLU/EOG/loss.png, id=666, 462.528pt x 346.896pt>
 File: ./results/res_bigru_light_LReLU/EOG/loss.png Graphic file (type png)
 <use ./results/res_bigru_light_LReLU/EOG/loss.png>
-Package pdftex.def Info: ./results/res_bigru_light_LReLU/EOG/loss.png  used on input line 1347.
+Package pdftex.def Info: ./results/res_bigru_light_LReLU/EOG/loss.png  used on input line 1352.
 (pdftex.def)             Requested size: 237.60242pt x 178.20085pt.
 [43]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -915,51 +924,51 @@ Chapter 5.
 <images/example_denoised.png, id=694, 394.5942pt x 298.4751pt>
 File: images/example_denoised.png Graphic file (type png)
 <use images/example_denoised.png>
-Package pdftex.def Info: images/example_denoised.png  used on input line 1414.
+Package pdftex.def Info: images/example_denoised.png  used on input line 1419.
 (pdftex.def)             Requested size: 237.60242pt x 179.72859pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1399--1423
+Underfull \hbox (badness 10000) in paragraph at lines 1404--1428
 
  []
 
 [47 <./images/example_denoised.png>] [48]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1466--1482
+Underfull \hbox (badness 10000) in paragraph at lines 1471--1487
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1466--1482
+Underfull \hbox (badness 10000) in paragraph at lines 1471--1487
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1466--1482
+Underfull \hbox (badness 10000) in paragraph at lines 1471--1487
 
  []
 
 [49
 
 ] [50] [51]
-Overfull \hbox (19.01355pt too wide) in paragraph at lines 1616--1617
+Overfull \hbox (19.01355pt too wide) in paragraph at lines 1621--1622
 []\T1/lmr/m/n/10.95 Compute the gra-di-ent of the pre-vi-ous layer's ac-ti-va-tions: $\OML/lmm/m/it/10.95 ^^N[] \OT1/lmr/m/n/10.95 = (\OML/lmm/m/it/10.95 W[]\OT1/lmr/m/n/10.95 )[]\OML/lmm/m/it/10.95 ^^N[]$\T1/lmr/m/n/10.95 . 
  []
 
 [52] [53] [54
 
 ]
-Underfull \hbox (badness 2277) in paragraph at lines 1656--1657
+Underfull \hbox (badness 2277) in paragraph at lines 1661--1662
 \T1/lmr/m/n/10.95 cess-ing and Con-trol, Vol-ume 68, 2021, 102741, ISSN 1746-8094, doi:
  []
 
 [55] [56]
-Underfull \hbox (badness 6526) in paragraph at lines 1678--1679
+Underfull \hbox (badness 6526) in paragraph at lines 1683--1684
 []\T1/lmr/m/n/10.95 Wenlong Wang, Bao-jiang Li, Haiyan Wang, A Novel End-to-end
  []
 
 
-Underfull \hbox (badness 3078) in paragraph at lines 1678--1679
+Underfull \hbox (badness 3078) in paragraph at lines 1683--1684
 \T1/lmr/m/n/10.95 Net-work Based on a bidi-rec-tional GRU and a Self-Attention Mech-a-
  []
 
@@ -968,18 +977,18 @@ Package rerunfilecheck Info: File `tesi.out' has not changed.
 (rerunfilecheck)             Checksum: ACD1D0F24E51EDFB400996E1D97D5624;7552.
  ) 
 Here is how much of TeX's memory you used:
- 13836 strings out of 476093
- 225157 string characters out of 5795583
+ 13837 strings out of 476093
+ 225172 string characters out of 5795583
  1868787 words of memory out of 5000000
- 33712 multiletter control sequences out of 15000+600000
+ 33713 multiletter control sequences out of 15000+600000
  602456 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,20n,131p,381b,551s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tesi.pdf (57 pages, 1611971 bytes).
+Output written on tesi.pdf (57 pages, 1992209 bytes).
 PDF statistics:
  912 PDF objects out of 1000 (max. 8388607)
- 775 compressed objects within 8 object streams
+ 776 compressed objects within 8 object streams
  267 named destinations out of 1000 (max. 500000)
  525 words of extra memory for PDF output out of 10000 (max. 10000000)
 

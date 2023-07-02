@@ -939,18 +939,19 @@ dataset\cite{EEGdenoiseNet}. It is a comprehensive benchmark dataset
   deep learning-based EEG denoising models. It is composed of 4514 clean 
   EEG epochs, 3400 EOG epochs, and 5598 EMG epochs, making it an inclusive 
   and extensive dataset that caters to the needs of researchers and
- practitioners alike.\newline \\
+ practitioners alike.
+ \begin{figure}[h!]
+  \centering
+  \includegraphics[width=1\textwidth]{images/raw_data_example.png}
+  \caption{EEGdenoiseNet dataset}
+  \label{fig:raw_data}
+\end{figure}
+\newline \\
 The incorporation of these various types of epochs in the dataset
 enables to generate a considerable number of noisy EEG epochs
 with their corresponding ground truth data. As a result, this compilation 
 has proven to be an invaluable resource for model training and testing,
  facilitating an enhanced understanding of EEG denoising.
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.9\textwidth]{images/raw_data_example.png}
-  \caption{EEGdenoiseNet dataset}
-  \label{fig:raw_data}
-\end{figure}
 \section{Preprocessing}
 The preprocessing of the EEG signals is an important step in the
 pipeline of the proposed model. It generates the noisy EEG
@@ -1014,17 +1015,12 @@ composed of:
 \end{itemize}
 It was trained on 100 epochs with a batch size of 40 for EOG and 
 60 epochs with a batch size of 40 for EMG.
-\begin{figure}
+\begin{figure}[h!]
 \centering
-\includegraphics[width=0.6\linewidth]{images/models_architecture_basic.png}
+\includegraphics[width=1\linewidth]{images/models_architecture_basic.png}
 \caption{a) FCNN architecture b) CNN architecture c) LSTM architecture}
 \end{figure}
 \subsection{1D-ResCNN}\label{sec:1D-ResCNN}
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=1\linewidth]{model_architecture_Res_CNN.png}
-  \caption{1D-ResCNN architecture}
-  \end{figure}
 The proposed model is a 1D residual CNN taken from\cite{1DResCNN}
  and it is composed of:
 \begin{itemize}
@@ -1036,6 +1032,11 @@ The proposed model is a 1D residual CNN taken from\cite{1DResCNN}
 \item a final convolutional layer with relu activation function
 \item a flattening and dense layer 
 \end{itemize}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1\linewidth]{model_architecture_Res_CNN.png}
+  \caption{1D-ResCNN architecture}
+  \end{figure}
 \subsection{EEGDNet}\label{sec:EEGDNet}
 The proposed  model is taken from\cite{EEGDNet} and it is
 composed of four parts including:
@@ -1095,6 +1096,11 @@ residual connections and batch normalization, which helps capture long-range dep
 \item Feed-Forward Network (FFN): A two-layer fully connected neural 
 network that processes the output of the ResBiGru block.
 \end{itemize}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1\linewidth]{images/bigru_light.png}
+  \caption{Proposed model architecture}
+  \end{figure}
 \subsubsection{Decoder}
 The Decoder class is responsible for generating the output sequence 
 based on the encoded input. It shares similar components with the Encoder 
@@ -1130,11 +1136,7 @@ The Decoder class consists of the following components:
     long-range dependencies in the input sequence.
   \item Feed-Forward Network (FFN): Processes the output of the ResBiGruBlock.
 \end{itemize}
-  \begin{figure}[h!]
-    \centering
-    \includegraphics[width=1\linewidth]{images/bigru_light.png}
-    \caption{Proposed model architecture}
-    \end{figure}
+
 \subsubsection{ResBiGRU Block}
 The Residual Bidirectional Gated Recurrent Unit (ResBiGRU) serves as a 
 fundamental building block in the proposed model, enabling effective 
@@ -1156,7 +1158,13 @@ forming a residual connection. This strategic design choice mitigates
 the vanishing gradient problem, allowing the network to retain essential 
 information during training. Furthermore, batch normalization is applied 
 after the bidirectional GRU layers to normalize the output, facilitating 
-stable training and improving the model's generalization capabilities.\newline \\
+stable training and improving the model's generalization capabilities.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1\linewidth]{images/resbigru.png}
+  \caption{ResBiGRU Block}
+  \end{figure}
+  \newline \\
 To introduce non-linearity and capture complex feature relationships, 
 a leaky rectified linear unit (LeakyReLU) activation function is applied 
 subsequent to the batch normalization step. The Leaky ReLU activation 
@@ -1184,11 +1192,7 @@ complex patterns, the ResBiGru layer is repeated two times in each block. This
 repetition enables the ResBiGRU model to iteratively learn and refine 
 representations of the input sequence, capturing hierarchical and 
 context-specific information. \newline
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=1\linewidth]{images/resbigru.png}
-    \caption{ResBiGRU Block}
-    \end{figure}
+
 \chapter{Experimental results}
 This chapter presents the experimental results of the proposed model and
 the baseline models. The results are presented in the form of comparison tables
@@ -1339,14 +1343,15 @@ performance. Through careful examination of the loss function,
 we can evaluate the effectiveness of our training methodology 
 and gain confidence in the subsequent evaluation of the model's 
 performance. The results of the training are shown in 
-Figure \ref{fig:results}
+Figure \ref{fig:results1}-\ref{fig:results2}
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.6\textwidth]{./results/res_bigru_light_LReLU/EMG/loss.png}
 \caption{The loss of proposed model on EMG}
+\label{fig:results1}
 \includegraphics[width=0.6\textwidth]{./results/res_bigru_light_LReLU/EOG/loss.png}
 \caption{The loss of proposed model on EOG}
-\label{fig:results}
+\label{fig:results2}
 \end{figure}
 \subsection{Comparison with baseline models}
 The proposed model surpasses the performance of the comparison models, 

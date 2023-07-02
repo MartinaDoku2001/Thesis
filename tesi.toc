@@ -58,12 +58,12 @@
 \contentsline {subsection}{\numberline {3.3.1}FCNN}{34}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}CNN}{35}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}LSTM}{35}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}1D-ResCNN}{36}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.4}1D-ResCNN}{35}{subsection.3.3.4}%
 \contentsline {subsection}{\numberline {3.3.5}EEGDNet}{36}{subsection.3.3.5}%
 \contentsline {section}{\numberline {3.4}Proposed model architecture}{37}{section.3.4}%
 \contentsline {subsubsection}{Encoder}{37}{section*.43}%
-\contentsline {subsubsection}{Decoder}{38}{section*.44}%
-\contentsline {subsubsection}{ResBiGRU Block}{38}{section*.46}%
+\contentsline {subsubsection}{Decoder}{37}{section*.45}%
+\contentsline {subsubsection}{ResBiGRU Block}{39}{section*.46}%
 \contentsline {chapter}{\numberline {4}Experimental results}{41}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Evaluation Metrics}{41}{section.4.1}%
 \contentsline {subsubsection}{RRMSE}{41}{section*.48}%
