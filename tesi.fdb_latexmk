@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1701614952 "c:/Users/Martina/Desktop/Thesis/tesi.tex" "tesi.pdf" "tesi" 1701614954 0
-  "C:/Users/Martina/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1701614950 82507 a9eef8696c92627b87e9975edea03b2a ""
+["pdflatex"] 1709551232 "c:/Users/Martina/Desktop/Thesis/tesi.tex" "tesi.pdf" "tesi" 1709551234 0
+  "C:/Users/Martina/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1707730188 118486 dd23bf9eeb829c57580e5235c66907ff ""
   "C:/Users/Martina/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1698305596 24176129 7c80cf37c099d5e1a60f896827f88782 ""
   "C:/Users/Martina/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
   "C:/Users/Martina/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc" 1256929440 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -162,10 +162,10 @@
   "results/res_bigru_light_LReLU/EOG/loss.png" 1701514203 22821 1e5bf40593f695d3304a244894196099 ""
   "sapienzalogo.pdf" 1701514203 16467 ae993a07c0ae9d5e7c2133cabeec0ab9 ""
   "sapthesis.cls" 1701514203 30890 fad5aace6bfda8910a58abec98fc569a ""
-  "tesi.aux" 1701614954 20419 3f4b527896c65ad5696f58c43e5ac7c0 "pdflatex"
-  "tesi.out" 1701614954 7552 acd1d0f24e51edfb400996e1d97d5624 "pdflatex"
+  "tesi.aux" 1709551234 20419 3f4b527896c65ad5696f58c43e5ac7c0 "pdflatex"
+  "tesi.out" 1709551234 7552 acd1d0f24e51edfb400996e1d97d5624 "pdflatex"
   "tesi.tex" 1701514203 91526 33e8f140aa1ce448c77a07dda6c1d3e4 ""
-  "tesi.toc" 1701614954 6815 95da93ae4a4624e863f92fd06a25fe36 "pdflatex"
+  "tesi.toc" 1709551234 6815 95da93ae4a4624e863f92fd06a25fe36 "pdflatex"
   (generated)
   "tesi.aux"
   "tesi.log"
